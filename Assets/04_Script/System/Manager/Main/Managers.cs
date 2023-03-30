@@ -40,7 +40,8 @@ public class Managers : MonoBehaviour
     public static void SettingManager(GameObject obj)
     {
 
-
+        systemManage = new SystemManager();
+        systemManage.Setting();
 
     }
 
