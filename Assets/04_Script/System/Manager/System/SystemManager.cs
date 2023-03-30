@@ -5,7 +5,9 @@ using UnityEngine;
 public class SystemManager
 {
 
-    public ProjectSettingSO projectSettingSO {  get; private set; }
+    private ProjectSettingSO projectSettingSO;
+
+    public bool isKeyboard => projectSettingSO.isKeyboard;
 
     public void Setting()
     {
