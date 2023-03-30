@@ -7,7 +7,7 @@ namespace Struct
 {
 
     [System.Serializable]
-    public class InputObject
+    public struct InputObject
     {
 
         public UnityEvent inputEvent;
