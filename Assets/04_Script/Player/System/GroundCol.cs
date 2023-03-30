@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroundCol : MonoBehaviour
 {
     
-    public bool isGround {  get; private set; }
+    public bool isGround { get; private set; }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
