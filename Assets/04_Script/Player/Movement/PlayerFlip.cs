@@ -15,7 +15,7 @@ public class PlayerFlip : PlayerMovementRoot
 
     }
 
-    private void Filp()
+    private void Flip(float value)
     {
 
 
