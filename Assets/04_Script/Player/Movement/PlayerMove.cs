@@ -10,6 +10,7 @@ public class PlayerMove : PlayerMovementRoot
     [SerializeField] private float moveSpeed;
     [SerializeField] private float increseMoveSpeed;
     [SerializeField] private float maxMoveSpeed;
+
     private float addMoveSpeed;
 
     protected override void Awake()
