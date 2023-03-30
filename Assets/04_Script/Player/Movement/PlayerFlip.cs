@@ -18,7 +18,14 @@ public class PlayerFlip : PlayerMovementRoot
     private void Flip(float value)
     {
 
+        spriteRenderer.flipX = value switch
+        {
 
+            1 => true,
+            2 => false,
+            _ => spriteRenderer.flipX
+
+        };
 
     }
 
