@@ -6,8 +6,10 @@ public class Managers : MonoBehaviour
 {
 
     private static Managers instance;
+    private static SystemManager systemManage;
 
     public static Managers Instance { get { Init(); return instance; } }
+    public static SystemManager SystemManage { get { Init(); return systemManage; } }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void Init()
