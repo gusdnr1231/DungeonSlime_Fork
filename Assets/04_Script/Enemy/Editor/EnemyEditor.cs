@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyEditor : MonoBehaviour
@@ -34,7 +35,20 @@ public class EnemyEditor : MonoBehaviour
     public void SaveEnemy()
     {
 
+        if (enemyName == "")
+        {
 
+            Debug.LogError("enemyName이 잘못됨");
+            return;
+
+        }
+
+        PrefabUtility.SaveAsPrefabAsset(mainObject,
+            Application.dataPath + $"/Resources/Enemy/{enemyName}.prefab");
+
+        enemyName = "";
+
+        Debug.Log("저장 완료");
 
     }
 
