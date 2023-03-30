@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : PlayerRoot
+public class PlayerMove : PlayerMovementRoot
 {
 
     [SerializeField] private float moveSpeed;
@@ -13,7 +13,7 @@ public class PlayerMove : PlayerRoot
 
         base.Awake();
 
-        input.OnMovementEvent += Move;
+        AddEvent();
 
     }
 
@@ -24,5 +24,18 @@ public class PlayerMove : PlayerRoot
 
     }
 
+    public override void AddEvent()
+    {
+        
+        input.OnMovementEvent += Move;
+
+    }
+
+    public override void RemoveEvent() 
+    {
+
+        input.OnMovementEvent -= Move;
+
+    }
 
 }
