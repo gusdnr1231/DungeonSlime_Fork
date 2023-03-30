@@ -31,7 +31,7 @@ public class PlayerMove : PlayerMovementRoot
 
     }
 
-    public override void RemoveEvent() 
+    public override void RemoveEvent()
     {
 
         input.OnMovementEvent -= Move;
