@@ -139,6 +139,8 @@ GameObject:
   - component: {fileID: 53109929}
   - component: {fileID: 53109928}
   - component: {fileID: 53109931}
+  - component: {fileID: 53109932}
+  - component: {fileID: 53109933}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -261,7 +263,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &53109928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7861c8b555d8f48943cbb15ac72000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPower: 3
+  JumpPower: 7
 --- !u!114 &53109930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +321,39 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &53109932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53109923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183605bd0819c064a9e16c622055af26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &53109933
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53109923}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6ed9c056a24d5e4792cdda4810a9a7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &302612211
 GameObject:
   m_ObjectHideFlags: 0
