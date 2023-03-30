@@ -12,6 +12,8 @@ public class PlayerJump : PlayerMovementRoot
 
         base.Awake();
 
+        AddEvent();
+
     }
 
     private void Jump()
