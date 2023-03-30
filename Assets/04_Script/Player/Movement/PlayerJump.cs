@@ -19,7 +19,7 @@ public class PlayerJump : PlayerMovementRoot
     private void Jump()
     {
 
-
+        rigid.velocity += Vector2.up * JumpPower;
 
     }
 
