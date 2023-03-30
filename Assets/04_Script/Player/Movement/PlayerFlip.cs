@@ -22,7 +22,7 @@ public class PlayerFlip : PlayerMovementRoot
         {
 
             1 => true,
-            2 => false,
+            -1 => false,
             _ => spriteRenderer.flipX
 
         };
