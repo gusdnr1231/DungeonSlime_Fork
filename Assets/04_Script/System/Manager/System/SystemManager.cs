@@ -10,7 +10,7 @@ public class SystemManager
     public void Setting()
     {
 
-        //projectTypeSO = Resources.Load<ProjectTypeSO>()
+        projectTypeSO = Resources.Load<ProjectTypeSO>("Setting/ProjectType");
 
     }
 
