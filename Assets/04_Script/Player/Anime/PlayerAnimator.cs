@@ -11,10 +11,40 @@ public class PlayerAnimator : PlayerRoot
 
     private void Update()
     {
-        
 
+        SetMove();
+        SetGround();
+        SetYVel();
 
     }
 
+    private void SetMove()
+    {
+
+        bool move = rigid.velocity.x switch
+        {
+
+            0 => false,
+            _ => true
+
+        };
+
+        animator.SetBool(IsMoveHash, move);
+
+    }
+
+    private void SetGround()
+    {
+
+        animator.SetBool(IsGroundHash, groundCol.isGround);
+
+    }
+
+    private void SetYVel()
+    {
+
+        animator.SetFloat(YVelHash, rigid.velocity.y);
+
+    }
 
 }
