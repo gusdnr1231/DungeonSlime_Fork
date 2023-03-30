@@ -19,6 +19,8 @@ public class PlayerJump : PlayerMovementRoot
     private void Jump()
     {
 
+        //나중에 땅 감지조건 추가
+
         rigid.velocity += Vector2.up * JumpPower;
 
     }
