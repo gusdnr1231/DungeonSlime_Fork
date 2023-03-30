@@ -14,7 +14,7 @@ public class PlayerInput : MonoBehaviour
     public event Action OnHideEvnet;
     public event Action OnSkillEvent;
 
-    private void Update()
+    private void FixedUpdate()
     {
 
         OnMovementEvent?.Invoke(moveValue);
