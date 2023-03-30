@@ -5,12 +5,12 @@ using UnityEngine;
 public class SystemManager
 {
 
-    public ProjectTypeSO projectTypeSO {  get; private set; }
+    public ProjectSettingSO projectSettingSO {  get; private set; }
 
     public void Setting()
     {
 
-        projectTypeSO = Resources.Load<ProjectTypeSO>("Setting/ProjectType");
+        projectSettingSO = Resources.Load<ProjectSettingSO>("Setting/ProjectSetting");
 
     }
 
