@@ -31,15 +31,15 @@ public class PlayerFlip : PlayerMovementRoot
 
     public override void AddEvent()
     {
-        
 
+        input.OnMovementEvent += Flip;
 
     }
 
     public override void RemoveEvent() 
     {
-        
 
+        input.OnMovementEvent -= Flip;
 
     }
 
