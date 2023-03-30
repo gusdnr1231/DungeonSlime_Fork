@@ -31,6 +31,13 @@ public class EnemyEditor : MonoBehaviour
 
     }
 
+    public void SaveEnemy()
+    {
+
+
+
+    }
+
     private GameObject CreateObject(string name = "Object")
     {
 
