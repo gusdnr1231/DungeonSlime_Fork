@@ -43,6 +43,13 @@ public class EnemyEditor : MonoBehaviour
 
         }
 
+        if(mainObject == null)
+        {
+
+
+
+        }
+
         PrefabUtility.SaveAsPrefabAsset(mainObject,
             Application.dataPath + $"/Resources/Enemy/{enemyName}.prefab");
 
