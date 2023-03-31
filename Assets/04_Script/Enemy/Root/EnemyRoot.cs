@@ -11,6 +11,7 @@ public class EnemyRoot : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected Rigidbody2D rigid;
+    protected bool isHidingPlayer;
 
     protected virtual void Awake()
     {
@@ -20,5 +21,8 @@ public class EnemyRoot : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
+
+    public virtual void Hide() { }
+    public virtual void Bounce() { }
 
 }

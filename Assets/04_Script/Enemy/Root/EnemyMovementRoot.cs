@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyMovementRoot : EnemyRoot, IEventObject
 {
+
     public virtual void AddEvent()
     {
 
