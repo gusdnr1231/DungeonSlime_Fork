@@ -7,8 +7,6 @@ using UnityEngine;
 public class EnemyRoot : MonoBehaviour, IEventObject
 {
 
-    [SerializeField] protected EnemyData enemyData;
-
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected Rigidbody2D rigid;
