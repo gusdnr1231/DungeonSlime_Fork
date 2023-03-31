@@ -7,6 +7,7 @@ public class EnemyRoot : MonoBehaviour
 {
 
     [SerializeField] protected EnemyData enemyData;
+
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected Rigidbody2D rigid;
