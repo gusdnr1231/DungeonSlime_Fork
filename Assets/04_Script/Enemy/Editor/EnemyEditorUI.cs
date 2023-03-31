@@ -13,6 +13,14 @@ public class EnemyEditorUI : Editor
 
         base.OnInspectorGUI();
 
+        var editor = (EnemyEditor)target;
+
+        if(GUILayout.Button("CreateEnemy")) editor.CreateEnemy();
+
+        if(GUILayout.Button("SaveEnemy")) editor.SaveEnemy();
+
+        if(GUILayout.Button("LoadEnemy")) editor.LoadEnemy();
+
     }
 
 }
