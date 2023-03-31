@@ -1,9 +1,10 @@
+using Interface;
 using Struct;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyRoot : MonoBehaviour
+public class EnemyRoot : MonoBehaviour, IEventObject
 {
 
     [SerializeField] protected EnemyData enemyData;
@@ -22,7 +23,25 @@ public class EnemyRoot : MonoBehaviour
 
     }
 
-    public virtual void Hide() { }
-    public virtual void Bounce() { }
+    public virtual void Hide() 
+    {
 
+        AddEvent();
+
+    }
+
+    public virtual void Bounce() 
+    { 
+        
+        RemoveEvent();
+
+    }
+
+    public virtual void AddEvent()
+    {
+    }
+
+    public virtual void RemoveEvent()
+    {
+    }
 }
