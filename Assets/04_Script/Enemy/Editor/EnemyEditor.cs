@@ -58,6 +58,7 @@ public class EnemyEditor : MonoBehaviour
 
         Debug.Log("저장 완료");
 
+        mainObject = null;
     }
 
     public void LoadEnemy()
@@ -68,6 +69,13 @@ public class EnemyEditor : MonoBehaviour
 
             Debug.LogError("enemyName이 잘못됨");
             return;
+
+        }
+
+        if (mainObject != null)
+        {
+
+            DestroyImmediate(mainObject);
 
         }
 
