@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemyEditor : MonoBehaviour
 {
-
+    
     [SerializeField] private string enemyName;
 
     private GameObject mainObject;
