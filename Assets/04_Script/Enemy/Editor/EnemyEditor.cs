@@ -46,7 +46,8 @@ public class EnemyEditor : MonoBehaviour
         if(mainObject == null)
         {
 
-
+            Debug.LogError("Enemy오브젝트가 잘못됨");
+            return;
 
         }
 
