@@ -26,14 +26,14 @@ public class EnemyMovementHide : EnemyRoot
     public override void AddEvent()
     {
 
-        playerInput.OnMovementEvent += Move;
+        input.OnMovementEvent += Move;
 
     }
 
     public override void RemoveEvent() 
     {
 
-        playerInput.OnMovementEvent -= Move;
+        input.OnMovementEvent -= Move;
 
     }
 

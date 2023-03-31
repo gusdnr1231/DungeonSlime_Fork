@@ -17,9 +17,9 @@ public class PlayerRoot : MonoBehaviour
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        groundCol = GetComponentInChildren<GroundCol>();
 
         input = FindObjectOfType<PlayerInput>();
-        groundCol = FindObjectOfType<GroundCol>();
 
     }
 

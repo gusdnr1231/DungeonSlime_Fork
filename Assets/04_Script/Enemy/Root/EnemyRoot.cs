@@ -7,10 +7,11 @@ using UnityEngine;
 public class EnemyRoot : MonoBehaviour, IEventObject
 {
 
-    protected PlayerInput playerInput;
+    protected PlayerInput input;
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected Rigidbody2D rigid;
+    protected GroundCol groundCol;
     protected bool isHidingPlayer;
 
     protected virtual void Awake()
@@ -19,8 +20,9 @@ public class EnemyRoot : MonoBehaviour, IEventObject
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        groundCol = GetComponentInChildren<GroundCol>();
 
-        playerInput = FindObjectOfType<PlayerInput>();
+        input = FindObjectOfType<PlayerInput>();
 
     }
 
