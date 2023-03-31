@@ -7,6 +7,7 @@ using UnityEngine;
 public class EnemyRoot : MonoBehaviour, IEventObject
 {
 
+    protected PlayerInput playerInput;
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected Rigidbody2D rigid;
@@ -18,6 +19,8 @@ public class EnemyRoot : MonoBehaviour, IEventObject
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        playerInput = FindObjectOfType<PlayerInput>();
 
     }
 

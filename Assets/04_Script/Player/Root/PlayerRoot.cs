@@ -14,11 +14,11 @@ public class PlayerRoot : MonoBehaviour
     protected virtual void Awake()
     {
 
-        input = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        input = FindObjectOfType<PlayerInput>();
         groundCol = FindObjectOfType<GroundCol>();
 
     }
