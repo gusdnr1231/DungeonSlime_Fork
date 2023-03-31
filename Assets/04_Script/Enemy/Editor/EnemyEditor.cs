@@ -52,6 +52,21 @@ public class EnemyEditor : MonoBehaviour
 
     }
 
+    public void LoadEnemy()
+    {
+
+        if (enemyName == "")
+        {
+
+            Debug.LogError("enemyNameÀÌ Àß¸øµÊ");
+            return;
+
+        }
+
+        mainObject = Resources.Load<GameObject>($"Enemy/{enemyName}");
+
+    }
+
     private GameObject CreateObject(string name = "Object")
     {
 
