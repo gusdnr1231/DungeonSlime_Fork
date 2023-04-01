@@ -40,7 +40,7 @@ public class EnemyEditor : MonoBehaviour
         var groundObj = CreateObject("groundCol");
         groundObj.AddComponent<BoxCollider2D>();
         groundObj.GetOrAddComponent<GroundCol>();
-        groundObj.transform.SetParent(transform);
+        groundObj.transform.SetParent(mainObject.transform);
 
         #endregion
 
