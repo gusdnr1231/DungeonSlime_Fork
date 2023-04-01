@@ -26,20 +26,6 @@ public class EnemyRoot : MonoBehaviour, IEventObject
 
     }
 
-    public virtual void Hide() 
-    {
-
-        AddEvent();
-
-    }
-
-    public virtual void Bounce() 
-    { 
-        
-        RemoveEvent();
-
-    }
-
     public virtual void AddEvent()
     {
     }

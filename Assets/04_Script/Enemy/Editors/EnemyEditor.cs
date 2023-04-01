@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -29,6 +30,17 @@ public class EnemyEditor : MonoBehaviour
         mainObject.AddComponent<Animator>();
         mainObject.AddComponent<EnemyMovementHide>();
         mainObject.AddComponent<EnemyJumpHide>();
+        mainObject.AddComponent<Rigidbody2D>();
+        mainObject.AddComponent<BoxCollider2D>();
+
+        #endregion
+
+        #region 땅 감지 오브젝트 생성
+
+        var groundObj = CreateObject("groundCol");
+        groundObj.AddComponent<BoxCollider2D>();
+        groundObj.GetOrAddComponent<GroundCol>();
+        groundObj.transform.SetParent(transform);
 
         #endregion
 
