@@ -48,6 +48,7 @@ public class PlayerHide : PlayerRoot
         }
 
         spriteRenderer.enabled = false;
+        playerCollider.enabled = false;
         rigid.gravityScale = 0;
         
 
