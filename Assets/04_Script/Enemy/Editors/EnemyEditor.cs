@@ -27,6 +27,8 @@ public class EnemyEditor : MonoBehaviour
         mainObject = CreateObject(enemyName);
         mainObject.AddComponent<SpriteRenderer>();
         mainObject.AddComponent<Animator>();
+        mainObject.AddComponent<EnemyMovementHide>();
+        mainObject.AddComponent<EnemyJumpHide>();
 
         #endregion
 

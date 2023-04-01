@@ -37,6 +37,13 @@ public class PlayerHide : PlayerRoot
 
         }
 
+        foreach(var x in hitAble.transform.GetComponents<IEventObject>())
+        {
+
+            x.AddEvent();
+
+        }
+
         spriteRenderer.enabled = false;
 
     }
