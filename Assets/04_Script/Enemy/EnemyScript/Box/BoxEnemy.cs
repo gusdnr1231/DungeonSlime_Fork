@@ -30,8 +30,8 @@ public class BoxEnemy : EnemyRoot
 
         if (upCount == maxUpCount) return;
 
-        spriteRenderer.size += Vector2.up;
-        enemyCollider.size += Vector2.up;
+        spriteRenderer.size += new Vector2(0, 1);
+        enemyCollider.size += new Vector2(0, 1);
         enemyCollider.offset += new Vector2(0, 0.5f);
         upCount++;
 
@@ -42,8 +42,8 @@ public class BoxEnemy : EnemyRoot
 
         if (upCount == 1) return;
 
-        spriteRenderer.size -= Vector2.up;
-        enemyCollider.size -= Vector2.up;
+        spriteRenderer.size -= new Vector2(0, 1);
+        enemyCollider.size -= new Vector2(0, 1);
         enemyCollider.offset -= new Vector2(0, 0.5f);
         upCount--;
 
