@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHide : PlayerRoot
+public class PlayerHide : PlayerMovementRoot
 {
-    
 
+    
 
 }
