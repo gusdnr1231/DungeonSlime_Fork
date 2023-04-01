@@ -38,7 +38,7 @@ public class EnemyEditor : MonoBehaviour
         #region 땅 감지 오브젝트 생성
 
         var groundObj = CreateObject("groundCol");
-        groundObj.AddComponent<BoxCollider2D>();
+        groundObj.AddComponent<BoxCollider2D>().isTrigger = true;
         groundObj.GetOrAddComponent<GroundCol>();
         groundObj.transform.SetParent(mainObject.transform);
 
