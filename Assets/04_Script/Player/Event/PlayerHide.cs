@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerHide : PlayerRoot
 {
@@ -11,6 +12,7 @@ public class PlayerHide : PlayerRoot
     [SerializeField] private LayerMask enemyLayer;
 
     private List<IEventObject> playerEvent = new List<IEventObject>();
+    private GameObject enemyObj;
     private bool isHide;
 
     protected override void Awake()
@@ -32,6 +34,8 @@ public class PlayerHide : PlayerRoot
         RaycastHit2D hitAble = Physics2D.BoxCast(transform.position, boxRange, 0, Vector2.zero, 0, enemyLayer);
 
         if (hitAble == false) return;
+
+        enemyObj = hitAble.transform.gameObject;
 
         foreach(var x in playerEvent)
         {
@@ -63,12 +67,21 @@ public class PlayerHide : PlayerRoot
 
         foreach (var x in playerEvent)
         {
-
             x.AddEvent();
+        }
+
+        foreach (var x in enemyObj.GetComponents<IEventObject>())
+        {
+
+            x.RemoveEvent();
 
         }
 
         spriteRenderer.enabled = true;
+        playerCollider.enabled = true;
+        rigid.gravityScale = 1;
+
+        enemyObj = null;
 
         isHide = false;
 

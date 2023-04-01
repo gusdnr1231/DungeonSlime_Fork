@@ -74,6 +74,8 @@ public class EnemyEditor : MonoBehaviour
 
         Debug.Log("저장 완료");
 
+        Destroy(mainObject);
+
         mainObject = null;
     }
 
@@ -95,7 +97,7 @@ public class EnemyEditor : MonoBehaviour
 
         }
 
-        mainObject = Resources.Load<GameObject>($"Enemy/{enemyName}");
+        mainObject = Instantiate(Resources.Load<GameObject>($"Enemy/{enemyName}"));
 
     }
 
