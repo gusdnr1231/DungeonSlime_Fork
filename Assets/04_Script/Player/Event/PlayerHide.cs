@@ -11,6 +11,7 @@ public class PlayerHide : PlayerRoot
     [SerializeField] private LayerMask enemyLayer;
 
     private List<IEventObject> playerEvent = new List<IEventObject>();
+    private bool isHide;
 
     protected override void Awake()
     {
@@ -25,6 +26,8 @@ public class PlayerHide : PlayerRoot
 
     private void Hide()
     {
+
+        if (isHide) return;
 
         RaycastHit2D hitAble = Physics2D.BoxCast(transform.position, boxRange, 0, Vector2.zero, 0, enemyLayer);
 
@@ -46,10 +49,14 @@ public class PlayerHide : PlayerRoot
 
         spriteRenderer.enabled = false;
 
+        isHide = true;
+
     }
 
     private void Bounce()
     {
+
+        if(!isHide) return;
 
         foreach (var x in playerEvent)
         {
@@ -59,6 +66,8 @@ public class PlayerHide : PlayerRoot
         }
 
         spriteRenderer.enabled = true;
+
+        isHide = false;
 
     }
 

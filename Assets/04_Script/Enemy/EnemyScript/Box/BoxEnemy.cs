@@ -12,14 +12,16 @@ public class BoxEnemy : EnemyRoot
     public override void AddEvent()
     {
 
-        
+        input.OnJumpEvent += BoxUpSkill;
+        input.OnHideEvnet += BoxDownSkill;
 
     }
 
     public override void RemoveEvent() 
     {
-        
 
+        input.OnJumpEvent -= BoxUpSkill;
+        input.OnHideEvnet -= BoxDownSkill;
 
     }
 
@@ -38,7 +40,12 @@ public class BoxEnemy : EnemyRoot
     private void BoxDownSkill()
     {
 
+        if (upCount == 1) return;
 
+        spriteRenderer.size -= Vector2.up;
+        enemyCollider.size -= Vector2.up;
+        enemyCollider.offset -= new Vector2(0, 0.5f);
+        upCount--;
 
     }
 
