@@ -11,6 +11,7 @@ public class EnemyRoot : MonoBehaviour, IEventObject
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected Rigidbody2D rigid;
+    protected BoxCollider2D enemyCollider;
     protected GroundCol groundCol;
     protected bool isHidingPlayer;
 
@@ -20,6 +21,7 @@ public class EnemyRoot : MonoBehaviour, IEventObject
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        enemyCollider = GetComponent<BoxCollider2D>();
         groundCol = GetComponentInChildren<GroundCol>();
 
         input = FindObjectOfType<PlayerInput>();

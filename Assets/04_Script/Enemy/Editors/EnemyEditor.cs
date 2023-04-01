@@ -33,6 +33,8 @@ public class EnemyEditor : MonoBehaviour
         mainObject.AddComponent<Rigidbody2D>();
         mainObject.AddComponent<BoxCollider2D>();
 
+        mainObject.layer = 3;
+
         #endregion
 
         #region 땅 감지 오브젝트 생성
