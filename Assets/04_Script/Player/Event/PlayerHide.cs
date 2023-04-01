@@ -1,21 +1,31 @@
+using Interface;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHide : PlayerMovementRoot
+public class PlayerHide : PlayerRoot
 {
 
+    private List<IEventObject> playerEvent = new List<IEventObject>();
 
-    public override void AddEvent()
+    protected override void Awake()
     {
-        
+
+        base.Awake();
+        input.OnHideEvnet += Hide;
+        input.OnBounceEvent += Bounce;
+
+    }
+
+    private void Hide()
+    {
+
 
 
     }
-    
-    public override void RemoveEvent() 
+
+    private void Bounce()
     {
-        
 
 
     }
