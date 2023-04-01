@@ -55,4 +55,15 @@ public class PlayerHide : PlayerRoot
 
     }
 
+#if UNITY_EDITOR
+
+    private void OnDrawGizmos()
+    {
+        
+        Gizmos.DrawWireCube(transform.position, boxRange);
+
+    }
+
+#endif
+
 }
