@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -27,6 +28,21 @@ public class EnemyEditor : MonoBehaviour
         mainObject = CreateObject(enemyName);
         mainObject.AddComponent<SpriteRenderer>();
         mainObject.AddComponent<Animator>();
+        mainObject.AddComponent<EnemyMovementHide>();
+        mainObject.AddComponent<EnemyJumpHide>();
+        mainObject.AddComponent<Rigidbody2D>();
+        mainObject.AddComponent<BoxCollider2D>();
+
+        mainObject.layer = 3;
+
+        #endregion
+
+        #region 땅 감지 오브젝트 생성
+
+        var groundObj = CreateObject("groundCol");
+        groundObj.AddComponent<BoxCollider2D>().isTrigger = true;
+        groundObj.GetOrAddComponent<GroundCol>();
+        groundObj.transform.SetParent(mainObject.transform);
 
         #endregion
 
@@ -58,6 +74,8 @@ public class EnemyEditor : MonoBehaviour
 
         Debug.Log("저장 완료");
 
+        DestroyImmediate(mainObject);
+
         mainObject = null;
     }
 
@@ -79,7 +97,8 @@ public class EnemyEditor : MonoBehaviour
 
         }
 
-        mainObject = Resources.Load<GameObject>($"Enemy/{enemyName}");
+        mainObject = Instantiate(Resources.Load<GameObject>($"Enemy/{enemyName}"));
+        mainObject.name = enemyName;
 
     }
 

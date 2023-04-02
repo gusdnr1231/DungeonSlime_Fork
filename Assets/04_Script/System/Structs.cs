@@ -15,4 +15,12 @@ namespace Struct
 
     }
 
+    [System.Serializable]
+    public struct EnemyData
+    {
+
+        [field:SerializeField] public float speed { get; private set; }
+        [field:SerializeField] public float jumpPower { get; private set; }
+
+    }
 }
