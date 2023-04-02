@@ -46,6 +46,13 @@ public class EnemyEditor : MonoBehaviour
 
         #endregion
 
+        #region 나오는곳 오브젝트 생성
+
+        var bouncePos = CreateObject("BouncePos");
+        bouncePos.transform.SetParent(mainObject.transform);
+
+        #endregion
+
     }
 
     public void SaveEnemy()

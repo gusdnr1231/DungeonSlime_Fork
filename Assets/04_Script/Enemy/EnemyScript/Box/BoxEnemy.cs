@@ -8,6 +8,16 @@ public class BoxEnemy : EnemyRoot
     [SerializeField] private int maxUpCount = 4;
 
     private int upCount = 1;
+    private GameObject bouncePos;
+
+    protected override void Awake()
+    {
+
+        base.Awake();
+
+        bouncePos = transform.Find("BouncePos").gameObject;
+
+    }
 
     public override void AddEvent()
     {
@@ -32,6 +42,7 @@ public class BoxEnemy : EnemyRoot
 
         spriteRenderer.size += new Vector2(0, 1);
         enemyCollider.size += new Vector2(0, 1);
+        bouncePos.transform.position += new Vector3(0, 1);
         enemyCollider.offset += new Vector2(0, 0.5f);
         upCount++;
 
@@ -44,6 +55,7 @@ public class BoxEnemy : EnemyRoot
 
         spriteRenderer.size -= new Vector2(0, 1);
         enemyCollider.size -= new Vector2(0, 1);
+        bouncePos.transform.position -= new Vector3(0, 1);
         enemyCollider.offset -= new Vector2(0, 0.5f);
         upCount--;
 

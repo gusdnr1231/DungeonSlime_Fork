@@ -10,6 +10,7 @@ public class PlayerHide : PlayerRoot
 
     [SerializeField] private Vector2 boxRange;
     [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private float bouncePower;
 
     private List<IEventObject> playerEvent = new List<IEventObject>();
     private GameObject enemyObj;
@@ -80,6 +81,11 @@ public class PlayerHide : PlayerRoot
         spriteRenderer.enabled = true;
         playerCollider.enabled = true;
         rigid.gravityScale = 1;
+
+        var jumpPos = enemyObj.transform.Find("BouncePos");
+        transform.position = jumpPos.position;
+
+        rigid.velocity += Vector2.up * bouncePower;
 
         enemyObj = null;
 
