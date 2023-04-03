@@ -19,7 +19,7 @@ public class MapManager : MonoBehaviour
     public void LoadMap()
     {
 
-        StartCoroutine()
+        StartCoroutine(MapLoadingCo());
 
     }
 
