@@ -45,6 +45,13 @@ public class MapEditor : MonoBehaviour
 
     }
 
+    public void LoadMap()
+    {
+
+        if (mapNumber <= 0) return;
+
+    }
+
     private GameObject CreateObject(string name = "Obj")
     {
 
