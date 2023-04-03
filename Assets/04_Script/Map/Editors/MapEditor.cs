@@ -6,7 +6,12 @@ using UnityEngine;
 public class MapEditor : MonoBehaviour
 {
     
+    private GameObject CreateObject(string name = "Obj")
+    {
 
+        return new GameObject(name);
+
+    }
 
 }
 #endif
