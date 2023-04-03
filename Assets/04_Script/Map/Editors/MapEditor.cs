@@ -17,6 +17,13 @@ public class MapEditor : MonoBehaviour
 
         if (mapNumber <= 0) return;
 
+        if (mainMap != null)
+        {
+
+            DestroyImmediate(mainMap);
+
+        }
+
         #region 디폴트 맵 생성
 
         mainMap = CreateObject(mapNumber.ToString());
@@ -49,6 +56,15 @@ public class MapEditor : MonoBehaviour
     {
 
         if (mapNumber <= 0) return;
+
+        if(mainMap != null)
+        {
+
+            DestroyImmediate(mainMap);
+
+        }
+
+        mainMap = Resources.Load<GameObject>($"Map/{mapNumber}");
 
     }
 
