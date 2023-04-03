@@ -26,6 +26,7 @@ public class MapEditor : MonoBehaviour
         GameObject defaultTilemapObject = CreateObject("TileMap");
         defaultTilemapObject.AddComponent<Tilemap>();
         defaultTilemapObject.AddComponent<TilemapRenderer>();
+        defaultTilemapObject.transform.SetParent(mainMap.transform);
 
         #endregion
 
