@@ -32,6 +32,13 @@ public class MapEditor : MonoBehaviour
 
     }
 
+    public void SaveMap()
+    {
+
+
+
+    }
+
     private GameObject CreateObject(string name = "Obj")
     {
 
