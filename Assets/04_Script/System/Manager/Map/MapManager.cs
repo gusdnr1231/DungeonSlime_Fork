@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapManager
+public class MapManager : MonoBehaviour
 {
 
     public int currentStageNum { get; private set; } = 1;
@@ -11,6 +11,13 @@ public class MapManager
     {
 
         currentStageNum = number;
+
+    }
+
+    public void CreateStage()
+    {
+
+        
 
     }
 
