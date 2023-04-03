@@ -15,6 +15,10 @@ public class MapEditorUI : Editor
 
         var editor = (MapEditor)target;
 
+        if(GUILayout.Button("CreateDefaultMap")) editor.CreateDefaultMap();
+        if(GUILayout.Button("SaveMap")) editor.SaveMap();
+        if(GUILayout.Button("LoadMap")) editor.LoadMap();
+
     }
 
 }
