@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    
 
+    [SerializeField] private Transform startPos;
+
+    public Transform StartPos => startPos;
 
 }

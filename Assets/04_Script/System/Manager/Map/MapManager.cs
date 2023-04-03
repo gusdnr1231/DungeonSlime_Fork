@@ -17,7 +17,9 @@ public class MapManager : MonoBehaviour
     public void CreateStage()
     {
 
-        Instantiate(Resources.Load<GameObject>($"Map/{currentStageNum}"));
+        var map = Instantiate(Resources.Load<GameObject>($"Map/{currentStageNum}")).GetComponent<Map>();
+
+
 
     }
 
