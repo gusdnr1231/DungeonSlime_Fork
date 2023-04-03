@@ -19,7 +19,8 @@ public class MapManager : MonoBehaviour
 
         var map = Instantiate(Resources.Load<GameObject>($"Map/{currentStageNum}")).GetComponent<Map>();
 
-
+        var player = GameObject.Find("Player");
+        player.transform.position = map.StartPos.position;
 
     }
 
