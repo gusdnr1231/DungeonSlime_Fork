@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,6 +10,8 @@ public class MapEditor : MonoBehaviour
 
     [SerializeField] private int mapNumber;
 
+    private GameObject mainMap;
+
     public void CreateDefaultMap()
     {
 
@@ -16,7 +19,7 @@ public class MapEditor : MonoBehaviour
 
         #region 디폴트 맵 생성
 
-        GameObject mainMap = CreateObject(mapNumber.ToString());
+        mainMap = CreateObject(mapNumber.ToString());
         mainMap.AddComponent<Grid>();
 
         #endregion
@@ -35,7 +38,10 @@ public class MapEditor : MonoBehaviour
     public void SaveMap()
     {
 
+        if (mapNumber <= 0 || mainMap == null) return;
 
+        PrefabUtility.SaveAsPrefabAsset(mainMap,
+            Application.dataPath + $"/Resources/Map/{mapNumber}");
 
     }
 
