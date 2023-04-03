@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapManager : MonoBehaviour
 {
@@ -14,6 +16,13 @@ public class MapManager : MonoBehaviour
 
     }
 
+    public void LoadMap()
+    {
+
+        StartCoroutine()
+
+    }
+
     public void CreateStage()
     {
 
@@ -21,6 +30,22 @@ public class MapManager : MonoBehaviour
 
         var player = GameObject.Find("Player");
         player.transform.position = map.StartPos.position;
+
+    }
+
+    IEnumerator MapLoadingCo()
+    {
+
+        var maploading = SceneManager.LoadSceneAsync("여기에 이름을 입력");
+
+        yield return new WaitUntil(() =>
+        {
+
+            return maploading.isDone;
+
+        });
+
+        //후시코드
 
     }
 
