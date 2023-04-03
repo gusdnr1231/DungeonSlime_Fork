@@ -9,8 +9,18 @@ public class DieSensor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
 
+        foreach(var tag in tags) 
+        {
+
+            if (collision.CompareTag(tag))
+            {
+
+                Debug.Log(1);
+
+            }
+
+        }
 
     }
 
