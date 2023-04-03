@@ -7,9 +7,11 @@ public class Managers : MonoBehaviour
 
     private static Managers instance;
     private static SystemManager systemManage;
+    private static MapManager mapManager;
 
     public static Managers Instance { get { Init(); return instance; } }
     public static SystemManager SystemManage { get { Init(); return systemManage; } }
+    public static MapManager Map { get { Init(); return mapManager; } }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void Init()
@@ -40,6 +42,7 @@ public class Managers : MonoBehaviour
     public static void SettingManager(GameObject obj)
     {
 
+        mapManager = obj.AddComponent<MapManager>();
         systemManage = new SystemManager();
         systemManage.Setting();
 
