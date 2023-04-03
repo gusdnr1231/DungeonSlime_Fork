@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour
     private float moveValue;
 
     public event Action<float> OnMovementEvent;
+    public event Action<bool> OnJumpKeyPressEvent;
     public event Action OnJumpEvent;
     public event Action OnBounceEvent;
     public event Action OnHideEvnet;
@@ -53,6 +54,13 @@ public class PlayerInput : MonoBehaviour
     {
 
         OnSkillEvent?.Invoke();
+
+    }
+
+    public void JumpKeyPressExecute(bool b)
+    {
+
+        OnJumpKeyPressEvent?.Invoke(b);
 
     }
 
