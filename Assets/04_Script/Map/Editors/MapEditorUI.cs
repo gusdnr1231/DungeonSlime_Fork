@@ -7,8 +7,15 @@ using UnityEngine;
 [CustomEditor(typeof(MapEditor))]
 public class MapEditorUI : Editor
 {
-    
 
+    public override void OnInspectorGUI()
+    {
+
+        base.OnInspectorGUI();
+
+        var editor = (MapEditor)target;
+
+    }
 
 }
 #endif
