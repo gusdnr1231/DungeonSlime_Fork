@@ -9,4 +9,11 @@ public class Map : MonoBehaviour
 
     public Transform StartPos => startPos;
 
+    public void SetStartPos(Transform startPos)
+    {
+
+        this.startPos = startPos;
+
+    }
+
 }
