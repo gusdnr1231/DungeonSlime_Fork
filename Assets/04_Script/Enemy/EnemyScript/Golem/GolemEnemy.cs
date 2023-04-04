@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GolemEnemy : MonoBehaviour
+public class GolemEnemy : EnemyRoot
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public override void AddEvent()
     {
+
         
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void RemoveEvent()
     {
+
         
+
     }
 }
