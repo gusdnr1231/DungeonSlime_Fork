@@ -26,9 +26,9 @@ public class MapEditor : MonoBehaviour
 
         #region 디폴트 맵 생성
 
+        var map = mainMap.AddComponent<Map>();
         mainMap = CreateObject(mapNumber.ToString());
         mainMap.AddComponent<Grid>();
-        mainMap.AddComponent<Map>();
 
         #endregion
 
@@ -45,6 +45,7 @@ public class MapEditor : MonoBehaviour
 
         var startPos = CreateObject("StartPos");
         startPos.transform.SetParent(mainMap.transform);
+        map.SetStartPos(startPos.transform);
 
         #endregion
 
