@@ -45,7 +45,8 @@ public class MapManager : MonoBehaviour
 
         });
 
-        //후시코드
+        
+        CreateStage();
 
     }
 
