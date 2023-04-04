@@ -17,16 +17,16 @@ public class SpiderEnemy : EnemyRoot
 
     private void WallSide(float value)
     {
-        //Collider2D col = Physics2D.BoxCast(sideCollider.transform.position, sideCollider.size / 2, 0, LayerMask.GetMask("Ground"));
-        if (Physics2D.BoxCast(transform.position + (Vector3)pos, size, 0, Vector2.up, LayerMask.GetMask("Ground")))
+        if (Physics2D.BoxCast(transform.position + (Vector3)pos, size, 0, Vector2.zero, 0,LayerMask.GetMask("Ground")))
         {
-            Debug.Log(55);
             if (value != 0)
             {
                 rb.gravityScale = 0;
                 rb.velocity = new Vector2(rb.velocity.x, 2f);
             }
+            else rb.gravityScale = 1;
         }
+        else rb.gravityScale = 1;
     }
 
     private void OnDrawGizmos()
