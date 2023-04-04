@@ -36,7 +36,7 @@ public class MapManager : MonoBehaviour
     IEnumerator MapLoadingCo()
     {
 
-        var maploading = SceneManager.LoadSceneAsync("여기에 이름을 입력");
+        var maploading = SceneManager.LoadSceneAsync("TestMap");
 
         yield return new WaitUntil(() =>
         {
