@@ -28,6 +28,7 @@ public class MapEditor : MonoBehaviour
 
         mainMap = CreateObject(mapNumber.ToString());
         mainMap.AddComponent<Grid>();
+        mainMap.AddComponent<Map>();
 
         #endregion
 
@@ -37,6 +38,13 @@ public class MapEditor : MonoBehaviour
         defaultTilemapObject.AddComponent<Tilemap>();
         defaultTilemapObject.AddComponent<TilemapRenderer>();
         defaultTilemapObject.transform.SetParent(mainMap.transform);
+
+        #endregion
+
+        #region 시작위치 오브젝트 생성
+
+        var startPos = CreateObject("StartPos");
+        startPos.transform.SetParent(mainMap.transform);
 
         #endregion
 

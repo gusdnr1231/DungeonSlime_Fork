@@ -402,6 +402,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - Die
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &302612211
 GameObject:
   m_ObjectHideFlags: 0
