@@ -12,7 +12,7 @@ public class BreakBlock : MonoBehaviour
     private void Update()
     {
         if (Physics2D.BoxCast(transform.position + (Vector3)pos, size, 0,
-            Vector2.zero, 0, LayerMask.GetMask("Player")))
+            Vector2.zero, 0))
             foot = true;
     }
 
@@ -24,11 +24,6 @@ public class BreakBlock : MonoBehaviour
                 //particle.Play();
                 gameObject.SetActive(false);
             }, 0.5f);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
     }
 
     private void OnDrawGizmos()

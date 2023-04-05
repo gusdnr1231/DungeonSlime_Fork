@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class TurtleEnemy : EnemyRoot
 {
-    public override void AddEvent()
+    [SerializeField] private string waterTag;
+    [SerializeField] private float waterSpeed;
+    EnemyMovementHide movementHide;
+
+    protected override void Awake()
     {
-
-        
-
+        base.Awake();
+        movementHide = gameObject.GetComponent<EnemyMovementHide>();
     }
 
-    public override void RemoveEvent()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        
-
+        if (collision.transform.CompareTag(waterTag))
+            movementHide.NewMoveSpeed(waterSpeed);
+        else movementHide.NewMoveSpeed(waterSpeed - 2);
     }
 }

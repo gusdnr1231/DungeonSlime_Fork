@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: acc6f6711c3bbe247b37e8acbcfc77af
+guid: 5ec05ab6c5c83094f8b14f36253f215d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slimeCannon-Sheet-export_0
+      name: Ori-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,20 +113,20 @@ TextureImporter:
         width: 150
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6467c2ac25b78b4689eeb9cfafdc0f0
-      internalID: 549404974
+      spriteID: d27c8ad24b5bbe24cbdc9a0b2485ebf7
+      internalID: -719341597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeCannon-Sheet-export_1
+      name: Ori-Sheet_1
       rect:
         serializedVersion: 2
         x: 150
@@ -134,14 +134,14 @@ TextureImporter:
         width: 150
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac4b04619431cec4a8b240b9e3113bb2
-      internalID: 540613503
+      spriteID: e501a5ed7238c1f4a8d1f01728e057ea
+      internalID: -890675143
       vertices: []
       indices: 
       edges: []
@@ -157,8 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      slimeCannon-Sheet-export_0: 549404974
-      slimeCannon-Sheet-export_1: 540613503
+      Ori-Sheet_0: -719341597
+      Ori-Sheet_1: -890675143
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
