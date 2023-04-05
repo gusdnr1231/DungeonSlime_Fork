@@ -822,6 +822,7 @@ GameObject:
   - component: {fileID: 1823270281}
   - component: {fileID: 1823270280}
   - component: {fileID: 1823270287}
+  - component: {fileID: 1823270288}
   m_Layer: 3
   m_Name: Turtle
   m_TagString: Untagged
@@ -1006,6 +1007,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381470b608a1ee74fad76539a1297a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1823270288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823270279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4dcdaa36d090e46aaeaf2aef33f35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Thorn
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1908139008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1111,7 @@ GameObject:
   - component: {fileID: 1981278590}
   - component: {fileID: 1981278589}
   - component: {fileID: 1981278596}
+  - component: {fileID: 1981278597}
   m_Layer: 3
   m_Name: Golem
   m_TagString: Untagged
@@ -1277,3 +1296,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db79a704b8efe484a850947d00346662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1981278597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981278588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4dcdaa36d090e46aaeaf2aef33f35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Water
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls: []

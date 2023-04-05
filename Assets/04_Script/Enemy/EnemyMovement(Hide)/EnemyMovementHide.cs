@@ -22,6 +22,10 @@ public class EnemyMovementHide : EnemyRoot
 
     }
 
+    public void NewMoveSpeed(float newMoveSpeed)
+    {
+        moveSpeed = newMoveSpeed;
+    }
 
     public override void AddEvent()
     {
