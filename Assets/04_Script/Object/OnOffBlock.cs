@@ -13,14 +13,16 @@ public class OnOffBlock : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
 
+        ChangeOnOff();
 
     }
 
     private void ChangeOnOff()
     {
 
+        isOn = !isOn;
+        changeEvent?.Invoke(isOn);
 
     }
 
