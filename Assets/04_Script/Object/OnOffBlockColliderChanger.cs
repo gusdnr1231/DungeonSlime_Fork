@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class OnOffBlockColliderChanger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private BoxCollider2D boxCollider;
+
+    private void Awake()
     {
         
+        boxCollider = GetComponent<BoxCollider2D>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeColSize(bool value)
     {
-        
+
+        boxCollider.size = value ? new Vector2(1, 0.11f) : new Vector2(1, 0.33f);
+        boxCollider.offset = value ? new Vector2(0, -0.44f) : new Vector2(0, -0.33f);
+
     }
+
 }
