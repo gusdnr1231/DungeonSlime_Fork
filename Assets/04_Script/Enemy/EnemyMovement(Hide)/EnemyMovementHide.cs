@@ -12,8 +12,12 @@ public class EnemyMovementHide : EnemyRoot
 
     private float addMoveSpeed;
 
+    public bool moveAble;
+
     private void Move(float value)
     {
+
+        if (!moveAble) return;
 
         if (value == 0) addMoveSpeed = 1;
         if (addMoveSpeed <= maxMoveSpeed) addMoveSpeed += increseMoveSpeed / 100f;
@@ -22,6 +26,13 @@ public class EnemyMovementHide : EnemyRoot
 
     }
 
+    public void SetValMoveAble()
+    {
+
+        StopAllCoroutines();
+        StartCoroutine(SetMoveAbleToVelCo());
+
+    }
 
     public override void AddEvent()
     {
@@ -34,6 +45,22 @@ public class EnemyMovementHide : EnemyRoot
     {
 
         input.OnMovementEvent -= Move;
+
+    }
+
+    IEnumerator SetMoveAbleToVelCo()
+    {
+
+        moveAble = false;
+
+        yield return new WaitUntil(() =>
+        {
+
+            return rigid.velocity == Vector2.zero;
+
+        });
+
+        moveAble = true;
 
     }
 
