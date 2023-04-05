@@ -20,23 +20,4 @@ public class TurtleEnemy : EnemyRoot
             movementHide.NewMoveSpeed(waterSpeed);
         else movementHide.NewMoveSpeed(waterSpeed - 2);
     }
-
-    private void SpeedChange()
-    {
-
-    }
-
-    public override void AddEvent()
-    {
-
-        
-
-    }
-
-    public override void RemoveEvent()
-    {
-
-        
-
-    }
 }
