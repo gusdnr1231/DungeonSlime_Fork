@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Die
   - Ground
   layers:
   - Default
