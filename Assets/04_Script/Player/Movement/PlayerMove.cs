@@ -13,6 +13,8 @@ public class PlayerMove : PlayerMovementRoot
 
     private float addMoveSpeed;
 
+    public bool moveAble = true;
+
     protected override void Awake()
     {
 
@@ -24,6 +26,9 @@ public class PlayerMove : PlayerMovementRoot
 
     private void Move(float value)
     {
+
+        if (!moveAble) return;
+
         if(value == 0) addMoveSpeed = 1;
         if (addMoveSpeed <= maxMoveSpeed) addMoveSpeed += increseMoveSpeed/100f;
 
