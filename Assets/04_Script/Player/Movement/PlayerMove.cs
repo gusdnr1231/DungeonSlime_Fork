@@ -35,6 +35,14 @@ public class PlayerMove : PlayerMovementRoot
         rigid.velocity = new Vector2(value * moveSpeed * addMoveSpeed, rigid.velocity.y);
     }
 
+    public void SetValMoveAble()
+    {
+
+        StopAllCoroutines();
+        StartCoroutine(SetMoveAbleToVelCo());
+
+    }
+
     public override void AddEvent()
     {
         
@@ -46,6 +54,22 @@ public class PlayerMove : PlayerMovementRoot
     {
 
         input.OnMovementEvent -= Move;
+
+    }
+
+    IEnumerator SetMoveAbleToVelCo()
+    {
+
+        moveAble = false;
+
+        yield return new WaitUntil(() =>
+        {
+
+            return rigid.velocity == Vector2.zero;
+
+        });
+
+        moveAble = true;
 
     }
 
