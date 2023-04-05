@@ -9,7 +9,7 @@ public class OnOffBlock : MonoBehaviour
 
     [SerializeField] private UnityEvent<bool> changeEvent;
 
-    private bool isOn;
+    private bool isOn = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
