@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class JumpPad : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private List<string> jumpAbleTag = new List<string>();
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         
+        i
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
