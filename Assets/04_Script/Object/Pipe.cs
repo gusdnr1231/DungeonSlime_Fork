@@ -4,13 +4,14 @@ using UnityEngine;
 using FD.Dev;
 using DG.Tweening;
 using Interface;
+using System;
 
 public class Pipe : MonoBehaviour
 {
 
     [SerializeField] private Transform outputPipe;
 
-    public void UsePipe(Transform useObjcet)
+    public void UsePipe(Transform useObjcet, Action completeAction)
     {
 
         if(useObjcet.TryGetComponent<IMoveAbleObject>(out var able))
@@ -31,6 +32,7 @@ public class Pipe : MonoBehaviour
             {
 
                 able.moveAble = true;
+                completeAction();
 
             });
 
