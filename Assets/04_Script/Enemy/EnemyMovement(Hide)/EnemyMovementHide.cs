@@ -16,10 +16,12 @@ public class EnemyMovementHide : EnemyRoot
 
     private void Move(float value)
     {
-
         if (!moveAble) return;
 
-        if (value == 0) addMoveSpeed = 1;
+        if (value == 0)
+        {
+            addMoveSpeed = 1;
+        }
         if (addMoveSpeed <= maxMoveSpeed) addMoveSpeed += increseMoveSpeed / 100f;
 
         rigid.velocity = new Vector2(value * moveSpeed * addMoveSpeed, rigid.velocity.y);
