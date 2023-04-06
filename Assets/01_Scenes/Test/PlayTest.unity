@@ -421,7 +421,7 @@ MonoBehaviour:
   boxRange: {x: 1, y: 0.5}
   pipeLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!1 &209831584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ GameObject:
   - component: {fileID: 851493961}
   - component: {fileID: 851493964}
   - component: {fileID: 851493963}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff7929510efe814797ddd22d5bc049b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputPipe: {fileID: 0}
+  outputPipe: {fileID: 1081140566}
 --- !u!1 &1081140562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1272,7 @@ GameObject:
   - component: {fileID: 1081140565}
   - component: {fileID: 1081140564}
   - component: {fileID: 1081140563}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pipe (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

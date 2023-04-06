@@ -21,13 +21,14 @@ public class Pipe : MonoBehaviour
 
         }
 
-        useObjcet.DOMoveY(useObjcet.transform.position.y - 1, 0.3f)
+        useObjcet.DOMoveY(useObjcet.transform.position.y - 1, 1.5f)
         .OnComplete(() =>
         {
 
             useObjcet.transform.position = outputPipe.position;
 
-            useObjcet.DOMoveY(useObjcet.transform.position.y + 1, 0.3f)
+            useObjcet.DOMoveY(useObjcet.transform.position.y + 1, 1.5f)
+            .SetDelay(1f)
             .OnComplete(() =>
             {
 
