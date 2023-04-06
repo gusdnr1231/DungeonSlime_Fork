@@ -7,11 +7,14 @@ public class PlayerPipeUse : PlayerMovementRoot
     [SerializeField] private Vector2 boxRange;
     [SerializeField] private LayerMask pipeLayer;
 
+    private PlayerJump jump;
+
     protected override void Awake()
     {
 
         base.Awake();
         AddEvent();
+        jump = GetComponent<PlayerJump>();
 
     }
 
@@ -34,6 +37,7 @@ public class PlayerPipeUse : PlayerMovementRoot
     {
 
         input.OnHideEvnet += UsingPipe;
+        jump?.AddEvent();
 
     }
 
@@ -41,6 +45,7 @@ public class PlayerPipeUse : PlayerMovementRoot
     {
 
         input.OnHideEvnet -= UsingPipe;
+        jump?.RemoveEvent();
 
     }
 

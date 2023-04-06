@@ -19,25 +19,40 @@ public class Pipe : MonoBehaviour
 
             able.moveAble = false;
 
-        }
+            var rigid = useObjcet.GetComponent<Rigidbody2D>();
+            var col = useObjcet.GetComponent<BoxCollider2D>();
 
-        useObjcet.DOMoveY(useObjcet.transform.position.y - 1, 1.5f)
-        .OnComplete(() =>
-        {
+            col.enabled = false;
+            rigid.gravityScale = 0;
+            rigid.velocity = Vector3.zero;
 
-            useObjcet.transform.position = outputPipe.position;
-
-            useObjcet.DOMoveY(useObjcet.transform.position.y + 1, 1.5f)
-            .SetDelay(1f)
+            useObjcet.DOMoveY(useObjcet.transform.position.y - 1, 1.5f)
             .OnComplete(() =>
             {
+            
+                Vector3 pos = outputPipe.position;
+                pos.y -= 1f;
+            
+                useObjcet.transform.position = pos;
+            
+                useObjcet.DOMoveY(useObjcet.transform.position.y + 1, 1.5f)
+                .SetDelay(1f)
+                .OnComplete(() =>
+                {
+            
+                    able.moveAble = true;
+                    col.enabled = true;
+                    completeAction();
+                    rigid.gravityScale = 1;
+                    rigid.velocity = Vector3.zero;
 
-                able.moveAble = true;
-                completeAction();
-
+                });
+            
             });
 
-        });
+        }
+
+
 
     }
 
