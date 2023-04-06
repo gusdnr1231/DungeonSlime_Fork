@@ -5,13 +5,14 @@ using UnityEngine;
 public class Cannon : EnemyRoot
 {
     private Rigidbody2D rb;
+    EnemyMovementHide movementHide;
 
     protected override void Awake()
     {
 
         base.Awake();
         rb = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
-        Debug.Log(rb.gameObject);
+        movementHide = gameObject.GetComponent<EnemyMovementHide>();
     }
 
     private void AngleSetting(float value)
@@ -22,7 +23,10 @@ public class Cannon : EnemyRoot
     private void Fire()
     {
         input.BounceExecute();
-        rb.AddForce(new Vector2(500, 9) * 10);
+        movementHide.SetValMoveAble();
+        rb.velocity += new Vector2(5, 5) * 2;
+        // rb.AddForce(new Vector2(50, 9) * 10);
+        movementHide.SetValMoveAble();
     }
 
     public override void AddEvent()

@@ -12,7 +12,7 @@ public class BreakBlock : MonoBehaviour
     private void Update()
     {
         if (Physics2D.BoxCast(transform.position + (Vector3)pos, size, 0,
-            Vector2.zero, 0))
+            Vector2.zero, 0, LayerMask.GetMask("Player", "Enemy")))
             foot = true;
     }
 
