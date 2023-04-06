@@ -13,7 +13,28 @@ public class Pipe : MonoBehaviour
     public void UsePipe(Transform useObjcet)
     {
 
-        
+        if(useObjcet.TryGetComponent<IMoveAbleObject>(out var able))
+        {
+
+            able.moveAble = false;
+
+        }
+
+        useObjcet.DOMoveY(useObjcet.transform.position.y - 1, 0.3f)
+        .OnComplete(() =>
+        {
+
+            useObjcet.transform.position = outputPipe.position;
+
+            useObjcet.DOMoveY(useObjcet.transform.position.y + 1, 0.3f)
+            .OnComplete(() =>
+            {
+
+                able.moveAble = true;
+
+            });
+
+        });
 
     }
 
