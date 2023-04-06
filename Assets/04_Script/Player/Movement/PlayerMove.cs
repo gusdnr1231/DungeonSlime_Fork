@@ -14,7 +14,7 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
 
     private float addMoveSpeed;
 
-    public bool moveAble { get; set; }
+    public bool moveAble { get; set; } = true;
 
     protected override void Awake()
     {

@@ -13,7 +13,7 @@ public class EnemyMovementHide : EnemyRoot, IMoveAbleObject
 
     private float addMoveSpeed;
 
-    public bool moveAble { get; set; }
+    public bool moveAble { get; set; } = true;
 
     private void Move(float value)
     {
