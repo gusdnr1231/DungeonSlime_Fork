@@ -18,7 +18,7 @@ public class PlayerPipeUse : PlayerMovementRoot
     private void UsingPipe()
     {
 
-        RaycastHit2D hitAble = Physics2D.BoxCast(transform.position, boxRange, 0, Vector2.zero, 0, enemyLayer);
+        RaycastHit2D hitAble = Physics2D.BoxCast(transform.position, boxRange, 0, Vector2.zero, 0, pipeLayer);
 
         if(hitAble && hitAble.transform.TryGetComponent<Pipe>(out var pipe))
         {
