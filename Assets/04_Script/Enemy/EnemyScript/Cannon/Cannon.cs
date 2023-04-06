@@ -5,13 +5,13 @@ using UnityEngine;
 public class Cannon : EnemyRoot
 {
     private Rigidbody2D rb;
+    PlayerMove playerMove;
 
     protected override void Awake()
     {
-
         base.Awake();
         rb = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
-        Debug.Log(rb.gameObject);
+        playerMove = GameObject.FindWithTag("Player").GetComponent<PlayerMove>();
     }
 
     private void AngleSetting(float value)
@@ -22,7 +22,12 @@ public class Cannon : EnemyRoot
     private void Fire()
     {
         input.BounceExecute();
-        rb.AddForce(new Vector2(500, 9) * 10);
+        playerMove.SetValMoveAble();
+
+        float angle = transform.eulerAngles.z < 180 ? -transform.eulerAngles.z : 360 - transform.eulerAngles.z;
+        Debug.Log(angle);
+
+        rb.velocity += new Vector2(angle, 90 - Mathf.Abs(angle)) * 0.1f;
     }
 
     public override void AddEvent()
