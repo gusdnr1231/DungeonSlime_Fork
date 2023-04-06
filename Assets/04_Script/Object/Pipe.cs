@@ -44,7 +44,6 @@ public class Pipe : MonoBehaviour
                     col.enabled = true;
                     completeAction();
                     rigid.gravityScale = 1;
-                    rigid.velocity = Vector3.zero;
 
                 });
             

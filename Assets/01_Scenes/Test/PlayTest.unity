@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a97f0dec795f774f8fc5975e383af71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxRange: {x: 1, y: 0.5}
+  boxRange: {x: 0.22, y: 0.5}
   pipeLayer:
     serializedVersion: 2
     m_Bits: 256
