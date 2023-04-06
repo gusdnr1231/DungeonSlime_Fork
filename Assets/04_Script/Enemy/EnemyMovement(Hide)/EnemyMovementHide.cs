@@ -1,9 +1,10 @@
+using Interface;
 using Struct;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovementHide : EnemyRoot
+public class EnemyMovementHide : EnemyRoot, IMoveAbleObject
 {
 
     [SerializeField] private float moveSpeed;
@@ -12,7 +13,7 @@ public class EnemyMovementHide : EnemyRoot
 
     private float addMoveSpeed;
 
-    public bool moveAble;
+    public bool moveAble { get; set; }
 
     private void Move(float value)
     {

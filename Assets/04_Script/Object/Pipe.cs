@@ -10,7 +10,7 @@ public class Pipe : MonoBehaviour
 
     [SerializeField] private Transform outputPipe;
 
-    private void UsePipe(Transform useObjcet)
+    public void UsePipe(Transform useObjcet)
     {
 
         

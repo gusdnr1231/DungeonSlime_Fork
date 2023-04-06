@@ -1,10 +1,11 @@
+using Interface;
 using Struct;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : PlayerMovementRoot
+public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
 {
 
     [SerializeField] private float moveSpeed;
@@ -13,7 +14,7 @@ public class PlayerMove : PlayerMovementRoot
 
     private float addMoveSpeed;
 
-    public bool moveAble = true;
+    public bool moveAble { get; set; }
 
     protected override void Awake()
     {

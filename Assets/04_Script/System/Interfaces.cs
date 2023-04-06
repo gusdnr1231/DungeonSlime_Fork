@@ -13,4 +13,11 @@ namespace Interface
 
     }
 
+    public interface IMoveAbleObject
+    {
+
+        public bool moveAble { get; set; }
+
+    }
+
 }
