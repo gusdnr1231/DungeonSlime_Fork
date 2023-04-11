@@ -39,7 +39,7 @@ public class PlayerInput : MonoBehaviour
     public void BounceExecute()
     {
 
-        OnBounceEvent?.Invoke();
+        OnBounceEvent?.Invoke();    
 
     }
 

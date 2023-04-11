@@ -26,8 +26,8 @@ public class MapEditor : MonoBehaviour
 
         #region 디폴트 맵 생성
 
-        var map = mainMap.AddComponent<Map>();
         mainMap = CreateObject(mapNumber.ToString());
+        var map = mainMap.AddComponent<Map>();
         mainMap.AddComponent<Grid>();
 
         #endregion

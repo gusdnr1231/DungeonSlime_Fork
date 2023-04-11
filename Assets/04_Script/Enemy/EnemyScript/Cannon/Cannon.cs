@@ -7,6 +7,8 @@ public class Cannon : EnemyRoot
     private Rigidbody2D rb;
     PlayerMove playerMove;
 
+    [SerializeField] private float cannonSpeed = 0.2f;
+
     protected override void Awake()
     {
         base.Awake();
@@ -24,10 +26,9 @@ public class Cannon : EnemyRoot
         input.BounceExecute();
         playerMove.SetValMoveAble();
 
-        float angle = transform.eulerAngles.z < 180 ? -transform.eulerAngles.z : 360 - transform.eulerAngles.z;
-        Debug.Log(angle);
+        float angle = transform.eulerAngles.z < 180 ? Mathf.Clamp(-transform.eulerAngles.z, -90, 90) : Mathf.Clamp(360 - transform.eulerAngles.z, -90, 90);
 
-        rb.velocity += new Vector2(angle, 90 - Mathf.Abs(angle)) * 0.1f;
+        rb.velocity += new Vector2(angle, 90 - Mathf.Abs(angle)) * cannonSpeed;
     }
 
     public override void AddEvent()
