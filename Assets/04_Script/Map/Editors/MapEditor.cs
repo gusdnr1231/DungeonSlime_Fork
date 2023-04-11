@@ -74,7 +74,7 @@ public class MapEditor : MonoBehaviour
         }
 
         mainMap = Resources.Load<GameObject>($"Map/{mapNumber}");
-        Instantiate(mainMap);
+        mainMap = Instantiate(mainMap);
         mainMap.transform.name = mapNumber.ToString();
 
     }
