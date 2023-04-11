@@ -57,7 +57,7 @@ public class MapEditor : MonoBehaviour
         if (mapNumber <= 0 || mainMap == null) return;
 
         PrefabUtility.SaveAsPrefabAsset(mainMap,
-            Application.dataPath + $"/Resources/Map/{mapNumber}");
+            Application.dataPath + $"/Resources/Map/{mapNumber}.prefab");
 
     }
 
