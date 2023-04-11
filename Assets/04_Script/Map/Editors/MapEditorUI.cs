@@ -18,6 +18,7 @@ public class MapEditorUI : Editor
         if(GUILayout.Button("CreateDefaultMap")) editor.CreateDefaultMap();
         if(GUILayout.Button("SaveMap")) editor.SaveMap();
         if(GUILayout.Button("LoadMap")) editor.LoadMap();
+        if(GUILayout.Button("Reset")) editor.ResetMap();
 
     }
 
