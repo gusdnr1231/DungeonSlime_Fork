@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a2730a1d00235409929aa8e21158a9, type: 3}
+  m_Name: DefaultAI
+  m_EditorClassIdentifier: 
+  nodeData:
+  - guid: 5d896b62-c602-45c1-b6ed-88e0e01485da
+    text: RootNode
+    type: 0
+    pos: {x: 0, y: 0}
+    ports:
+    - 1
+    - 2
+    inputPorts: []
+  - guid: 75c79b12-df85-443b-8a7b-432bb29c82f7
+    text: IdleState
+    type: 1
+    pos: {x: 214.4, y: -48}
+    ports:
+    - 1
+    inputPorts:
+    - EnderState
+  - guid: ff00dbef-d26e-4fe7-be4f-f24cd2e360ca
+    text: IdleState
+    type: 2
+    pos: {x: 448, y: 74.399994}
+    ports: []
+    inputPorts:
+    - State
+  - guid: 4c4602e1-215f-4db5-99e2-03c658cfda60
+    text: ChaceState
+    type: 2
+    pos: {x: 448, y: -48}
+    ports: []
+    inputPorts:
+    - State
+  - guid: ed0d0a4a-32ff-4770-b62f-36ecb18e6e6b
+    text: ChaceState
+    type: 1
+    pos: {x: 214.4, y: 74.399994}
+    ports:
+    - 1
+    inputPorts:
+    - EnderState
+  linkData:
+  - baseGuid: 5d896b62-c602-45c1-b6ed-88e0e01485da
+    portName: 1
+    targetGuid: 75c79b12-df85-443b-8a7b-432bb29c82f7
+    thisGuid: 
+  - baseGuid: 5d896b62-c602-45c1-b6ed-88e0e01485da
+    portName: 2
+    targetGuid: ed0d0a4a-32ff-4770-b62f-36ecb18e6e6b
+    thisGuid: 
+  - baseGuid: 75c79b12-df85-443b-8a7b-432bb29c82f7
+    portName: 1
+    targetGuid: 4c4602e1-215f-4db5-99e2-03c658cfda60
+    thisGuid: 
+  - baseGuid: ed0d0a4a-32ff-4770-b62f-36ecb18e6e6b
+    portName: 1
+    targetGuid: ff00dbef-d26e-4fe7-be4f-f24cd2e360ca
+    thisGuid: 
