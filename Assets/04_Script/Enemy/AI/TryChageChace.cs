@@ -22,7 +22,7 @@ public class TryChageChace : FAED_FSMTransition
     {
 
         bool value = (Mathf.Abs(transform.position.x) - Mathf.Abs(player.position.x)) <= maxRange &&
-            (Mathf.Abs(transform.position.y) -Mathf.Abs(player.position.y)) <= 3;
+            (Mathf.Abs(transform.position.y) - Mathf.Abs(player.position.y)) <= 3;
 
         return value;
 
