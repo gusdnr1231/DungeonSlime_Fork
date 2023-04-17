@@ -7,6 +7,8 @@ using DG.Tweening;
 public class ChaceState : FAED_FSMState
 {
 
+
+    [SerializeField] private float speed;
     private Rigidbody2D rigid;
     private Transform player;
 
@@ -27,7 +29,7 @@ public class ChaceState : FAED_FSMState
     public override void UpdateState()
     {
         
-        float value = player.position.x > transform.position.x ? -3f : 3f;
+        float value = player.position.x > transform.position.x ? 3f : -3f;
 
         rigid.velocity = new Vector2(value, rigid.velocity.y);
 
