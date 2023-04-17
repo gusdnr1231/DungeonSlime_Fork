@@ -21,8 +21,7 @@ public class TryChageChace : FAED_FSMTransition
     public override bool ChackTransition()
     {
 
-        bool value = (Mathf.Abs(transform.position.x) - Mathf.Abs(player.position.x)) <= maxRange &&
-            (Mathf.Abs(transform.position.y) - Mathf.Abs(player.position.y)) <= 3;
+        bool value = Vector2.Distance(transform.position, player.position) <= maxRange;
 
         return value;
 
@@ -36,7 +35,7 @@ public class TryChageChace : FAED_FSMTransition
         Color old = Gizmos.color;
         Gizmos.color = Color.white;
         //DrawCode
-        Gizmos.DrawWireCube(transform.position, new Vector2(maxRange * 2, 1));
+        Gizmos.DrawWireSphere(transform.position, maxRange);
 
         Gizmos.color = old;
 
