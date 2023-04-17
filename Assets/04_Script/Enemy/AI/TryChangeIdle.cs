@@ -10,9 +10,10 @@ public class TryChangeIdle : FAED_FSMTransition
 
     private Transform player;
 
-    private void Awake()
+    protected override void Awake()
     {
 
+        base.Awake();
         player = GameObject.Find("Player").transform;
 
     }

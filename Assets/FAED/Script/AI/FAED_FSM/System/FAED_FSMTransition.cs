@@ -10,7 +10,7 @@ namespace FD.AI.FSM
 
         [HideInInspector] public string nextState;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             
             nextState = gameObject.name.Replace("(GoTo)", "");
