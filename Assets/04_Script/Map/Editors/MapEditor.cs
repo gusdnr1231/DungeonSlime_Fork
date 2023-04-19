@@ -32,12 +32,15 @@ public class MapEditor : MonoBehaviour
 
         #endregion
 
+        GameObject tileParent = CreateObject("Map");
+        tileParent.transform.SetParent(mainMap.transform);
+
         #region 타일맵 오브젝트 생성
 
         GameObject defaultTilemapObject = CreateObject("TileMap");
         defaultTilemapObject.AddComponent<Tilemap>();
         defaultTilemapObject.AddComponent<TilemapRenderer>();
-        defaultTilemapObject.transform.SetParent(mainMap.transform);
+        defaultTilemapObject.transform.SetParent(tileParent.transform);
 
         #endregion
 
