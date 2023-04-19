@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Thorn
   - Water
+  - Scale
   layers:
   - Default
   - TransparentFX

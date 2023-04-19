@@ -24,7 +24,10 @@ public class Scale : MonoBehaviour
     {
         scale1.transform.position = s1T.position;
         scale2.transform.position = s2T.position;
+    }
 
+    public void SetScale()
+    {
         SetStick(Angle());
         SetBalanceStones(Angle());
     }
@@ -54,19 +57,15 @@ public class Scale : MonoBehaviour
         try
         {
             RaycastHit2D[] d = Physics2D.BoxCastAll(scale.transform.position + new Vector3(0, 1, 0),
-            overlapBoxSize, 0, Vector2.zero);
+            new Vector2(2.9f, 0.2f), 0, Vector2.zero);
 
-            Heavy[] hs = new Heavy[20];
+            float sumHeavy = 0;
             for (int i = 0; i < d.Length; i++)
             {
-                hs[i] = d[i].transform.GetComponent<Heavy>();
-            }
-            float sumHeavy = 0;
-            foreach (Heavy heavy in hs)
-            {
-                sumHeavy += heavy.heavy;
+                sumHeavy += d[i].transform.GetComponent<Heavy>().heavy;
                 Debug.Log(sumHeavy);
             }
+
             Debug.Log("aa");
             return sumHeavy;
         }
