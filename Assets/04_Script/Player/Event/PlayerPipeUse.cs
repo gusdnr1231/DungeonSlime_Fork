@@ -8,6 +8,7 @@ public class PlayerPipeUse : PlayerMovementRoot
     [SerializeField] private LayerMask pipeLayer;
 
     private PlayerJump jump;
+    private bool isInSidePipe;
 
     protected override void Awake()
     {
@@ -26,6 +27,7 @@ public class PlayerPipeUse : PlayerMovementRoot
         if(hitAble && hitAble.transform.TryGetComponent<Pipe>(out var pipe))
         {
 
+            isInSidePipe = true;
             RemoveEvent();
             pipe.UsePipe(transform, AddEvent);
 
@@ -36,14 +38,17 @@ public class PlayerPipeUse : PlayerMovementRoot
     public override void AddEvent()
     {
 
+        if (!isInSidePipe) return;
+
         input.OnHideEvnet += UsingPipe;
         jump?.AddEvent();
+        isInSidePipe = false;
 
     }
 
     public override void RemoveEvent() 
     {
-
+        if (!isInSidePipe) return;
         input.OnHideEvnet -= UsingPipe;
         jump?.RemoveEvent();
 
