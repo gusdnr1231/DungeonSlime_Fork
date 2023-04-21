@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavy: 3
+  isGround: 0
 --- !u!1 &302612211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1050,7 @@ MonoBehaviour:
   scale1: {fileID: 1990833123}
   scale2: {fileID: 1633934658}
   stick: {fileID: 617347105}
-  overlapBoxSize: {x: 2.9, y: 0.2}
+  overlapBoxSize: {x: 2.92, y: 0.05}
 --- !u!1 &1990833123
 GameObject:
   m_ObjectHideFlags: 0
