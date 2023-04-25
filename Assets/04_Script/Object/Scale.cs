@@ -14,7 +14,7 @@ public class Scale : MonoBehaviour
 
     const float stonOrgPosY = -1.8f;
 
-    //private void Update() => SetScale();
+    private void Update() => SetScale();
 
     public void SetScale()
     {
@@ -50,8 +50,7 @@ public class Scale : MonoBehaviour
             for (int i = 0; i < d.Length; i++)
             {
                 Debug.Log(d[i].transform.name);
-                if(d[i].transform.GetComponent<Heavy>().isGround)
-                    sumHeavy += d[i].transform.GetComponent<Heavy>().heavy;
+                sumHeavy += d[i].transform.GetComponent<Heavy>().heavy;
                 
             }
 

@@ -163,7 +163,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7921709880008751649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -232,8 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavy: 5
-  isGround: 0
-  time: 0
 --- !u!1 &6436464569159747103
 GameObject:
   m_ObjectHideFlags: 0
