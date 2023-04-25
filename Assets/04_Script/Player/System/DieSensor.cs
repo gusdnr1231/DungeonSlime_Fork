@@ -8,6 +8,7 @@ public class DieSensor : MonoBehaviour
 
     [SerializeField] private List<string> tags = new List<string>();
     [SerializeField] private UnityEvent dieEvent;
+    [SerializeField] private bool useIsDie = true;
 
     private bool isDie;
 
@@ -20,7 +21,7 @@ public class DieSensor : MonoBehaviour
             if (collision.CompareTag(tag))
             {
 
-                if (isDie) return;
+                if (isDie && useIsDie) return;
 
                 isDie = true;
                 dieEvent?.Invoke();
