@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using FD.AI.FSM;
 using DG.Tweening;
+using FD.Dev;
 
-public class ChaceState : FAED_FSMState
+public class SklChaceState : FAED_FSMState
 {
 
     [SerializeField] private bool reverce;
+    [SerializeField] private Vector2 size;
+    [SerializeField] private Vector2 offset;
+    [SerializeField] private LayerMask layerMask;
 
     private EnemyMovementHide hide;
     private float speed => hide.getMoveSpeed;
     private Rigidbody2D rigid;
     private Transform player;
+    private GroundCol groundCol;
+    private bool jumpCoolDown = true;
 
     private void Awake()
     {
@@ -20,6 +26,7 @@ public class ChaceState : FAED_FSMState
         player = GameObject.Find("Player").transform;
         rigid = transform.parent.GetComponent<Rigidbody2D>();
         hide = transform.parent.GetComponent<EnemyMovementHide>();
+        groundCol = transform.parent.GetComponentInChildren<GroundCol>();
 
     }
 
@@ -47,6 +54,22 @@ public class ChaceState : FAED_FSMState
 
         rigid.velocity = new Vector2(value, rigid.velocity.y);
 
+        var obj = Physics2D.OverlapBox(transform.position + (Vector3)offset, size, 0, layerMask);
+
+        if(obj != null && groundCol.isGround && jumpCoolDown) 
+        {
+
+            jumpCoolDown = false;
+            rigid.velocity += new Vector2(0, 5f);
+            FAED.InvokeDelay(() =>
+            {
+
+                jumpCoolDown = true;
+
+            }, 1f) ;
+
+        }
+
     }
 
     public override void ExitState()
@@ -55,5 +78,6 @@ public class ChaceState : FAED_FSMState
         rigid.velocity = Vector2.zero;
 
     }
+
 
 }

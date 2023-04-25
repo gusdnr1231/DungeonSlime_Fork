@@ -8,8 +8,11 @@ public class DieSensor : MonoBehaviour
 
     [SerializeField] private List<string> tags = new List<string>();
     [SerializeField] private UnityEvent dieEvent;
+    [SerializeField] private bool useIsDie = true;
 
     private bool isDie;
+
+    public string dieTag { get; set; }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,8 +23,30 @@ public class DieSensor : MonoBehaviour
             if (collision.CompareTag(tag))
             {
 
-                if (isDie) return;
+                if (isDie && useIsDie) return;
 
+                dieTag = tag;
+                isDie = true;
+                dieEvent?.Invoke();
+
+            }
+
+        }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        foreach (var tag in tags)
+        {
+
+            if (collision.transform.CompareTag(tag))
+            {
+
+                if (isDie && useIsDie) return;
+
+                dieTag = tag;
                 isDie = true;
                 dieEvent?.Invoke();
 

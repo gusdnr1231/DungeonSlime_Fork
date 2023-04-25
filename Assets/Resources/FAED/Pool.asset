@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed5fe4f65728d9046b5d48fc7a22a33e, type: 3}
-  m_Name: SettingData
+  m_Script: {fileID: 11500000, guid: d15621ca6b7a3bf40abb3206c2e75766, type: 3}
+  m_Name: Pool
   m_EditorClassIdentifier: 
-  poolData: {fileID: 11400000, guid: fbe4491128bc115459553a5b9ba68f48, type: 2}
-  soundList: {fileID: 0}
+  poolingList:
+  - poolName: GolemBlock
+    poolObj: {fileID: 6302938134848234102, guid: 3b9cf5c2ce682e445bb31d4fda24299e, type: 3}
+    poolSize: 10
