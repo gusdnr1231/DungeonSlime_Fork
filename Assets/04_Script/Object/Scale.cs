@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening;
 
 public class Scale : MonoBehaviour
 {
@@ -12,36 +12,26 @@ public class Scale : MonoBehaviour
     [SerializeField] private GameObject stick;
     [SerializeField] private Vector2 overlapBoxSize;
 
-    private Transform s1T, s2T;
+    const float stonOrgPosY = -1.8f;
 
-    private void Awake()
+    private void Update() => SetScale();
+
+    public void SetScale()
     {
-        s1T = scale1.transform;
-        s2T = scale2.transform;
-    }
-
-    void Update()
-    {
-        scale1.transform.position = s1T.position;
-        scale2.transform.position = s2T.position;
-
         SetStick(Angle());
         SetBalanceStones(Angle());
     }
 
     void SetStick(float angle)
     {
-        float position1Y = Mathf.Lerp(s1T.position.y, s1T.position.y + angle, Time.deltaTime);
-        float position2Y = Mathf.Lerp(s2T.position.y, s2T.position.y + angle, Time.deltaTime);
-
-        s1T.position = new Vector3(s1T.position.x, position1Y);
-        s2T.position = new Vector3(s2T.position.x, position2Y);
+        scale1.transform.DOMoveY(stonOrgPosY - (angle / 4), 2f);
+        scale2.transform.DOMoveY(stonOrgPosY + (angle / 4), 2f);
     }
 
     void SetBalanceStones(float angle)
     {
         float eulerZ = Mathf.Lerp(stick.transform.rotation.z, angle, Time.deltaTime);
-        stick.transform.rotation = Quaternion.Euler(0, 0, eulerZ);
+        stick.transform.DORotate(new Vector3(0, 0, angle * 4.5f), 2f);
     }
 
     float Angle()
@@ -51,33 +41,30 @@ public class Scale : MonoBehaviour
 
     float HeavySenser(GameObject scale)
     {
+        float sumHeavy = 0;
         try
         {
-            RaycastHit2D[] d = Physics2D.BoxCastAll(scale.transform.position + new Vector3(0, 1, 0),
+            RaycastHit2D[] d = Physics2D.BoxCastAll(scale.transform.position + new Vector3(0, 1.05f, 0),
             overlapBoxSize, 0, Vector2.zero);
 
-            Heavy[] hs = new Heavy[20];
             for (int i = 0; i < d.Length; i++)
             {
-                hs[i] = d[i].transform.GetComponent<Heavy>();
+                Debug.Log(d[i].transform.name);
+                sumHeavy += d[i].transform.GetComponent<Heavy>().heavy;
+                
             }
-            float sumHeavy = 0;
-            foreach (Heavy heavy in hs)
-            {
-                sumHeavy += heavy.heavy;
-                Debug.Log(sumHeavy);
-            }
-            Debug.Log("aa");
+
             return sumHeavy;
         }
         catch (Exception exp)
         {
-            return 0;
+            Debug.Log("exp");
+            return sumHeavy;
         }
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawCube(scale1.transform.position + new Vector3(0, 1, 0), overlapBoxSize);
+        Gizmos.DrawCube(scale1.transform.position + new Vector3(0, 1.05f, 0), overlapBoxSize);
     }
 }

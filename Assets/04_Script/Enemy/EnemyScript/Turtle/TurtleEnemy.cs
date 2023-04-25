@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurtleEnemy : EnemyRoot
 {
-    [SerializeField] private string waterTag;
+    const string waterTag = "Water";
     [SerializeField] private float waterSpeed;
     EnemyMovementHide movementHide;
 
