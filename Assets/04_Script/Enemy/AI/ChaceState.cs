@@ -7,8 +7,10 @@ using DG.Tweening;
 public class ChaceState : FAED_FSMState
 {
 
+    [SerializeField] private bool reverce;
 
-    [SerializeField] private float speed;
+    private EnemyMovementHide hide;
+    private float speed => hide.getMoveSpeed;
     private Rigidbody2D rigid;
     private Transform player;
 
@@ -17,6 +19,7 @@ public class ChaceState : FAED_FSMState
 
         player = GameObject.Find("Player").transform;
         rigid = transform.parent.GetComponent<Rigidbody2D>();
+        hide = transform.parent.GetComponent<EnemyMovementHide>();
 
     }
 
@@ -28,8 +31,19 @@ public class ChaceState : FAED_FSMState
 
     public override void UpdateState()
     {
-        
-        float value = player.position.x > transform.position.x ? speed : -speed;
+        float value = 0;
+        if (!reverce)
+        {
+
+            value = player.position.x > transform.position.x ? speed : -speed;
+
+        }
+        else
+        {
+
+            value = player.position.x > transform.position.x ? -speed : speed;
+
+        }
 
         rigid.velocity = new Vector2(value, rigid.velocity.y);
 

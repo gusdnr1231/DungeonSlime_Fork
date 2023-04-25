@@ -32,4 +32,24 @@ public class DieSensor : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        foreach (var tag in tags)
+        {
+
+            if (collision.transform.CompareTag(tag))
+            {
+
+                if (isDie && useIsDie) return;
+
+                isDie = true;
+                dieEvent?.Invoke();
+
+            }
+
+        }
+
+    }
+
 }

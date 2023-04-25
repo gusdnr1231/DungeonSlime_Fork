@@ -6,10 +6,10 @@ using UnityEngine;
 public class IdleState : FAED_FSMState
 {
 
-    [SerializeField] private float movementSpeed;
     [SerializeField] private float changeTime;
 
-
+    private EnemyMovementHide movementHide;
+    private float movementSpeed => movementHide.getMoveSpeed;
     private float dir = 1;
     private Rigidbody2D rigid;
 
@@ -17,6 +17,7 @@ public class IdleState : FAED_FSMState
     {
         
         rigid = transform.parent.GetComponent<Rigidbody2D>();
+        movementHide = transform.parent.GetComponent<EnemyMovementHide>();
 
     }
 
