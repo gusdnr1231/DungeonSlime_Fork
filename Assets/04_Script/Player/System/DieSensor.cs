@@ -12,6 +12,8 @@ public class DieSensor : MonoBehaviour
 
     private bool isDie;
 
+    public string dieTag { get; set; }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -23,6 +25,7 @@ public class DieSensor : MonoBehaviour
 
                 if (isDie && useIsDie) return;
 
+                dieTag = tag;
                 isDie = true;
                 dieEvent?.Invoke();
 
@@ -43,6 +46,7 @@ public class DieSensor : MonoBehaviour
 
                 if (isDie && useIsDie) return;
 
+                dieTag = tag;
                 isDie = true;
                 dieEvent?.Invoke();
 

@@ -13,7 +13,19 @@ public class GolemDieEvt :DieEvent
 
         //¹° Á¶°Ç
 
-        FAED.Pop("GolemBlock", transform.position - new Vector3(0, 0.75f), Quaternion.identity);
+        if(GetComponent<DieSensor>().dieTag == "Water")
+        {
+
+            FAED.Pop("GolemBlock", transform.position - new Vector3(0, 0.75f * 2), Quaternion.identity);
+
+        }
+        else
+        {
+
+            FAED.Pop("GolemBlock", transform.position - new Vector3(0, 0.75f), Quaternion.identity);
+
+        }
+
         gameObject.SetActive(false);
 
     }
