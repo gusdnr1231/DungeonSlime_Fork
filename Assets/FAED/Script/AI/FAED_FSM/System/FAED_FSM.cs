@@ -31,7 +31,7 @@ namespace FD.AI.FSM
 
             }
 
-            EnterEvnet += firstState.EnterState;
+            EnterEvnet += firstState.EnterState; 
             UpdateEvnet += firstState.UpdateState;
             ExitEvnet += firstState.ExitState;
             
