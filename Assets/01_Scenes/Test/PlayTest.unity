@@ -1777,7 +1777,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1.5, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2737,7 +2737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381470b608a1ee74fad76539a1297a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterTag: Water
   waterSpeed: 3
 --- !u!61 &1736188005
 BoxCollider2D:
@@ -2756,7 +2755,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
