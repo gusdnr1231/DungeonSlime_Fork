@@ -30,6 +30,13 @@ public class UiManager : MonoBehaviour
 
     }
 
+    public void SetNextScene(string value)
+    {
+
+        PlayerPrefs.SetString("NextScene", value);
+
+    }
+
     public void MoveChapterUI(bool value)
     {
 

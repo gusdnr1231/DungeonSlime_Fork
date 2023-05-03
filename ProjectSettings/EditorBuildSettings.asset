@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/Test/SystemTest/TestMap.unity
     guid: 5f9e7f2e8ca78234eb50aee83b11acf1
+  - enabled: 1
+    path: Assets/01_Scenes/Play/ChapterSelect.unity
+    guid: 506bd09705d480a449524b8e1f507ab3
+  - enabled: 1
+    path: Assets/01_Scenes/Play/Loading.unity
+    guid: 236ef6882b7bb96479347ea8e7c125ff
+  - enabled: 1
+    path: Assets/01_Scenes/Play/SelectStage/SelectStage1.unity
+    guid: 5ea19fdaf028f084fb7b53e1659c3410
   m_configObjects: {}
