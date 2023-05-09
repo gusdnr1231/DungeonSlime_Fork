@@ -1016,6 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ab8a2f7e79d0949800cf9bc721fae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementUI: {fileID: 0}
 --- !u!4 &1888283609
 Transform:
   m_ObjectHideFlags: 0
@@ -1089,7 +1090,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAEBC\uC838"
+  m_text: "\uC815\uB9D0 \uB098\uAC08\uAC70\uC57C?\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82adba936386b184d95c22d25bc38084, type: 2}
   m_sharedMaterial: {fileID: -1160832513067960368, guid: 82adba936386b184d95c22d25bc38084, type: 2}
