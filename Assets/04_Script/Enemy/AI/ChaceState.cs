@@ -13,6 +13,7 @@ public class ChaceState : FAED_FSMState
     private float speed => hide.getMoveSpeed;
     private Rigidbody2D rigid;
     private Transform player;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class ChaceState : FAED_FSMState
         player = GameObject.Find("Player").transform;
         rigid = transform.parent.GetComponent<Rigidbody2D>();
         hide = transform.parent.GetComponent<EnemyMovementHide>();
+        spriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
 
     }
 
@@ -44,6 +46,8 @@ public class ChaceState : FAED_FSMState
             value = player.position.x > transform.position.x ? -speed : speed;
 
         }
+
+        spriteRenderer.flipX = value >= 0 ? false : true; 
 
         rigid.velocity = new Vector2(value, rigid.velocity.y);
 
