@@ -5,31 +5,14 @@ using UnityEngine;
 
 public abstract class AIState : IAIState
 {
-    public void EnterState()
+    public abstract void EnterState();
+    public abstract void UpdateState();
+    public abstract void ExitState();
+    public virtual void SettingState(AIController controller)
     {
 
 
 
     }
 
-    public void ExitState()
-    {
-
-
-
-    }
-
-    public void SettingState(AIController controller)
-    {
-
-
-
-    }
-
-    public void UpdateState()
-    {
-
-
-
-    }
 }
