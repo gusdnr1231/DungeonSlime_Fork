@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIState : IAIState
+public abstract class AIState : IAIState
 {
     public void EnterState()
     {
