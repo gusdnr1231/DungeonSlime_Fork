@@ -6,9 +6,10 @@ using UnityEngine;
 public class AIController : EnemyRoot
 {
 
+    [SerializeField] private AIState currentState;
     [SerializeField] private GameObject aiRootObj;
 
-    private List<IAIState> aIStates = null;
+    private List<AIState> aIStates = null;
     private event Action UpdateEventHandle = null;
 
     protected override void Awake()
@@ -19,10 +20,16 @@ public class AIController : EnemyRoot
         if (aiRootObj == null) GetComponentsInChildren(aIStates);
         else aiRootObj.GetComponentsInChildren(aIStates);
 
+        foreach(var item in aIStates) 
+        {
+
+            item.SettingState(this);
+        
+        }
+
         AddEvent();
 
     }
-
 
     private void Update()
     {
