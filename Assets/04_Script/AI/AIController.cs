@@ -8,15 +8,15 @@ public class AIController : EnemyRoot
 
     [SerializeField] private GameObject aiRootObj;
 
-    private IAIState[] aIStates = null;
+    private List<IAIState> aIStates = null;
 
     protected override void Awake()
     {
 
         base.Awake();
 
-        if (aiRootObj == null) aIStates = GetComponentsInChildren<IAIState>();
-        else aIStates = aiRootObj.GetComponentsInChildren<IAIState>();
+        if (aiRootObj == null) GetComponentsInChildren(aIStates);
+        else GetComponentsInChildren(aIStates);
 
     }
 
