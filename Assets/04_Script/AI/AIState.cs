@@ -1,18 +1,35 @@
+using Interface;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIState : MonoBehaviour
+public class AIState : IAIState
 {
-    // Start is called before the first frame update
-    void Start()
+    public void EnterState()
     {
-        
+
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ExitState()
     {
-        
+
+
+
+    }
+
+    public void SettingState(AIController controller)
+    {
+
+
+
+    }
+
+    public void UpdateState()
+    {
+
+
+
     }
 }
