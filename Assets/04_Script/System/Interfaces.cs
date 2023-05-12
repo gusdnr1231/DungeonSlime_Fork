@@ -20,4 +20,14 @@ namespace Interface
 
     }
 
+    public interface IAIState
+    {
+
+        public void SettingState(AIController controller);
+        public void UpdateState();
+        public void EnterState();
+        public void ExitState();
+
+    }
+
 }
