@@ -40,7 +40,7 @@ public class IdleState : FAED_FSMState
     public override void UpdateState()
     {
 
-        spriteRenderer.flipX = dir >= 0 ? false : true;   
+        spriteRenderer.flipX = dir >= 0 ? true : false;   
         rigid.velocity = new Vector2(movementSpeed * dir, rigid.velocity.y);
 
     }

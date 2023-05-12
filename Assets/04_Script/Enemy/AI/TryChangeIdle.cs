@@ -23,7 +23,7 @@ public class TryChangeIdle : FAED_FSMTransition
 
         bool value = Vector2.Distance(transform.position, player.position) > maxRange;
 
-        return value;
+        return value || Vector2.Distance(transform.position, player.position) < 0.1f;
 
     }
 
