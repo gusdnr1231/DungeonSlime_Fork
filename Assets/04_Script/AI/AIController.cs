@@ -34,7 +34,12 @@ public class AIController : EnemyRoot
     private void UpdateEvent()
     {
 
-
+        foreach(var item in aIStates) 
+        { 
+            
+            item.UpdateState();
+        
+        }
 
     }
 
