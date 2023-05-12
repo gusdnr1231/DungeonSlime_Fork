@@ -17,7 +17,7 @@ public class AIController : EnemyRoot
         base.Awake();
 
         if (aiRootObj == null) GetComponentsInChildren(aIStates);
-        else GetComponentsInChildren(aIStates);
+        else aiRootObj.GetComponentsInChildren(aIStates);
 
         AddEvent();
 
