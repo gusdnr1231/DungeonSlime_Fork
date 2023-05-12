@@ -12,12 +12,14 @@ public class IdleState : FAED_FSMState
     private float movementSpeed => movementHide.getMoveSpeed;
     private float dir = 1;
     private Rigidbody2D rigid;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         
         rigid = transform.parent.GetComponent<Rigidbody2D>();
         movementHide = transform.parent.GetComponent<EnemyMovementHide>();
+        spriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
 
     }
 
@@ -37,7 +39,8 @@ public class IdleState : FAED_FSMState
 
     public override void UpdateState()
     {
-     
+
+        spriteRenderer.flipX = dir >= 0 ? true : false;   
         rigid.velocity = new Vector2(movementSpeed * dir, rigid.velocity.y);
 
     }
