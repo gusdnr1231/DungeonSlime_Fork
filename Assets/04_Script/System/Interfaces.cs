@@ -20,4 +20,15 @@ namespace Interface
 
     }
 
+    public interface IAIState
+    {
+
+        public AITransition transition { get; set; }
+        public void SettingState(AIController controller);
+        public void UpdateState();
+        public void EnterState();
+        public void ExitState();
+
+    }
+
 }
