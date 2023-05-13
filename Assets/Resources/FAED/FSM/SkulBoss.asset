@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a2730a1d00235409929aa8e21158a9, type: 3}
+  m_Name: SkulBoss
+  m_EditorClassIdentifier: 
+  nodeData:
+  - guid: fa669e74-433f-44a1-95af-1216abe110be
+    text: RootNode
+    type: 0
+    pos: {x: -56, y: -0.79999924}
+    ports:
+    - 1
+    - 2
+    inputPorts: []
+  - guid: deab95f5-da1d-4997-939c-dc1d383435e9
+    text: PlayerControl
+    type: 2
+    pos: {x: 417.6, y: 76}
+    ports: []
+    inputPorts:
+    - State
+  - guid: 91338e8e-061c-49a2-950d-3118af57b067
+    text: Idle
+    type: 1
+    pos: {x: 172.8, y: -29.599998}
+    ports:
+    - 1
+    inputPorts:
+    - EnderState
+  - guid: 95f96fef-61ca-45e7-a8d6-a0edab51ca43
+    text: Idle
+    type: 2
+    pos: {x: 417.6, y: -29.599998}
+    ports: []
+    inputPorts:
+    - State
+  - guid: b32cb9e9-d9fe-4243-9541-639c6df00df8
+    text: PlayerControl
+    type: 1
+    pos: {x: 172.8, y: 76}
+    ports:
+    - 1
+    inputPorts:
+    - EnderState
+  linkData:
+  - baseGuid: 91338e8e-061c-49a2-950d-3118af57b067
+    portName: 1
+    targetGuid: 95f96fef-61ca-45e7-a8d6-a0edab51ca43
+    thisGuid: 
+  - baseGuid: fa669e74-433f-44a1-95af-1216abe110be
+    portName: 1
+    targetGuid: 91338e8e-061c-49a2-950d-3118af57b067
+    thisGuid: 
+  - baseGuid: fa669e74-433f-44a1-95af-1216abe110be
+    portName: 2
+    targetGuid: b32cb9e9-d9fe-4243-9541-639c6df00df8
+    thisGuid: 
+  - baseGuid: b32cb9e9-d9fe-4243-9541-639c6df00df8
+    portName: 1
+    targetGuid: deab95f5-da1d-4997-939c-dc1d383435e9
+    thisGuid: 
