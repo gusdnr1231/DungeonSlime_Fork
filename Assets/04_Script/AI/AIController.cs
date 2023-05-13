@@ -9,7 +9,6 @@ public class AIController : EnemyRoot
     [SerializeField] private AIState currentState;
     [SerializeField] private GameObject aiRootObj;
 
-    private List<AIState> aIStates = null;
     private event Action UpdateEventHandle = null;
 
     protected override void Awake()
@@ -17,10 +16,8 @@ public class AIController : EnemyRoot
 
         base.Awake();
 
-        if (aiRootObj == null) GetComponentsInChildren(aIStates);
-        else aiRootObj.GetComponentsInChildren(aIStates);
 
-        foreach(var item in aIStates) 
+        foreach(var item in aiRootObj.GetComponentsInChildren<AIState>()) 
         {
 
             item.SettingState(this);
@@ -28,6 +25,13 @@ public class AIController : EnemyRoot
         }
 
         AddEvent();
+
+    }
+
+    private void Start()
+    {
+        
+        currentState.EnterState();
 
     }
 
@@ -41,12 +45,23 @@ public class AIController : EnemyRoot
     private void UpdateEvent()
     {
 
-        foreach(var item in aIStates) 
-        { 
-            
-            item.UpdateState();
-        
+        currentState.UpdateState();
+
+        if (currentState.transition.Chack())
+        {
+
+            ChangeState(currentState.transition.nextState);
+
         }
+
+    }
+
+    private void ChangeState(AIState state)
+    {
+
+        currentState.ExitState();
+        currentState = state;
+        currentState.EnterState();
 
     }
 
