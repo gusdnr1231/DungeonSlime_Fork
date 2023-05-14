@@ -21,13 +21,6 @@ MonoBehaviour:
     - 1
     - 2
     inputPorts: []
-  - guid: deab95f5-da1d-4997-939c-dc1d383435e9
-    text: PlayerControl
-    type: 2
-    pos: {x: 417.6, y: 76}
-    ports: []
-    inputPorts:
-    - State
   - guid: 91338e8e-061c-49a2-950d-3118af57b067
     text: Idle
     type: 1
@@ -36,13 +29,6 @@ MonoBehaviour:
     - 1
     inputPorts:
     - EnderState
-  - guid: 95f96fef-61ca-45e7-a8d6-a0edab51ca43
-    text: Idle
-    type: 2
-    pos: {x: 417.6, y: -29.599998}
-    ports: []
-    inputPorts:
-    - State
   - guid: b32cb9e9-d9fe-4243-9541-639c6df00df8
     text: PlayerControl
     type: 1
@@ -51,11 +37,21 @@ MonoBehaviour:
     - 1
     inputPorts:
     - EnderState
+  - guid: 95f96fef-61ca-45e7-a8d6-a0edab51ca43
+    text: Idle
+    type: 2
+    pos: {x: 421.6, y: 76}
+    ports: []
+    inputPorts:
+    - State
+  - guid: deab95f5-da1d-4997-939c-dc1d383435e9
+    text: PlayerControl
+    type: 2
+    pos: {x: 421.6, y: -29.599998}
+    ports: []
+    inputPorts:
+    - State
   linkData:
-  - baseGuid: 91338e8e-061c-49a2-950d-3118af57b067
-    portName: 1
-    targetGuid: 95f96fef-61ca-45e7-a8d6-a0edab51ca43
-    thisGuid: 
   - baseGuid: fa669e74-433f-44a1-95af-1216abe110be
     portName: 1
     targetGuid: 91338e8e-061c-49a2-950d-3118af57b067
@@ -64,7 +60,11 @@ MonoBehaviour:
     portName: 2
     targetGuid: b32cb9e9-d9fe-4243-9541-639c6df00df8
     thisGuid: 
-  - baseGuid: b32cb9e9-d9fe-4243-9541-639c6df00df8
+  - baseGuid: 91338e8e-061c-49a2-950d-3118af57b067
     portName: 1
     targetGuid: deab95f5-da1d-4997-939c-dc1d383435e9
+    thisGuid: 
+  - baseGuid: b32cb9e9-d9fe-4243-9541-639c6df00df8
+    portName: 1
+    targetGuid: 95f96fef-61ca-45e7-a8d6-a0edab51ca43
     thisGuid: 
