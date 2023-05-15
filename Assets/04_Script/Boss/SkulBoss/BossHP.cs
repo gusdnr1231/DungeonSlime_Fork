@@ -27,6 +27,7 @@ public class BossHP : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _playerMove = FindObjectOfType<PlayerMove>();
         _vCamPerlin = _vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        Debug.Log(_vCamPerlin);
         bossClearObject.SetActive(false);
     }
 

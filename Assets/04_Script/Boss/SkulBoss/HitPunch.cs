@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
-public class HitPunch : FAED_FSMTransition 
+public class HitPunch : FAED_FSMTransition
 {
     [Header("Object")]
     [SerializeField] private GameObject player;
@@ -21,10 +21,16 @@ public class HitPunch : FAED_FSMTransition
 
     private SkulBossAppear bossAppear;
     private Rigidbody2D skbRg;
-    private SpriteRenderer skbSp;
     private Animator skbAnim;
 
     bool hit;
+
+    private void Awake()
+    {
+        bossAppear = transform.parent.parent.GetComponent<SkulBossAppear>();
+        skbRg = transform.parent.parent.GetComponent<Rigidbody2D>();
+        skbAnim = transform.parent.parent.GetComponent<Animator>();
+    }
 
     public override bool ChackTransition()
     {
