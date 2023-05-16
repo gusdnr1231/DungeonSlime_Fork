@@ -6,7 +6,9 @@ using FD.AI.FSM;
 public class TryChangeIdle : FAED_FSMTransition
 {
 
-    [SerializeField] private float maxRange;
+    [SerializeField] private Vector2 boxRange;
+    [SerializeField] private Vector2 offset;
+    [SerializeField] private LayerMask playerLayer;
 
     private Transform player;
 
@@ -21,9 +23,9 @@ public class TryChangeIdle : FAED_FSMTransition
     public override bool ChackTransition()
     {
 
-        bool value = Vector2.Distance(transform.position, player.position) > maxRange;
+        bool value = Physics2D.OverlapBox(transform.position + (Vector3)offset, boxRange, 0, playerLayer);
 
-        return value || Vector2.Distance(transform.position, player.position) < 0.1f;
+        return !value;
 
     }
 
@@ -33,9 +35,9 @@ public class TryChangeIdle : FAED_FSMTransition
     {
 
         Color old = Gizmos.color;
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.white;
         //DrawCode
-        Gizmos.DrawWireSphere(transform.position, maxRange);
+        Gizmos.DrawWireCube(transform.position + (Vector3)offset, boxRange);
 
         Gizmos.color = old;
 

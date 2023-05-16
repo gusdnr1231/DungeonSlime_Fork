@@ -19,7 +19,7 @@ public class MapManager : MonoBehaviour
     {
 
         StartCoroutine(MapLoadingCo());
-
+        
     }
 
     public void CreateStage()

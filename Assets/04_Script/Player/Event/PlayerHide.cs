@@ -56,7 +56,7 @@ public class PlayerHide : PlayerRoot
         playerCollider.enabled = false;
         rigid.gravityScale = 0;
         var evt = enemyObj.GetComponent<DieEvent>();
-        evt.dieEvt += Bounce;
+        if(evt != null) evt.dieEvt += Bounce;
 
         isHide = true;
 
@@ -84,7 +84,7 @@ public class PlayerHide : PlayerRoot
         rigid.gravityScale = 1;
 
         var evt = enemyObj.GetComponent<DieEvent>();
-        evt.dieEvt -= Bounce;
+        if(evt != null) evt.dieEvt -= Bounce;
 
         var jumpPos = enemyObj.transform.Find("BouncePos");
         transform.position = jumpPos.position;

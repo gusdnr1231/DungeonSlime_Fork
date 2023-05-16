@@ -1,3 +1,4 @@
+using Interface;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,14 +8,15 @@ using UnityEngine;
 namespace FD.AI.FSM
 {
 
-    public class FAED_FSM : MonoBehaviour
+    public class FAED_FSM : MonoBehaviour, IEventObject
     {
 
         [SerializeField, HideInInspector] private List<FAED_FSMClass> fsmList = new List<FAED_FSMClass>();
         [SerializeField] private FAED_FSMSaveSO data;
         [SerializeField] private FAED_FSMState firstState; 
 
-        private List<FAED_FSMTransition> transitions = new List<FAED_FSMTransition>(); 
+        private List<FAED_FSMTransition> transitions = new List<FAED_FSMTransition>();
+        private bool isAble;
 
         public event Action EnterEvnet;
         public event Action UpdateEvnet;
@@ -36,6 +38,8 @@ namespace FD.AI.FSM
             ExitEvnet += firstState.ExitState;
             
             transitions = firstState.GetComponentsInChildren<FAED_FSMTransition>().ToList();
+
+            AddEvent();
 
         }
 
@@ -90,6 +94,7 @@ namespace FD.AI.FSM
         private void Update()
         {
 
+            if (!isAble) return;
             UpdateEvnet();
             TryChangeState();
 
@@ -141,6 +146,19 @@ namespace FD.AI.FSM
 
         }
 
+        public void AddEvent()
+        {
+
+            isAble = true;
+
+        }
+
+        public void RemoveEvent()
+        {
+
+            isAble = false;
+
+        }
     }
 
 }
