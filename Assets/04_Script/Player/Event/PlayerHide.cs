@@ -58,6 +58,8 @@ public class PlayerHide : PlayerRoot
         var evt = enemyObj.GetComponent<DieEvent>();
         if(evt != null) evt.dieEvt += Bounce;
 
+        CameraManager.instance.CameraTarget(hitAble.transform);
+
         isHide = true;
 
     }
@@ -91,6 +93,7 @@ public class PlayerHide : PlayerRoot
 
         rigid.velocity += Vector2.up * bouncePower;
 
+        CameraManager.instance.CameraTarget(transform);
         enemyObj = null;
 
         isHide = false;

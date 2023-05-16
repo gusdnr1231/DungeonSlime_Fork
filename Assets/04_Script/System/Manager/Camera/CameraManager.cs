@@ -14,8 +14,11 @@ public class CameraManager : MonoBehaviour
 
     private void Awake()
     {
-        //Vcam은 여러씬에 있으므로 디스트로이에 올리면 복잡해짐
+
         instance = this;
+
+        cvcam = GetComponent<CinemachineVirtualCamera>();
+        cbmcp = cvcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
     }
 
@@ -32,6 +35,13 @@ public class CameraManager : MonoBehaviour
             cbmcp.m_FrequencyGain -= frequencyGain;
 
         }, duration);
+
+    }
+
+    public void CameraTarget(Transform trm)
+    {
+
+        cvcam.Follow = trm;
 
     }
 

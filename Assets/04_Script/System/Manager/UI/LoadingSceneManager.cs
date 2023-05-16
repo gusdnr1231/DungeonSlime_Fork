@@ -41,7 +41,7 @@ public class LoadingSceneManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
             oper.allowSceneActivation = true;
-            FAED.InvokeDelay(() => Managers.Map.CreateStage(), 0.01f);
+            FAED.InvokeDelay(() => Managers.Map.CreateStage(), 0.001f);
 
         }
         else
