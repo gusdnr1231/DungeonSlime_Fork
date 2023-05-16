@@ -17,7 +17,7 @@ public class CameraManager : MonoBehaviour
 
         instance = this;
 
-        cvcam = GetComponent<CinemachineVirtualCamera>();
+        cvcam = FindObjectOfType<CinemachineVirtualCamera>();
         cbmcp = cvcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
     }
