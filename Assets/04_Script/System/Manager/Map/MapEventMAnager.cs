@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapEventManager : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class MapEventManager : MonoBehaviour
     {
 
         Managers.Map.SetCurrentStageNumber(count);
-        Managers.Map.LoadMap();
+        PlayerPrefs.SetString("NextScene", "StartLoadingMap");
+        SceneManager.LoadScene("Loading");
 
     }
 

@@ -1,14 +1,20 @@
+using FD.Dev;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadingSceneManager : MonoBehaviour
 {
 
+    [SerializeField] private TMP_Text text;
+    [SerializeField] private LoadingTextSO textSO;
+
     private void Start()
     {
 
+        text.text = FAED.Random(textSO.loadingText);
         StartCoroutine(LoadingSceneCo());
 
     }
@@ -19,19 +25,45 @@ public class LoadingSceneManager : MonoBehaviour
         string value = PlayerPrefs.GetString("NextScene");
         PlayerPrefs.DeleteKey("NextScene");
 
-        var oper = SceneManager.LoadSceneAsync(value);
-        oper.allowSceneActivation = false;
-
-        yield return new WaitUntil(() =>
+        if(value == "StartLoadingMap")
         {
 
-            return oper.progress >= 0.9f;
+            var oper = SceneManager.LoadSceneAsync("TestMap");
+            oper.allowSceneActivation = false;
 
-        });
+            yield return new WaitUntil(() =>
+            {
 
-        yield return new WaitForSeconds(0.5f);
+                return oper.progress >= 0.9f;
 
-        oper.allowSceneActivation = true;
+            });
+
+            yield return new WaitForSeconds(1f);
+
+            oper.allowSceneActivation = true;
+            FAED.InvokeDelay(() => Managers.Map.CreateStage(), 0.01f);
+
+        }
+        else
+        {
+
+            var oper = SceneManager.LoadSceneAsync(value);
+            oper.allowSceneActivation = false;
+
+            yield return new WaitUntil(() =>
+            {
+
+                return oper.progress >= 0.9f;
+
+            });
+
+            yield return new WaitForSeconds(1f);
+
+            oper.allowSceneActivation = true;
+
+        }
+
+
 
     }
 
