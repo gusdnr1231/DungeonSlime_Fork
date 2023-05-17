@@ -38,8 +38,6 @@ public class PlayerPipeUse : PlayerMovementRoot
     public override void AddEvent()
     {
 
-        if (!isInSidePipe) return;
-
         input.OnHideEvnet += UsingPipe;
         jump?.AddEvent();
         isInSidePipe = false;
@@ -48,7 +46,7 @@ public class PlayerPipeUse : PlayerMovementRoot
 
     public override void RemoveEvent() 
     {
-        if (!isInSidePipe) return;
+
         input.OnHideEvnet -= UsingPipe;
         jump?.RemoveEvent();
 

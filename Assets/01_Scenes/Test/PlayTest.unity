@@ -873,7 +873,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextState: 
-  maxRange: 1.5
+  boxRange: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &592496036
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +969,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextState: 
-  maxRange: 1.5
+  boxRange: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &769219489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,7 +2668,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextState: 
-  maxRange: 3
+  boxRange: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1593551321
 Transform:
   m_ObjectHideFlags: 0
@@ -2706,7 +2718,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextState: 
-  maxRange: 3
+  boxRange: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1723537949
 Transform:
   m_ObjectHideFlags: 0
@@ -3601,11 +3617,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8823802744553566065, guid: 0ddfe02bc38372645abf890ac76c3f8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.23
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 8823802744553566065, guid: 0ddfe02bc38372645abf890ac76c3f8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.85
+      value: -2.73
       objectReference: {fileID: 0}
     - target: {fileID: 8823802744553566065, guid: 0ddfe02bc38372645abf890ac76c3f8d, type: 3}
       propertyPath: m_LocalPosition.z
