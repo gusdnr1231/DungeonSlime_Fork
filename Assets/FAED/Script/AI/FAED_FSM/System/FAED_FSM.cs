@@ -11,7 +11,7 @@ namespace FD.AI.FSM
     public class FAED_FSM : MonoBehaviour, IEventObject
     {
 
-        [SerializeField, HideInInspector] private List<FAED_FSMClass> fsmList = new List<FAED_FSMClass>();
+        [SerializeField] private List<FAED_FSMClass> fsmList = new List<FAED_FSMClass>();
         [SerializeField] private FAED_FSMSaveSO data;
         [SerializeField] private FAED_FSMState firstState; 
 
