@@ -15,18 +15,16 @@ public class HitPunch : FAED_FSMTransition
     [SerializeField] private Transform popPoint;
     [Header("Other")]
     [SerializeField] private CinemachineVirtualCamera cv;
-    [SerializeField] private Sprite leftSprite;
-    [SerializeField] private Sprite rightSprite;
-    [SerializeField] float moveSpeed;
 
     private SkulBossAppear bossAppear;
     private Rigidbody2D skbRg;
     private Animator skbAnim;
 
-    bool hit;
-
-    private void Awake()
+    protected override void Awake()
     {
+
+        base.Awake();
+
         bossAppear = transform.parent.parent.GetComponent<SkulBossAppear>();
         skbRg = transform.parent.parent.GetComponent<Rigidbody2D>();
         skbAnim = transform.parent.parent.GetComponent<Animator>();
@@ -34,10 +32,9 @@ public class HitPunch : FAED_FSMTransition
 
     public override bool ChackTransition()
     {
-        if (Physics2D.OverlapBox(skullBoss.transform.position, new Vector2(2f, 5.5f), 0, LayerMask.GetMask("Hand")) && !hit)
+        Debug.Log("hit");
+        if (Physics2D.OverlapBox(skullBoss.transform.position, new Vector2(2f, 5.5f), 0, LayerMask.GetMask("Hand")))
         {
-            hit = true;
-
             cv.Follow = player.transform;
             cv.m_Lens.OrthographicSize = 8;
 
@@ -54,7 +51,7 @@ public class HitPunch : FAED_FSMTransition
 
             if (BossHP.Instance.Boss_hp > 0)
             {
-                skullBoss.transform.DOMove(new Vector2(-1.4f, bossAppear.pos), 1f).SetEase(Ease.OutBack)
+                skullBoss.transform.DOMove(new Vector2(-1.4f, bossAppear.backPos), 1f).SetEase(Ease.OutBack)
                 .OnComplete(() =>
                 {
                     player.transform.position = popPoint.transform.position;

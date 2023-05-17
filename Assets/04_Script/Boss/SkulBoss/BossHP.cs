@@ -11,11 +11,12 @@ public class BossHP : MonoBehaviour
 
     [SerializeField] private GameObject bossClearObject;
     [SerializeField] CinemachineVirtualCamera _vCam;
+    [SerializeField] GameObject lHand, rHand, dangerBox;
     CinemachineBasicMultiChannelPerlin _vCamPerlin;
 
     private new PolygonCollider2D collider;
     private SpriteRenderer spriteRenderer;
-    private PlayerMove _playerMove;
+    private SkulBossIdle skulBossIdle;
 
     public int Boss_hp;
 
@@ -25,9 +26,9 @@ public class BossHP : MonoBehaviour
 
         collider = gameObject.GetComponent<PolygonCollider2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        _playerMove = FindObjectOfType<PlayerMove>();
         _vCamPerlin = _vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        Debug.Log(_vCamPerlin);
+        skulBossIdle = FindObjectOfType<SkulBossIdle>();
+
         bossClearObject.SetActive(false);
     }
 
@@ -43,7 +44,12 @@ public class BossHP : MonoBehaviour
         {
             Boss_hp = 10;
             collider.enabled = false;
+            skulBossIdle.enabled = false;
+
             bossClearObject.SetActive(true);
+            lHand.SetActive(false);
+            rHand.SetActive(false);
+            Destroy(dangerBox);
 
             transform.DOMoveY(transform.position.y + 3, 0.5f).SetEase(Ease.OutCubic)
             .OnComplete(() =>

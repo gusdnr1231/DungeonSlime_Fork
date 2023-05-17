@@ -19,17 +19,13 @@ public class SkulBossIdle : FAED_FSMState
     [SerializeField] private BoxCollider2D onPlayer;
     [SerializeField] private Vector2 maxX;
     [SerializeField] private Vector2 maxY;
-    [SerializeField] private Vector2 bossPos;
     [SerializeField] private float attackSpeed;
 
     private SkulBossAppear bossAppear;
-    private Vector3 leftHandTransform;
-    private Vector3 rightHandTransform;
 
     Color orignDangerousColor;
 
     Sequence attack;
-    Sequence back;
 
     void Awake()
     {
@@ -39,9 +35,6 @@ public class SkulBossIdle : FAED_FSMState
 
         leftHand.GetComponent<Collider2D>().enabled = false;
         rightHand.GetComponent<Collider2D>().enabled = false;
-
-        leftHandTransform = leftHand.transform.position;
-        rightHandTransform = rightHand.transform.position;
     }
 
     private void Start()
@@ -81,37 +74,9 @@ public class SkulBossIdle : FAED_FSMState
         });
     }
 
-    float RandomValue()
-    {
-        float random = 0;
-        for (; random < bossPos.x || random < bossPos.y;) random = Random.Range(maxY.x, maxY.y);
-        return random;
-    }
-
     float PlayerValue()
     {
-        return Mathf.Clamp(player.transform.position.y, -10, bossAppear.pos - 4f);
-    }
-
-    void BackHand()
-    {
-        back = DOTween.Sequence();
-
-        leftHand.GetComponent<Collider2D>().enabled = false;
-        rightHand.GetComponent<Collider2D>().enabled = false;
-
-        leftHand.transform.rotation = Quaternion.Euler(0, 0, 0);
-        rightHand.transform.rotation = Quaternion.Euler(0, 0, 0);
-
-        back.Append(leftHand.transform.DOMove(leftHandTransform, 2f).SetEase(Ease.OutQuad))
-        .Join(rightHand.transform.DOMove(rightHandTransform, 2f).SetEase(Ease.OutQuad))
-        .OnComplete(() =>
-        {
-            //Debug.Log(isActive);
-            attack.Kill();
-            back.Kill();
-            //Complete(FAED_TreeNodeState.Failure);
-        });
+        return Mathf.Clamp(player.transform.position.y, -10, bossAppear.backPos - 4f);
     }
 
     public override void EnterState()

@@ -6,16 +6,16 @@ using UnityEngine;
 public class SkulBossAppear : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    public float pos;
+    public float appearPos, backPos;
     float shake = -180;
     const float shakeAomunt = 0.025f;
 
     void Awake()
     {
-        transform.DOMoveY(4f, 1f).SetEase(Ease.OutBack)
+        transform.DOMoveY(appearPos, 1f).SetEase(Ease.OutBack)
         .OnComplete(() =>
         {
-            transform.DOMoveY(pos, 1f).SetEase(Ease.InCirc);
+            transform.DOMoveY(backPos, 1f).SetEase(Ease.InCirc);
         });
     }
 
