@@ -57,7 +57,7 @@ public class PlayerHide : PlayerRoot
         var evt = enemyObj.GetComponent<DieEvent>();
         if(evt != null) evt.dieEvt += Bounce;
 
-        CameraManager.instance.CameraTarget(hitAble.transform);
+        CameraManager.instance?.CameraTarget(enemyObj.transform.Find("BouncePos"));
 
         isHide = true;
 
@@ -92,7 +92,7 @@ public class PlayerHide : PlayerRoot
 
         rigid.velocity += Vector2.up * bouncePower;
 
-        CameraManager.instance.CameraTarget(transform);
+        CameraManager.instance?.CameraTarget(transform);
         enemyObj = null;
 
         isHide = false;

@@ -39,7 +39,7 @@ namespace FD.AI.FSM
             
             transitions = firstState.GetComponentsInChildren<FAED_FSMTransition>().ToList();
 
-            AddEvent();
+            RemoveEvent();
 
         }
 
@@ -149,14 +149,14 @@ namespace FD.AI.FSM
         public void AddEvent()
         {
 
-            isAble = true;
+            isAble = false;
 
         }
 
         public void RemoveEvent()
         {
 
-            isAble = false;
+            isAble = true;
 
         }
     }
