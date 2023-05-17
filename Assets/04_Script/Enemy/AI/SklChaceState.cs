@@ -18,7 +18,9 @@ public class SklChaceState : FAED_FSMState
     private Rigidbody2D rigid;
     private Transform player;
     private GroundCol groundCol;
+    private SpriteRenderer spriteRenderer;
     private bool jumpCoolDown = true;
+    
 
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class SklChaceState : FAED_FSMState
         rigid = transform.parent.GetComponent<Rigidbody2D>();
         hide = transform.parent.GetComponent<EnemyMovementHide>();
         groundCol = transform.parent.GetComponentInChildren<GroundCol>();
+        spriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
 
     }
 
@@ -54,13 +57,15 @@ public class SklChaceState : FAED_FSMState
 
         rigid.velocity = new Vector2(value, rigid.velocity.y);
 
+        spriteRenderer.flipX = value > 0 ? true : false;
+
         var obj = Physics2D.OverlapBox(transform.position + (Vector3)offset, size, 0, layerMask);
 
         if(obj != null && groundCol.isGround && jumpCoolDown) 
         {
 
             jumpCoolDown = false;
-            rigid.velocity += new Vector2(0, 5f);
+            rigid.velocity += new Vector2(0, 10f);
             FAED.InvokeDelay(() =>
             {
 
