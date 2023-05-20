@@ -8,16 +8,18 @@ using FD.Dev;
 public class SklChaceState : FAED_FSMState
 {
 
-    [SerializeField] private bool reverce;
     [SerializeField] private Vector2 size;
     [SerializeField] private Vector2 offset;
     [SerializeField] private LayerMask layerMask;
+    [SerializeField] private float jumpPower = 10f;
+    [SerializeField] private bool reverce;
 
     private EnemyMovementHide hide;
+    private SpriteRenderer spriteRenderer;
+    private SkellAnimator animator;
     private Rigidbody2D rigid;
     private Transform player;
     private GroundCol groundCol;
-    private SpriteRenderer spriteRenderer;
     private bool jumpCoolDown = true;
     
     private float speed => hide.getMoveSpeed;
@@ -64,8 +66,9 @@ public class SklChaceState : FAED_FSMState
         if(obj != null && groundCol.isGround && jumpCoolDown) 
         {
 
+            animator.SetJumpTrigger();
             jumpCoolDown = false;
-            rigid.velocity += new Vector2(0, 10f);
+            rigid.velocity += new Vector2(0, jumpPower);
             FAED.InvokeDelay(() =>
             {
 
