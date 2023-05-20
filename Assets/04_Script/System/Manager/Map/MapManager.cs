@@ -33,6 +33,19 @@ public class MapManager : MonoBehaviour
 
     }
 
+    public void RestartMap()
+    {
+
+        Destroy(FindObjectOfType<Map>().gameObject);
+
+        var map = Instantiate(Resources.Load<GameObject>($"Map/{currentStageNum}")).GetComponent<Map>();
+
+        var player = GameObject.Find("Player");
+        CameraManager.instance.SetCof(map.cameraLockZone);
+        player.transform.position = map.StartPos.position;
+
+    }
+
     IEnumerator MapLoadingCo()
     {
 

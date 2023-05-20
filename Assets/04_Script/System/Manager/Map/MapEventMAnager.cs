@@ -15,4 +15,11 @@ public class MapEventManager : MonoBehaviour
 
     }
 
+    public void RestartMap()
+    {
+
+
+
+    }
+
 }
