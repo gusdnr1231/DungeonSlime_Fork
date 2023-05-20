@@ -29,7 +29,7 @@ public class PlayerPipeUse : PlayerMovementRoot
 
             isInSidePipe = true;
             RemoveEvent();
-            pipe.UsePipe(transform, AddEvent);
+            pipe.UsePipe(transform, () => jump.AddEvent());
 
         }
 
@@ -39,7 +39,6 @@ public class PlayerPipeUse : PlayerMovementRoot
     {
 
         input.OnHideEvnet += UsingPipe;
-        jump?.AddEvent();
         isInSidePipe = false;
 
     }
