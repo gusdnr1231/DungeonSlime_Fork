@@ -893,6 +893,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1515324340, guid: 6e7a9c704ed49494c875b9e0641411da, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 602717185dd57c940ae45cd0a1f7d284, type: 2}
     - target: {fileID: 1515324342, guid: 6e7a9c704ed49494c875b9e0641411da, type: 3}
       propertyPath: m_RootOrder
       value: 1
