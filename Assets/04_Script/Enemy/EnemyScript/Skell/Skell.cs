@@ -34,7 +34,7 @@ public class Skell : EnemyRoot
         
         }
 
-        fsm.AddEvent();
+        
         sklAnimator.SetPaintTrigger(true);
 
     }
@@ -48,6 +48,7 @@ public class Skell : EnemyRoot
 
         yield return null;
         dieEvent.Die();
+        fsm.AddEvent();
 
     }
 
