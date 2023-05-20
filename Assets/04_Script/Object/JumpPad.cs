@@ -16,7 +16,7 @@ public class JumpPad : MonoBehaviour
 
         var v = Physics2D.OverlapBox(transform.position + (Vector3)ofs, size, 0);
 
-        if (!v || !v.TryGetComponent<IMoveAbleObject>(out var move)) return;
+        if (!v) return;
 
         foreach (var tag in jumpAbleTag)
         {
@@ -24,7 +24,7 @@ public class JumpPad : MonoBehaviour
             if (v.CompareTag(tag))
             {
 
-                if (!ativeMoveable)
+                if (!ativeMoveable && v.TryGetComponent<IMoveAbleObject>(out var move))
                 {
 
                     move.moveAble = false;
