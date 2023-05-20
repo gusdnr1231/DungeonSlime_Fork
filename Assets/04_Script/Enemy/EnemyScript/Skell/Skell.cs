@@ -16,11 +16,20 @@ public class Skell : EnemyRoot
     public override void AddEvent()
     {
 
-        dieEvent.Die();
-
+        StartCoroutine(AdCo());
+        
     }
 
     public override void RemoveEvent()
     {
     }
+
+    private IEnumerator AdCo()
+    {
+
+        yield return null;
+        dieEvent.Die();
+
+    }
+
 }
