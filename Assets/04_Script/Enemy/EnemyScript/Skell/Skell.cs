@@ -1,3 +1,4 @@
+using FD.AI.FSM;
 using Interface;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,12 +9,16 @@ public class Skell : EnemyRoot
 
     [SerializeField] private EnemyRoot[] eventObjects;
 
+    private FAED_FSM fsm;
     private DieEvent dieEvent;
+    private SkellAnimator sklAnimator;
 
     protected override void Awake()
     {
 
         dieEvent = GetComponent<DieEvent>();
+        fsm = GetComponent<FAED_FSM>();
+        sklAnimator = GetComponent<SkellAnimator>();
 
     }
 
@@ -28,6 +33,9 @@ public class Skell : EnemyRoot
             item.RemoveEvent();
         
         }
+
+        fsm.AddEvent();
+        sklAnimator.SetPaintTrigger(true);
 
     }
 
