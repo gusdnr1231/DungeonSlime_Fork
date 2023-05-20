@@ -17,6 +17,7 @@ namespace Interface
     {
 
         public bool moveAble { get; set; }
+        public void SetValMoveAble();
 
     }
 

@@ -45,12 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7306c72d1faea49489ae443b4f8e1075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reverce: 0
   size: {x: 2, y: 0.1}
   offset: {x: 0, y: 1}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  jumpPower: 10
+  reverce: 0
 --- !u!1 &871674275
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +239,9 @@ GameObject:
   - component: {fileID: 1515324337}
   - component: {fileID: 1515324343}
   - component: {fileID: 1515324344}
+  - component: {fileID: 493672630}
+  - component: {fileID: 493672631}
+  - component: {fileID: 493672640}
   m_Layer: 3
   m_Name: Skell
   m_TagString: Untagged
@@ -326,7 +330,7 @@ Animator:
   m_GameObject: {fileID: 1515324335}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 602717185dd57c940ae45cd0a1f7d284, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -349,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd77c45d47ab5d94f8d8c289d2c7aa73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 1
   increseMoveSpeed: 1
   maxMoveSpeed: 4
 --- !u!114 &1515324338
@@ -385,7 +389,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1515324343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -435,6 +439,46 @@ MonoBehaviour:
     - {fileID: 1007140817}
   data: {fileID: 11400000, guid: 1f73045765d14f34cab771ac88e872e6, type: 2}
   firstState: {fileID: 1780329485}
+--- !u!114 &493672630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515324335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb095e9fdf9da942b9c8a8d475749d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventObjects:
+  - {fileID: 1515324339}
+  - {fileID: 1515324338}
+--- !u!114 &493672631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515324335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc481e518277e84b96fc6b47b2b2f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+--- !u!114 &493672640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515324335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9f0bd6014fcea439964030121124ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1780329483
 GameObject:
   m_ObjectHideFlags: 0

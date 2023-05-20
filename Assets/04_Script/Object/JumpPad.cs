@@ -1,3 +1,4 @@
+using Interface;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,45 +7,36 @@ public class JumpPad : MonoBehaviour
 {
 
     [SerializeField] private List<string> jumpAbleTag = new List<string>();
-    [SerializeField] private Vector2 posVector;
+    [SerializeField] private Vector2 posVector, size, ofs;
     [SerializeField] private float bouncePower;
     [SerializeField] private bool ativeMoveable = true;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Jump()
     {
-        
-        foreach(var tag in jumpAbleTag)
+
+        var v = Physics2D.OverlapBox(transform.position + (Vector3)ofs, size, 0);
+
+        if (!v || !v.TryGetComponent<IMoveAbleObject>(out var move)) return;
+
+        foreach (var tag in jumpAbleTag)
         {
 
-            if(collision.CompareTag(tag) && collision.TryGetComponent<PlayerMove>(out var pMove))
+            if (v.CompareTag(tag))
             {
 
                 if (!ativeMoveable)
                 {
 
-                    pMove.moveAble = false;
-                    pMove.SetValMoveAble();
+                    move.moveAble = false;
+                    move.SetValMoveAble();
 
                 }
-                pMove.GetComponent<Rigidbody2D>().velocity += posVector * bouncePower;
 
-            }
-            else if (collision.CompareTag(tag) && collision.TryGetComponent<EnemyMovementHide>(out var eMove))
-            {
-
-                if (!ativeMoveable)
-                {
-
-                    eMove.moveAble = false;
-                    eMove.SetValMoveAble();
-
-                }
-                eMove.GetComponent<Rigidbody2D>().velocity += posVector * bouncePower;
+                v.GetComponent<Rigidbody2D>().velocity += posVector * bouncePower;
 
             }
 
         }
-
     }
 
 }
