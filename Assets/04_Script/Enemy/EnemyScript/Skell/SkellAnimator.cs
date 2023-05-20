@@ -29,9 +29,13 @@ public class SkellAnimator : MonoBehaviour
     {
         
         SetIsAir();
+        SetIsMove();
 
     }
 
     private void SetIsAir() => animator.SetBool(IsAirHash, groundCol.isGround);
+    private void SetIsMove() => animator.SetBool(IsMoveHash, Mathf.Abs(rigid.velocity.x) > 0);
+
+    public void SetJumpTrigger() => animator.SetTrigger(JumpTriggerHash);
 
 }
