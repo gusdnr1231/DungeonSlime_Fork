@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class SkellAnimator : MonoBehaviour
 {
-    
-    //Hash
 
+    //Hash
+    private readonly int IsMoveHash = Animator.StringToHash("IsMove");
+    private readonly int IsAirHash = Animator.StringToHash("IsAir");
+    private readonly int JumpTriggerHash = Animator.StringToHash("JumpTrigger");
+    private readonly int PaintHash = Animator.StringToHash("Paint");
+    private readonly int ReleasePaintHash = Animator.StringToHash("ReleasePaint");
     //
 
     private Animator animator;
