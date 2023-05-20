@@ -20,6 +20,7 @@ public class SklChaceState : FAED_FSMState
     private Rigidbody2D rigid;
     private Transform player;
     private GroundCol groundCol;
+    private FAED_FSM fsm;
     private bool jumpCoolDown = true;
     
     private float speed => hide.getMoveSpeed;

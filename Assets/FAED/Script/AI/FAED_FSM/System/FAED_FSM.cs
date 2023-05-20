@@ -8,7 +8,7 @@ using UnityEngine;
 namespace FD.AI.FSM
 {
 
-    public class FAED_FSM : EnemyRoot
+    public class FAED_FSM : MonoBehaviour, IEventObject
     {
 
         [SerializeField] private List<FAED_FSMClass> fsmList = new List<FAED_FSMClass>();
@@ -23,7 +23,7 @@ namespace FD.AI.FSM
         public event Action ExitEvnet;
 
 
-        protected override void Awake()
+        private void Awake()
         {
             
             if(firstState == null) 
@@ -146,14 +146,14 @@ namespace FD.AI.FSM
 
         }
 
-        public override void AddEvent()
+        public void AddEvent()
         {
 
             isAble = false;
 
         }
 
-        public override void RemoveEvent()
+        public void RemoveEvent()
         {
 
             isAble = true;
