@@ -16,7 +16,7 @@ public class JumpPad : MonoBehaviour
 
         var v = Physics2D.OverlapBox(transform.position + (Vector3)ofs, size, 0);
 
-        if (!v) return;
+        if (v == null) return;
 
         foreach (var tag in jumpAbleTag)
         {
@@ -38,5 +38,16 @@ public class JumpPad : MonoBehaviour
 
         }
     }
+
+#if UNITY_EDITOR
+
+    private void OnDrawGizmos()
+    {
+
+        Gizmos.DrawWireCube(transform.position + (Vector3)ofs, size);
+
+    }
+
+#endif
 
 }
