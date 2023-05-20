@@ -1,18 +1,26 @@
+using Interface;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skell : MonoBehaviour
+public class Skell : EnemyRoot
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private DieEvent dieEvent;
+
+    protected override void Awake()
     {
-        
+        dieEvent = GetComponent<DieEvent>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void AddEvent()
     {
-        
+
+        dieEvent.Die();
+
+    }
+
+    public override void RemoveEvent()
+    {
     }
 }

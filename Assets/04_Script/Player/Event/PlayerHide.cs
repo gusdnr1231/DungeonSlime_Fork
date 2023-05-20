@@ -37,6 +37,7 @@ public class PlayerHide : PlayerRoot
 
         enemyObj = hitAble.transform.gameObject;
 
+
         foreach(var x in playerEvent)
         {
 
@@ -54,6 +55,7 @@ public class PlayerHide : PlayerRoot
         spriteRenderer.enabled = false;
         playerCollider.enabled = false;
         rigid.gravityScale = 0;
+
         var evt = enemyObj.GetComponent<DieEvent>();
         if(evt != null) evt.dieEvt += Bounce;
 
@@ -67,6 +69,7 @@ public class PlayerHide : PlayerRoot
     {
 
         if(!isHide) return;
+
 
         foreach (var x in playerEvent)
         {
