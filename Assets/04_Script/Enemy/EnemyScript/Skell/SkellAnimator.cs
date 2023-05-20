@@ -13,13 +13,25 @@ public class SkellAnimator : MonoBehaviour
 
     private Animator animator;
     private GroundCol groundCol;
+    private Rigidbody2D rigid;
 
     private void Awake()
     {
         
         animator = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
+
         groundCol = GetComponentInChildren<GroundCol>();
 
     }
+
+    private void Update()
+    {
+        
+        SetIsAir();
+
+    }
+
+    private void SetIsAir() => animator.SetBool(IsAirHash, groundCol.isGround);
 
 }
