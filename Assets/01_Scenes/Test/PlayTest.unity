@@ -889,6 +889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skell
       objectReference: {fileID: 0}
+    - target: {fileID: 1515324337, guid: 6e7a9c704ed49494c875b9e0641411da, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1515324339, guid: 6e7a9c704ed49494c875b9e0641411da, type: 3}
       propertyPath: moveSpeed
       value: 1
@@ -973,6 +977,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+--- !u!114 &493672640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493672629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9f0bd6014fcea439964030121124ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &592496036
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,8 +30,11 @@ public class SklChaceState : FAED_FSMState
         player = GameObject.Find("Player").transform;
         rigid = transform.parent.GetComponent<Rigidbody2D>();
         hide = transform.parent.GetComponent<EnemyMovementHide>();
-        groundCol = transform.parent.GetComponentInChildren<GroundCol>();
         spriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
+
+        groundCol = transform.parent.GetComponentInChildren<GroundCol>();
+        animator = GetComponentInParent<SkellAnimator>();
+
 
     }
 
