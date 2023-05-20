@@ -28,6 +28,7 @@ public class MapManager : MonoBehaviour
         var map = Instantiate(Resources.Load<GameObject>($"Map/{currentStageNum}")).GetComponent<Map>();
 
         var player = GameObject.Find("Player");
+        CameraManager.instance.SetCof(map.cameraLockZone);
         player.transform.position = map.StartPos.position;
 
     }
@@ -44,7 +45,8 @@ public class MapManager : MonoBehaviour
 
         });
 
-        
+        yield return null;
+
         CreateStage();
 
     }

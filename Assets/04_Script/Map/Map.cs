@@ -6,6 +6,7 @@ public class Map : MonoBehaviour
 {
 
     [SerializeField] private Transform startPos;
+    public Collider2D cameraLockZone;
 
     public Transform StartPos => startPos;
 

@@ -9,6 +9,7 @@ public class CameraManager : MonoBehaviour
 
     private CinemachineVirtualCamera cvcam;
     private CinemachineBasicMultiChannelPerlin cbmcp;
+    private CinemachineConfiner2D confiner2D;
 
     public static CameraManager instance;
 
@@ -18,6 +19,8 @@ public class CameraManager : MonoBehaviour
         instance = this;
 
         cvcam = FindObjectOfType<CinemachineVirtualCamera>();
+        confiner2D = FindObjectOfType<CinemachineConfiner2D>();
+
         cbmcp = cvcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
     }
@@ -42,6 +45,13 @@ public class CameraManager : MonoBehaviour
     {
 
         cvcam.Follow = trm;
+
+    }
+    
+    public void SetCof(Collider2D col)
+    {
+
+        confiner2D.m_BoundingShape2D = col;
 
     }
 
