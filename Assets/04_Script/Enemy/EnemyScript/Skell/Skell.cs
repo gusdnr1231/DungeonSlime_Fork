@@ -6,11 +6,15 @@ using UnityEngine;
 public class Skell : EnemyRoot
 {
 
+    [SerializeField] private EnemyRoot[] eventObjects;
+
     private DieEvent dieEvent;
 
     protected override void Awake()
     {
+
         dieEvent = GetComponent<DieEvent>();
+
     }
 
     public override void AddEvent()
@@ -18,6 +22,13 @@ public class Skell : EnemyRoot
 
         StartCoroutine(AdCo());
         
+        foreach(var item in eventObjects) 
+        { 
+            
+            item.RemoveEvent();
+        
+        }
+
     }
 
     public override void RemoveEvent()
