@@ -14,13 +14,13 @@ public class SklChaceState : FAED_FSMState
     [SerializeField] private LayerMask layerMask;
 
     private EnemyMovementHide hide;
-    private float speed => hide.getMoveSpeed;
     private Rigidbody2D rigid;
     private Transform player;
     private GroundCol groundCol;
     private SpriteRenderer spriteRenderer;
     private bool jumpCoolDown = true;
     
+    private float speed => hide.getMoveSpeed;
 
     private void Awake()
     {
