@@ -96,7 +96,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextState: 
-  maxRange: 2
+  boxRange: {x: 3, y: 3}
+  offset: {x: 0, y: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1007140817
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +146,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextState: 
-  maxRange: 2
+  boxRange: {x: 3, y: 3}
+  offset: {x: 0, y: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1131474134
 GameObject:
   m_ObjectHideFlags: 0
