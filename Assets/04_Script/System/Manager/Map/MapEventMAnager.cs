@@ -18,7 +18,7 @@ public class MapEventManager : MonoBehaviour
     public void RestartMap()
     {
 
-        Managers.Map.RestartMap();
+        LoadMap(Managers.Map.currentStageNum);
 
     }
 
