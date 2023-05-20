@@ -37,5 +37,12 @@ public class SkellAnimator : MonoBehaviour
     private void SetIsMove() => animator.SetBool(IsMoveHash, Mathf.Abs(rigid.velocity.x) > 0);
 
     public void SetJumpTrigger() => animator.SetTrigger(JumpTriggerHash);
+    public void SetPaintTrigger(bool value)
+    {
+
+        if(value) animator.SetTrigger(PaintHash);
+        else animator.SetTrigger(ReleasePaintHash);
+
+    }
 
 }
