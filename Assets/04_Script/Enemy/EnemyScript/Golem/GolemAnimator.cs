@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class GolemAnimator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private readonly int DieTriggerHash = Animator.StringToHash("Die");
+
+    private Animator animator;
+
+    private void Awake()
     {
         
+        animator = GetComponent<Animator>();
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void SetDieTrigger() => animator.SetTrigger(DieTriggerHash);
+
 }
