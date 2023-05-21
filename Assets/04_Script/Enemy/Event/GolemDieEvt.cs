@@ -6,11 +6,21 @@ using UnityEngine;
 public class GolemDieEvt : DieEvent
 {
 
+    private GolemAnimator animator;
+
+    private void Awake()
+    {
+        
+        animator = GetComponent<GolemAnimator>();
+
+    }
+
     public override void Die()
     {
 
         base.Die();
 
+        animator.SetDieTrigger();
 
     }
 
