@@ -15,7 +15,16 @@ public class GolemEnemy : EnemyRoot
     public override void RemoveEvent()
     {
 
-        
+        StartCoroutine(CO());
 
     }
+
+    private IEnumerator CO()
+    {
+
+        yield return null;
+        GetComponent<DieEvent>().Die();
+
+    }
+
 }
