@@ -1,3 +1,4 @@
+using FD.AI.FSM;
 using FD.Dev;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,11 +8,13 @@ public class GolemDieEvt : DieEvent
 {
 
     private GolemAnimator animator;
+    private FAED_FSM fsm;
 
     private void Awake()
     {
         
         animator = GetComponent<GolemAnimator>();
+        fsm = GetComponent<FAED_FSM>();
 
     }
 
@@ -19,6 +22,7 @@ public class GolemDieEvt : DieEvent
     {
 
         base.Die();
+        fsm.AddEvent();
 
         animator.SetDieTrigger();
 
