@@ -17,9 +17,9 @@ public class Scrooling : MonoBehaviour
     void Scroll()
     {
         Vector2 pos = transform.position;
-        if (pos.y <= maxDownY)
+        if (pos.y >= maxDownY)
             pos = new Vector2(0, backY);
-        pos.y -= downSpeed * Time.deltaTime;
+        pos.y += downSpeed * Time.deltaTime;
         transform.position = pos;
     }
 
