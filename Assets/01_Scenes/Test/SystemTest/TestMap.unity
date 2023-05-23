@@ -2208,6 +2208,7 @@ MonoBehaviour:
   - Die
   - Trap
   - Water
+  - Hand
   dieEvent:
     m_PersistentCalls:
       m_Calls:
