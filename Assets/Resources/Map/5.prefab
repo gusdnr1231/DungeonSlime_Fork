@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b9d02377b88c1409fc74a3051604bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {fileID: 0}
-  cameraLockZone: {fileID: 0}
+  startPos: {fileID: 751252221}
+  cameraLockZone: {fileID: 354864883}
 --- !u!156049354 &47729872
 Grid:
   m_ObjectHideFlags: 0
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 491821055}
   m_Layer: 0
   m_Name: Trap
-  m_TagString: Untagged
+  m_TagString: Thorn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,7 +546,7 @@ CompositeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -612,6 +612,10 @@ CompositeCollider2D:
         Y: -50000000
       - X: 130000000
         Y: -50000000
+  - m_Collider: {fileID: 491821057}
+    m_ColliderPaths: []
+  - m_Collider: {fileID: 491821057}
+    m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 15.999971, y: -4}
@@ -1302,7 +1306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751252220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.34, y: -2.93, z: 0}
+  m_LocalPosition: {x: -17.01, y: -0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1323,7 +1327,7 @@ GameObject:
   - component: {fileID: 966966987}
   - component: {fileID: 966966986}
   - component: {fileID: 966966985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2597,6 +2601,10 @@ CompositeCollider2D:
         Y: 80000000
       - X: 170000000
         Y: -50000000
+  - m_Collider: {fileID: 966966987}
+    m_ColliderPaths: []
+  - m_Collider: {fileID: 966966987}
+    m_ColliderPaths: []
   - m_Collider: {fileID: 966966987}
     m_ColliderPaths: []
   m_CompositePaths:
@@ -7607,7 +7615,7 @@ GameObject:
   - component: {fileID: 2053577462}
   - component: {fileID: 2053577461}
   - component: {fileID: 2053577460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9267,6 +9275,10 @@ CompositeCollider2D:
         Y: -50000000
       - X: 60000000
         Y: -50000000
+  - m_Collider: {fileID: 2053577462}
+    m_ColliderPaths: []
+  - m_Collider: {fileID: 2053577462}
+    m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: -4.000029, y: -2.3125}

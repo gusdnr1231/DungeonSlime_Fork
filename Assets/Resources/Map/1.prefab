@@ -655,7 +655,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 297629586}
   - component: {fileID: 297629585}
   - component: {fileID: 297629584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4790,7 +4790,7 @@ GameObject:
   - component: {fileID: 1445644719}
   - component: {fileID: 1445644718}
   - component: {fileID: 1445644717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
