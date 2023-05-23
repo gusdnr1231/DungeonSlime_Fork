@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 354864882}
   - component: {fileID: 354864883}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CameraZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 491821055}
   m_Layer: 0
   m_Name: Trap
-  m_TagString: Thorn
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

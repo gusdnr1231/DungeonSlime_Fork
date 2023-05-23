@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SkulBossAppear : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+
     public float appearPos, backPos;
     float shake = -180;
     const float shakeAomunt = 0.025f;

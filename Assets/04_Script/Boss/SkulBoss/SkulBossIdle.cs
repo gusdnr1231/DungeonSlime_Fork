@@ -8,7 +8,6 @@ using UnityEngine;
 public class SkulBossIdle : FAED_FSMState
 {
     [Header("GameObject")]
-    [SerializeField] private GameObject player;
     [SerializeField] private GameObject leftHand;
     [SerializeField] private GameObject rightHand;
     [Space(10f)]
@@ -22,6 +21,7 @@ public class SkulBossIdle : FAED_FSMState
     [SerializeField] private float attackSpeed;
 
     private SkulBossAppear bossAppear;
+    private GameObject player;
 
     Color orignDangerousColor;
 
@@ -32,6 +32,7 @@ public class SkulBossIdle : FAED_FSMState
         bossAppear = FindObjectOfType<SkulBossAppear>();
         orignDangerousColor = dangerousBox.GetComponent<SpriteRenderer>().color;
         dangerousBox.SetActive(false);
+        player = FindObjectOfType<PlayerAnimator>().gameObject;
 
         leftHand.GetComponent<Collider2D>().enabled = false;
         rightHand.GetComponent<Collider2D>().enabled = false;

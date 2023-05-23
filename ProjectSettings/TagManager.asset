@@ -9,6 +9,8 @@ TagManager:
   - Thorn
   - Water
   - Scale
+  - Trap
+  - Hand
   layers:
   - Default
   - TransparentFX

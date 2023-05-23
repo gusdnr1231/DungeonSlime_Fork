@@ -12,6 +12,7 @@ public class IsPlayer : FAED_FSMTransition
         bool d = Physics2D.OverlapBox(new Vector2(onPlayer.transform.position.x, onPlayer.transform.position.y + 2.4f), onPlayer.size, 0, LayerMask.GetMask("Player"));
         if (d && Input.GetKeyDown(KeyCode.S))
         {
+            Debug.Log("¾¾¹ß");
             return true;
         }
         return false;

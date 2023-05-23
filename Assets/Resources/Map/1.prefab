@@ -623,7 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243599489}
   - component: {fileID: 243599490}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CameraZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

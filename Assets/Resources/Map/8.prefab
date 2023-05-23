@@ -10177,7 +10177,7 @@ GameObject:
   - component: {fileID: 661104883961861875}
   m_Layer: 0
   m_Name: Trap
-  m_TagString: Thorn
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12556,8 +12556,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3441822653429012220}
-  - component: {fileID: 7381550335450771087}
-  m_Layer: 0
+  - component: {fileID: 1999786421407118908}
+  m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12579,8 +12579,8 @@ Transform:
   m_Father: {fileID: 7925241219480054886}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7381550335450771087
-BoxCollider2D:
+--- !u!60 &1999786421407118908
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12592,7 +12592,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1, y: 12.5}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -12602,9 +12602,13 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 30, y: 31}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -14.124573, y: 28.108902}
+      - {x: -14.202413, y: 7.3418603}
+      - {x: -14.193794, y: -2.9103317}
+      - {x: 16.242575, y: -2.8577979}
+      - {x: 16.027664, y: 28.05505}
 --- !u!1 &7925241219480054885
 GameObject:
   m_ObjectHideFlags: 0
@@ -12659,7 +12663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {fileID: 661104883619088296}
-  cameraLockZone: {fileID: 7381550335450771087}
+  cameraLockZone: {fileID: 1999786421407118908}
 --- !u!156049354 &7925241219480054884
 Grid:
   m_ObjectHideFlags: 0
