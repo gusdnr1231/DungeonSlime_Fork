@@ -55,6 +55,8 @@ public class PlayerHide : PlayerRoot
         spriteRenderer.enabled = false;
         playerCollider.enabled = false;
         rigid.gravityScale = 0;
+        
+        rigid.velocity = Vector3.zero;
 
         var evt = enemyObj.GetComponent<DieEvent>();
         if(evt != null) evt.dieEvt += Bounce;
