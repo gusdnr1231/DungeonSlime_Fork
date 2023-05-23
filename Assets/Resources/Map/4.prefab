@@ -1262,7 +1262,7 @@ GameObject:
   - component: {fileID: 8464044612480999019}
   m_Layer: 0
   m_Name: Trap
-  m_TagString: Thorn
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

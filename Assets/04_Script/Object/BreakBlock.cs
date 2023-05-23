@@ -13,24 +13,18 @@ public class BreakBlock : MonoBehaviour
     {
         if (Physics2D.BoxCast(transform.position + (Vector3)pos, size, 0,
             Vector2.zero, 0, LayerMask.GetMask("Player", "Enemy")))
-            foot = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (foot && !isInvoked)
         {
 
-            isInvoked = true;
+            if (foot) return;
+            foot = true;
             FAED.InvokeDelay(() => {
-                //particle.transform.position = transform.position;
-                //particle.Play();
+
                 gameObject.SetActive(false);
             }, 0.5f);
 
         }
-
     }
+
 
     private void OnDrawGizmos()
     {
