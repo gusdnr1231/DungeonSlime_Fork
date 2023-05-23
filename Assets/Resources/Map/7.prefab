@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 55730465}
   - component: {fileID: 55730464}
   - component: {fileID: 55730463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8800,7 +8800,7 @@ GameObject:
   - component: {fileID: 1584615775}
   - component: {fileID: 1584615774}
   - component: {fileID: 1584615773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}

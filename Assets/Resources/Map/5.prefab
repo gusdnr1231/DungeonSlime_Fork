@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b9d02377b88c1409fc74a3051604bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {fileID: 0}
-  cameraLockZone: {fileID: 0}
+  startPos: {fileID: 751252221}
+  cameraLockZone: {fileID: 354864883}
 --- !u!156049354 &47729872
 Grid:
   m_ObjectHideFlags: 0
@@ -1306,7 +1306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751252220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.34, y: -2.93, z: 0}
+  m_LocalPosition: {x: -17.01, y: -0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1327,7 +1327,7 @@ GameObject:
   - component: {fileID: 966966987}
   - component: {fileID: 966966986}
   - component: {fileID: 966966985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7615,7 +7615,7 @@ GameObject:
   - component: {fileID: 2053577462}
   - component: {fileID: 2053577461}
   - component: {fileID: 2053577460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
