@@ -623,7 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243599489}
   - component: {fileID: 243599490}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CameraZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 297629586}
   - component: {fileID: 297629585}
   - component: {fileID: 297629584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4792,7 +4792,7 @@ GameObject:
   - component: {fileID: 1445644719}
   - component: {fileID: 1445644718}
   - component: {fileID: 1445644717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}

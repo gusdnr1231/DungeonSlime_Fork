@@ -278,7 +278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183697154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.66, y: -1.23, z: -10}
+  m_LocalPosition: {x: -11.77, y: 1.95, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 753698917}
   - component: {fileID: 753698919}
   - component: {fileID: 753698918}
+  - component: {fileID: 753698920}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -968,6 +969,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &753698920
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753698916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &839717011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1239,7 @@ GameObject:
   - component: {fileID: 1493953830}
   - component: {fileID: 1493953832}
   - component: {fileID: 1493953831}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +1823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1680556842}
   - component: {fileID: 1680556843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2169,7 +2187,7 @@ GameObject:
   - component: {fileID: 1932782185}
   - component: {fileID: 1932782184}
   - component: {fileID: 1932782183}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2208,6 +2226,7 @@ MonoBehaviour:
   - Die
   - Trap
   - Water
+  - Hand
   dieEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2432,7 +2451,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 408578513, guid: 6863c989a197c314a848a1f42a0e07f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2452,7 +2471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932782182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.66, y: -1.23, z: 0}
+  m_LocalPosition: {x: -11.77, y: 1.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2540,7 +2559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035085550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.66, y: -1.23, z: -10}
+  m_LocalPosition: {x: -11.77, y: 1.95, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

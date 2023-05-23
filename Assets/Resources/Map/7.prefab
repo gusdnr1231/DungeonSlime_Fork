@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 55730465}
   - component: {fileID: 55730464}
   - component: {fileID: 55730463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -8899,7 +8899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1515508460}
   - component: {fileID: 1515508461}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CameraZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8965,7 +8965,7 @@ GameObject:
   - component: {fileID: 1584615775}
   - component: {fileID: 1584615774}
   - component: {fileID: 1584615773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -10219,7 +10219,7 @@ GameObject:
   - component: {fileID: 1623012813}
   m_Layer: 0
   m_Name: Trap
-  m_TagString: Thorn
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

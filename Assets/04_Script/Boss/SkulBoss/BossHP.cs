@@ -10,10 +10,10 @@ public class BossHP : MonoBehaviour
     public static BossHP Instance;
 
     [SerializeField] private GameObject bossClearObject;
-    [SerializeField] CinemachineVirtualCamera _vCam;
     [SerializeField] GameObject lHand, rHand, dangerBox;
     CinemachineBasicMultiChannelPerlin _vCamPerlin;
 
+    private CinemachineVirtualCamera _vCam;
     private new PolygonCollider2D collider;
     private SpriteRenderer spriteRenderer;
     private SkulBossIdle skulBossIdle;
@@ -24,6 +24,7 @@ public class BossHP : MonoBehaviour
     {
         Instance = this;
 
+        _vCam = FindObjectOfType<CinemachineVirtualCamera>();
         collider = gameObject.GetComponent<PolygonCollider2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _vCamPerlin = _vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();

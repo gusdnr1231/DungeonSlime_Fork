@@ -10,15 +10,14 @@ using UnityEngine;
 public class HitPunch : FAED_FSMTransition
 {
     [Header("Object")]
-    [SerializeField] private GameObject player;
     [SerializeField] private GameObject skullBoss;
     [SerializeField] private Transform popPoint;
-    [Header("Other")]
-    [SerializeField] private CinemachineVirtualCamera cv;
 
     private SkulBossAppear bossAppear;
     private Rigidbody2D skbRg;
     private Animator skbAnim;
+    private GameObject player;
+    private CinemachineVirtualCamera cv;
 
     protected override void Awake()
     {
@@ -28,6 +27,8 @@ public class HitPunch : FAED_FSMTransition
         bossAppear = transform.parent.parent.GetComponent<SkulBossAppear>();
         skbRg = transform.parent.parent.GetComponent<Rigidbody2D>();
         skbAnim = transform.parent.parent.GetComponent<Animator>();
+        player = FindObjectOfType<PlayerAnimator>().gameObject;
+        cv = FindObjectOfType<CinemachineVirtualCamera>();
     }
 
     public override bool ChackTransition()
