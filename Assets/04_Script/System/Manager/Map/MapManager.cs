@@ -25,8 +25,17 @@ public class MapManager : MonoBehaviour
     public void CreateStage()
     {
 
-        var map = Instantiate(Resources.Load<GameObject>($"Map/{currentStageNum}")).GetComponent<Map>();
+        if(Resources.Load<GameObject>($"Map/{currentStageNum}") == null)
+        {
 
+            Debug.Log(123);
+            PlayerPrefs.SetString("NextScene", "SelectStage1");
+            SceneManager.LoadScene("Loading");
+            return;
+
+        }
+
+        var map = Instantiate(Resources.Load<GameObject>($"Map/{currentStageNum}")).GetComponent<Map>();
         var player = GameObject.Find("Player");
         CameraManager.instance.SetCof(map.cameraLockZone);
         player.transform.position = map.StartPos.position;

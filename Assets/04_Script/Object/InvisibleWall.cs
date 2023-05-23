@@ -9,14 +9,15 @@ public class InvisibleWall : MonoBehaviour
 
     [SerializeField] private float dessolvePower;
     [SerializeField] private string[] tagStr;
+    [SerializeField] private float alphaClamp = 0.2f;
 
-    private SpriteRenderer tilemapRenderer;
+    private Renderer tilemapRenderer;
     private bool isFade;
 
     private void Awake()
     {
         
-        tilemapRenderer = GetComponent<SpriteRenderer>();
+        tilemapRenderer = GetComponent<Renderer>();
 
     }
 
@@ -66,7 +67,7 @@ public class InvisibleWall : MonoBehaviour
                 oldC.a - dessolvePower * Time.deltaTime);
 
             oldC = new Color(oldC.r, oldC.g, oldC.b,
-                Mathf.Clamp(oldC.a, 0.3f, 1));
+                Mathf.Clamp(oldC.a, alphaClamp, 1));
 
             tilemapRenderer.material.color = oldC;
 

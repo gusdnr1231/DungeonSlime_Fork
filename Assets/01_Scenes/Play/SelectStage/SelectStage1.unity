@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 244410019}
   - component: {fileID: 244410021}
   - component: {fileID: 244410020}
+  - component: {fileID: 244410022}
   m_Layer: 5
   m_Name: 11
   m_TagString: Untagged
@@ -335,6 +336,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244410018}
   m_CullTransparentMesh: 1
+--- !u!114 &244410022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244410018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &459034497
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +547,7 @@ GameObject:
   - component: {fileID: 660440946}
   - component: {fileID: 660440948}
   - component: {fileID: 660440947}
+  - component: {fileID: 660440949}
   m_Layer: 5
   m_Name: 12
   m_TagString: Untagged
@@ -585,6 +614,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660440945}
   m_CullTransparentMesh: 1
+--- !u!114 &660440949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660440945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &692972587
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +888,7 @@ GameObject:
   - component: {fileID: 807263843}
   - component: {fileID: 807263845}
   - component: {fileID: 807263844}
+  - component: {fileID: 807263846}
   m_Layer: 5
   m_Name: 8
   m_TagString: Untagged
@@ -898,6 +955,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807263842}
   m_CullTransparentMesh: 1
+--- !u!114 &807263846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807263842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &857341983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,6 +1111,7 @@ GameObject:
   - component: {fileID: 901515958}
   - component: {fileID: 901515960}
   - component: {fileID: 901515959}
+  - component: {fileID: 901515961}
   m_Layer: 5
   m_Name: 7
   m_TagString: Untagged
@@ -1093,6 +1178,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901515957}
   m_CullTransparentMesh: 1
+--- !u!114 &901515961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901515957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &939167487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1216,7 @@ GameObject:
   - component: {fileID: 939167488}
   - component: {fileID: 939167490}
   - component: {fileID: 939167489}
+  - component: {fileID: 939167491}
   m_Layer: 5
   m_Name: 5
   m_TagString: Untagged
@@ -1170,6 +1283,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939167487}
   m_CullTransparentMesh: 1
+--- !u!114 &939167491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939167487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &948475894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1321,7 @@ GameObject:
   - component: {fileID: 948475895}
   - component: {fileID: 948475897}
   - component: {fileID: 948475896}
+  - component: {fileID: 948475898}
   m_Layer: 5
   m_Name: 10
   m_TagString: Untagged
@@ -1247,6 +1388,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948475894}
   m_CullTransparentMesh: 1
+--- !u!114 &948475898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948475894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1022819970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,6 +1426,7 @@ GameObject:
   - component: {fileID: 1022819971}
   - component: {fileID: 1022819973}
   - component: {fileID: 1022819972}
+  - component: {fileID: 1022819974}
   m_Layer: 5
   m_Name: 3
   m_TagString: Untagged
@@ -1324,6 +1493,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022819970}
   m_CullTransparentMesh: 1
+--- !u!114 &1022819974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022819970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1034215831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,6 +2206,7 @@ GameObject:
   - component: {fileID: 1240931540}
   - component: {fileID: 1240931542}
   - component: {fileID: 1240931541}
+  - component: {fileID: 1240931543}
   m_Layer: 5
   m_Name: 6
   m_TagString: Untagged
@@ -2076,6 +2273,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240931539}
   m_CullTransparentMesh: 1
+--- !u!114 &1240931543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240931539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1293319243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,6 +2311,7 @@ GameObject:
   - component: {fileID: 1293319244}
   - component: {fileID: 1293319246}
   - component: {fileID: 1293319245}
+  - component: {fileID: 1293319247}
   m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
@@ -2153,6 +2378,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293319243}
   m_CullTransparentMesh: 1
+--- !u!114 &1293319247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293319243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1308149449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,6 +3000,7 @@ GameObject:
   - component: {fileID: 1774893229}
   - component: {fileID: 1774893231}
   - component: {fileID: 1774893230}
+  - component: {fileID: 1774893232}
   m_Layer: 5
   m_Name: 4
   m_TagString: Untagged
@@ -2814,6 +3067,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774893228}
   m_CullTransparentMesh: 1
+--- !u!114 &1774893232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774893228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1981096792
 GameObject:
   m_ObjectHideFlags: 0
@@ -3033,6 +3313,7 @@ GameObject:
   - component: {fileID: 2066790523}
   - component: {fileID: 2066790525}
   - component: {fileID: 2066790524}
+  - component: {fileID: 2066790526}
   m_Layer: 5
   m_Name: 9
   m_TagString: Untagged
@@ -3099,3 +3380,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066790522}
   m_CullTransparentMesh: 1
+--- !u!114 &2066790526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066790522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1308149450}
+        m_TargetAssemblyTypeName: MapEventManager, Assembly-CSharp
+        m_MethodName: LoadMap
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
