@@ -20,7 +20,7 @@ public class BreakBlock : MonoBehaviour
             FAED.InvokeDelay(() => {
 
                 gameObject.SetActive(false);
-            }, 0.5f);
+            }, 3f);
 
         }
     }
