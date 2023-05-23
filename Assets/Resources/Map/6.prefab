@@ -3841,7 +3841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {fileID: 1021620443}
-  cameraLockZone: {fileID: 6395335766084411367}
+  cameraLockZone: {fileID: 49957302134558406}
 --- !u!156049354 &1345154677
 Grid:
   m_ObjectHideFlags: 0
@@ -12711,8 +12711,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 54030736470259896}
-  - component: {fileID: 6395335766084411367}
-  m_Layer: 0
+  - component: {fileID: 49957302134558406}
+  m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12734,8 +12734,8 @@ Transform:
   m_Father: {fileID: 1345154679}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6395335766084411367
-BoxCollider2D:
+--- !u!60 &49957302134558406
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12747,7 +12747,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 5.5}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -12757,9 +12757,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 26.5, y: 30.5}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -13.854754, y: 20.688337}
+      - {x: -13.810537, y: -9.863441}
+      - {x: 12.822675, y: -9.980772}
+      - {x: 12.699815, y: -0.48492944}
+      - {x: 12.633844, y: 12.817211}
+      - {x: 12.861284, y: 20.969618}
 --- !u!1001 &10208300
 PrefabInstance:
   m_ObjectHideFlags: 0

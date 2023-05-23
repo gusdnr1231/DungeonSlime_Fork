@@ -9,6 +9,7 @@ TagManager:
   - Thorn
   - Water
   - Scale
+  - Trap
   layers:
   - Default
   - TransparentFX

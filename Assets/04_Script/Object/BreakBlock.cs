@@ -7,7 +7,7 @@ public class BreakBlock : MonoBehaviour
 {
     [SerializeField] private Vector2 size, pos;
     //[SerializeField] private ParticleSystem particle;
-    bool foot = false;
+    bool foot = false, isInvoked;
 
     private void Update()
     {
@@ -18,12 +18,18 @@ public class BreakBlock : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (foot)
+        if (foot && !isInvoked)
+        {
+
+            isInvoked = true;
             FAED.InvokeDelay(() => {
                 //particle.transform.position = transform.position;
                 //particle.Play();
                 gameObject.SetActive(false);
             }, 0.5f);
+
+        }
+
     }
 
     private void OnDrawGizmos()
