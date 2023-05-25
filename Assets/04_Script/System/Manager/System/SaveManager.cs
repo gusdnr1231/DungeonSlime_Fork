@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public class SaveManager
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public void SaveMap<T>(T obj, string fileName)
     {
-        
+
+        var jsonObject = JsonUtility.ToJson(obj);
+
+        File.WriteAllText(Application.dataPath + $"/{fileName}.json", jsonObject);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public T LoadMap<T>(string fileName)
     {
-        
+
+        var obj = File.ReadAllText(Application.dataPath + $"/{fileName}.json");
+
+        return JsonUtility.FromJson<T>(obj);
+
     }
+
 }
