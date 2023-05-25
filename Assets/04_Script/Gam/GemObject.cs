@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class GemObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private string[] getAbleObjectTag;
+    [SerializeField] private string getKey;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         
+        foreach(var item in getAbleObjectTag)
+        {
+
+            if (collision.CompareTag(item))
+            {
+
+                PlayerPrefs.SetInt(getKey, int.MaxValue);
+                Destroy(gameObject);
+
+            }
+
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
