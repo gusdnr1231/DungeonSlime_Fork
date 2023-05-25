@@ -27,6 +27,13 @@ public class DieEvent : MonoBehaviour
 
         }
 
+        Execute();
+
+    }
+
+    public void Execute()
+    {
+
         dieEvt?.Invoke();
         dieEvt = null;
 

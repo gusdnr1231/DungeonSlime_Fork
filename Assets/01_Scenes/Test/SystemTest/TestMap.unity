@@ -2241,6 +2241,7 @@ MonoBehaviour:
   - Trap
   - Water
   - Hand
+  - Enemy
   dieEvent:
     m_PersistentCalls:
       m_Calls:
