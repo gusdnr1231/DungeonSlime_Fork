@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHide : PlayerRoot
 {
@@ -10,6 +11,8 @@ public class PlayerHide : PlayerRoot
     [SerializeField] private Vector2 boxRange;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float bouncePower;
+    [SerializeField] private UnityEvent<bool> hideEvt;
+    [SerializeField] private UnityEvent bounceEvt;
 
     private List<IEventObject> playerEvent = new List<IEventObject>();
     private GameObject enemyObj;
@@ -65,6 +68,21 @@ public class PlayerHide : PlayerRoot
 
         isHide = true;
 
+        if(hitAble.transform.TryGetComponent<EnemyJumpHide>(out var copo))
+        {
+
+            hideEvt?.Invoke(copo.JumpPower != 0);
+
+        }
+        else
+        {
+
+
+            hideEvt?.Invoke(false);
+
+        }
+
+
     }
 
     private void Bounce()
@@ -108,6 +126,8 @@ public class PlayerHide : PlayerRoot
         enemyObj = null;
 
         isHide = false;
+
+        bounceEvt?.Invoke();
 
     }
 

@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyJumpHide : EnemyRoot
 {
 
-    [SerializeField] private float JumpPower;
-
+    [SerializeField] private float jumpPower;
+    public float JumpPower => jumpPower;
     private void Jump()
     {
 
         if (groundCol.isGround == false) return;
 
-        rigid.velocity += Vector2.up * JumpPower;
+        rigid.velocity += Vector2.up * jumpPower;
 
     }
 
