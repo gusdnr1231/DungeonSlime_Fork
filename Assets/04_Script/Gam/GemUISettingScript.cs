@@ -17,7 +17,13 @@ public class GemUISettingScript : MonoBehaviour
             if(PlayerPrefs.GetInt(item.gemKey) == int.MaxValue)
             {
 
+                item.gemIconImage.color = Color.white;
 
+            }
+            else
+            {
+
+                item.gemIconImage.color = new Color(0, 0, 0, 0);
 
             }
 
