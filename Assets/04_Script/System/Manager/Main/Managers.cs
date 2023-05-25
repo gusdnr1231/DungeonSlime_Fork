@@ -9,11 +9,13 @@ public class Managers : MonoBehaviour
     private static SystemManager systemManage;
     private static MapManager mapManager;
     private static SaveManager saveManager;
+    private static GemManager gemManager;
 
     public static Managers Instance { get { Init(); return instance; } }
     public static SystemManager SystemManage { get { Init(); return systemManage; } }
     public static MapManager Map { get { Init(); return mapManager; } }
     public static SaveManager Save { get { Init(); return saveManager; } }
+    public static GemManager Gem { get { Init(); return gemManager; } }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void Init()
@@ -46,8 +48,9 @@ public class Managers : MonoBehaviour
 
         mapManager = obj.AddComponent<MapManager>();
         systemManage = new SystemManager();
-        systemManage.Setting();
         saveManager = new SaveManager();
+        gemManager = new GemManager();
+        systemManage.Setting();
 
     }
 

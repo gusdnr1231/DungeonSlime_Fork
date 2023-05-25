@@ -6,7 +6,7 @@ using UnityEngine;
 public class SaveManager
 {
     
-    public void SaveMap<T>(T obj, string fileName)
+    public void SaveFile<T>(T obj, string fileName)
     {
 
         var jsonObject = JsonUtility.ToJson(obj);
@@ -15,7 +15,7 @@ public class SaveManager
 
     }
 
-    public T LoadMap<T>(string fileName)
+    public T LoadFile<T>(string fileName)
     {
 
         var obj = File.ReadAllText(Application.dataPath + $"/{fileName}.json");
