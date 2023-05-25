@@ -70,6 +70,14 @@ public class PlayerHide : PlayerRoot
 
         if(!isHide) return;
 
+        var jumpPos = enemyObj.transform.Find("BouncePos");
+
+        if(Physics2D.OverlapBox(jumpPos.position, new Vector2(0.8f, 2), 0, LayerMask.GetMask("Ground"))) 
+        {
+
+            return;
+
+        }
 
         foreach (var x in playerEvent)
         {
@@ -90,7 +98,6 @@ public class PlayerHide : PlayerRoot
         var evt = enemyObj.GetComponent<DieEvent>();
         if(evt != null) evt.dieEvt -= Bounce;
 
-        var jumpPos = enemyObj.transform.Find("BouncePos");
         transform.position = jumpPos.position;
 
         rigid.velocity += Vector2.up * bouncePower;
