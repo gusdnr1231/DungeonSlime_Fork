@@ -45,6 +45,13 @@ public class BoxEnemy : EnemyRoot
 
         if (upCount == maxUpCount) return;
 
+        if (Physics2D.OverlapBox(bouncePos.transform.position + new Vector3(0, 1), new Vector2(0.8f, 1), 0, LayerMask.GetMask("Ground")))
+        {
+
+            return;
+
+        }
+
         spriteRenderer.size += new Vector2(0, 1);
         enemyCollider.size += new Vector2(0, 1);
         bouncePos.transform.position += new Vector3(0, 1);
