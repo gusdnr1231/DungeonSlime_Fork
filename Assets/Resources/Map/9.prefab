@@ -18787,6 +18787,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2967107005435303993, guid: bd9cc9a8b18d817459ed81006e8a4e9c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2967107005435303995, guid: bd9cc9a8b18d817459ed81006e8a4e9c, type: 3}
       propertyPath: m_Name
       value: BreakBlock (1)
