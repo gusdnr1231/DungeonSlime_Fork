@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b35f43bfde20742bf559d943a95674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPower: 1.5
+  JumpPower: 0
 --- !u!50 &3947916268646432062
 Rigidbody2D:
   serializedVersion: 4
@@ -397,8 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149cf529793c70640bbfabb17f338c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1.1, y: 0.5}
-  pos: {x: 0.1, y: 0.3}
+  size: {x: 1.2, y: 0.7}
+  pos: {x: 0.1, y: 0.37}
 --- !u!114 &2065343454
 MonoBehaviour:
   m_ObjectHideFlags: 0
