@@ -51,6 +51,7 @@ public class JumpUISetting : MonoBehaviour
         if (isClearAble)
         {
 
+            FindObjectOfType<GemObject>()?.TrySave();
             door.clearEvent?.Invoke();
 
         }

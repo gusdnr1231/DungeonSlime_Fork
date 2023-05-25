@@ -8,8 +8,8 @@ public class GemObject : MonoBehaviour
     [SerializeField] private string[] getAbleObjectTag;
     [SerializeField] private string getKey;
 
-    private bool isFollowing;
     private Transform target;
+    private bool isFollowing;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
