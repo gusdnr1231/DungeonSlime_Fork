@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1932782196}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -1079,6 +1079,7 @@ GameObject:
   - component: {fileID: 863178206}
   - component: {fileID: 863178207}
   - component: {fileID: 863178208}
+  - component: {fileID: 863178209}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1137,6 +1138,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c661b79bbaa7847baa73e761cc8121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &863178209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863178204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81234af1bce2cdc44bf8525191152887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1932782182}
+  vcam: {fileID: 183697156}
 --- !u!1 &1166545186
 GameObject:
   m_ObjectHideFlags: 0
