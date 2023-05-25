@@ -8,7 +8,7 @@ public class GemUISettingScript : MonoBehaviour
 
     [SerializeField] private List<GemUIClass> gems = new List<GemUIClass>();
 
-    private void Awake()
+    private void Start()
     {
         
         foreach(var item in gems)
