@@ -18,6 +18,7 @@ public class PlayerHide : PlayerRoot
     private List<IEventObject> playerEvent = new List<IEventObject>();
     private GameObject enemyObj;
     private bool isHide;
+    private GemObject obj;
 
     protected override void Awake()
     {
@@ -28,6 +29,14 @@ public class PlayerHide : PlayerRoot
         dieSensor = GetComponent<DieSensor>(); 
 
         playerEvent = GetComponents<IEventObject>().ToList();
+
+    }
+
+    private IEnumerator Start()
+    {
+
+        yield return null;
+        obj = FindObjectOfType<GemObject>();
 
     }
 
@@ -85,6 +94,7 @@ public class PlayerHide : PlayerRoot
 
         }
 
+        obj.SetTarget(enemyObj.transform.Find("BouncePos"));
 
     }
 
@@ -133,6 +143,8 @@ public class PlayerHide : PlayerRoot
         isHide = false;
 
         bounceEvt?.Invoke();
+
+        obj.SetTarget(transform);
 
     }
 

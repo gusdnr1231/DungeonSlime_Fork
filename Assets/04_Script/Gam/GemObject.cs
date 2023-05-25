@@ -11,7 +11,6 @@ public class GemObject : MonoBehaviour
     private bool isFollowing;
     private Transform target;
 
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
