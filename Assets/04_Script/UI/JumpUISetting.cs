@@ -11,11 +11,14 @@ public class JumpUISetting : MonoBehaviour
     [SerializeField] private Sprite clear;
 
     private Image image;
+    private bool isClearAble;
+    private Door door;
 
-    private void Awake()
+    private IEnumerator Start()
     {
-        
+        yield return null;
         image = GetComponent<Image>();
+        door = FindObjectOfType<Door>();
 
     }
 
@@ -23,6 +26,7 @@ public class JumpUISetting : MonoBehaviour
     {
 
         image.sprite = origin;
+        isClearAble = false;
 
     }
 
@@ -37,7 +41,21 @@ public class JumpUISetting : MonoBehaviour
     {
 
         image.sprite = clear;
+        isClearAble = true;
 
     }
+
+    public void ClearEvent()
+    {
+
+        if (isClearAble)
+        {
+
+            door.clearEvent?.Invoke();
+
+        }
+
+    }
+
 
 }

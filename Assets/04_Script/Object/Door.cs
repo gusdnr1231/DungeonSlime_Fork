@@ -6,10 +6,10 @@ using UnityEngine.Events;
 public class Door : MonoBehaviour
 {
 
-    [SerializeField] private UnityEvent clearEvent;
     [SerializeField] private List<string> clearAbleTag;
 
     private JumpUISetting jumpUISetting;
+    public UnityEvent clearEvent;
 
     private void Awake()
     {

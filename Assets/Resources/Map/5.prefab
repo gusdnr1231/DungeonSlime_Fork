@@ -9302,6 +9302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8a883c71146b74e8e8d96f17b41edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clearAbleTag:
+  - Player
   clearEvent:
     m_PersistentCalls:
       m_Calls:
@@ -9317,8 +9319,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  clearAbleTag:
-  - Player
 --- !u!114 &54730021850220987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9341,6 +9341,18 @@ PrefabInstance:
     - target: {fileID: 1298464570171964935, guid: 87c4939462c7dde4cad63084726b177e, type: 3}
       propertyPath: m_Name
       value: Spider
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566938298451500951, guid: 87c4939462c7dde4cad63084726b177e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5987834
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566938298451500951, guid: 87c4939462c7dde4cad63084726b177e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.09498012
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566938298451500951, guid: 87c4939462c7dde4cad63084726b177e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.30752188
       objectReference: {fileID: 0}
     - target: {fileID: 4956524956465926511, guid: 87c4939462c7dde4cad63084726b177e, type: 3}
       propertyPath: m_RootOrder

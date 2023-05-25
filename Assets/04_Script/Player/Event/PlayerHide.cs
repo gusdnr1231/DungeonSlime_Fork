@@ -14,6 +14,7 @@ public class PlayerHide : PlayerRoot
     [SerializeField] private UnityEvent<bool> hideEvt;
     [SerializeField] private UnityEvent bounceEvt;
 
+    private DieSensor dieSensor;
     private List<IEventObject> playerEvent = new List<IEventObject>();
     private GameObject enemyObj;
     private bool isHide;
@@ -24,6 +25,7 @@ public class PlayerHide : PlayerRoot
         base.Awake();
         input.OnHideEvnet += Hide;
         input.OnBounceEvent += Bounce;
+        dieSensor = GetComponent<DieSensor>();
 
         playerEvent = GetComponents<IEventObject>().ToList();
 
