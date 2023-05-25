@@ -14,11 +14,19 @@ public class PlayerInput : MonoBehaviour
     public event Action OnBounceEvent;
     public event Action OnHideEvnet;
     public event Action OnSkillEvent;
+    public event Action OnUpdateEvent;
 
     private void FixedUpdate()
     {
 
         OnMovementEvent?.Invoke(moveValue);
+
+    }
+
+    private void Update()
+    {
+
+        OnUpdateEvent?.Invoke();
 
     }
 
