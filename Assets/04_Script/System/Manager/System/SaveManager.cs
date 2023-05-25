@@ -20,6 +20,8 @@ public class SaveManager
 
         var obj = File.ReadAllText(Application.dataPath + $"/{fileName}.json");
 
+        if (obj == "") return default;
+
         return JsonUtility.FromJson<T>(obj);
 
     }

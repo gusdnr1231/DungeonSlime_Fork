@@ -16,4 +16,12 @@ namespace Class
 
     }
 
+    [System.Serializable]
+    public class GemSaveFile
+    {
+
+        public List<string> clearTag = new List<string>(); 
+
+    }
+
 }
