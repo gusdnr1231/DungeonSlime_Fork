@@ -14,7 +14,7 @@ public class GemUISettingScript : MonoBehaviour
         foreach(var item in gems)
         {
 
-            if(PlayerPrefs.GetInt(item.gemKey) == int.MaxValue)
+            if(Managers.Gem.ClearChack(item.gemKey))
             {
 
                 item.gemIconImage.color = Color.white;

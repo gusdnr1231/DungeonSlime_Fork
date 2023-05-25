@@ -9,6 +9,13 @@ public class SaveManager
     public void SaveFile<T>(T obj, string fileName)
     {
 
+        if (!File.Exists(Application.dataPath + $"/{fileName}.json"))
+        {
+
+            File.Create(Application.dataPath + $"/{fileName}.json");
+
+        }
+
         var jsonObject = JsonUtility.ToJson(obj);
 
         File.WriteAllText(Application.dataPath + $"/{fileName}.json", jsonObject);
@@ -17,6 +24,13 @@ public class SaveManager
 
     public T LoadFile<T>(string fileName)
     {
+
+        if(File.Exists(Application.dataPath + $"/{fileName}.json"))
+        {
+
+            File.Create(Application.dataPath + $"/{fileName}.json");
+
+        }
 
         var obj = File.ReadAllText(Application.dataPath + $"/{fileName}.json");
 

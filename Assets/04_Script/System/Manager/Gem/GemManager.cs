@@ -14,9 +14,17 @@ public class GemManager
         if (gemSaveFile == null)
         {
 
-            gemSaveFile = Managers.Save.LoadFile<GemSaveFile>("Gem");
+            gemSaveFile = new GemSaveFile();
+            Managers.Save.SaveFile(gemSaveFile, "Gem");
 
         }
+
+    }
+
+    public void Setting()
+    {
+
+        gemSaveFile = Managers.Save.LoadFile<GemSaveFile>("Gem");
 
     }
 

@@ -50,7 +50,9 @@ public class Managers : MonoBehaviour
         systemManage = new SystemManager();
         saveManager = new SaveManager();
         gemManager = new GemManager();
+
         systemManage.Setting();
+        gemManager.Setting();
 
     }
 
