@@ -13,9 +13,12 @@ public class DieSensor : MonoBehaviour
     private bool isDie;
 
     public string dieTag { get; set; }
+    public bool dieAble { get; set; } = true;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (!dieAble) return;
 
         foreach(var tag in tags) 
         {
@@ -37,6 +40,8 @@ public class DieSensor : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if (!dieAble) return;
 
         foreach (var tag in tags)
         {

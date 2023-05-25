@@ -25,7 +25,7 @@ public class PlayerHide : PlayerRoot
         base.Awake();
         input.OnHideEvnet += Hide;
         input.OnBounceEvent += Bounce;
-        dieSensor = GetComponent<DieSensor>();
+        dieSensor = GetComponent<DieSensor>(); 
 
         playerEvent = GetComponents<IEventObject>().ToList();
 
@@ -41,6 +41,7 @@ public class PlayerHide : PlayerRoot
         if (hitAble == false) return;
 
         enemyObj = hitAble.transform.gameObject;
+        dieSensor.dieAble = false;
 
 
         foreach(var x in playerEvent)
@@ -116,6 +117,8 @@ public class PlayerHide : PlayerRoot
         spriteRenderer.enabled = true;
         playerCollider.enabled = true;
         rigid.gravityScale = 1;
+
+        dieSensor.dieAble = true;
 
         var evt = enemyObj.GetComponent<DieEvent>();
         if(evt != null) evt.dieEvt -= Bounce;
