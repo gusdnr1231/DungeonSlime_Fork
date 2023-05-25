@@ -9,16 +9,9 @@ public class GemObject : MonoBehaviour
     [SerializeField] private string getKey;
 
     private bool isFollowing;
-    private Rigidbody2D target;
-    private Rigidbody2D rigid;
+    private Transform target;
 
-    private void Awake()
-    {
-        
-        rigid = GetComponent<Rigidbody2D>();
-
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -31,7 +24,7 @@ public class GemObject : MonoBehaviour
             {
 
                 isFollowing = true;
-                target = collision.transform.GetComponent<Rigidbody2D>();
+                target = collision.transform;
                 break;
 
             }
@@ -45,14 +38,22 @@ public class GemObject : MonoBehaviour
 
         if (!isFollowing) return;
 
-        rigid.velocity = Vector3.Lerp(rigid.velocity, target.velocity, Time.deltaTime * 10);
+        transform.position = Vector3.Lerp(transform.position, target.transform.position, Time.deltaTime);
 
     }
 
     public void SetTarget(Transform target)
     {
 
-        this.target = target.GetComponent<Rigidbody2D>();
+        this.target = target;
+
+    }
+
+    public void TrySave()
+    {
+
+        if(!isFollowing) return;
+        Managers.Gem.SetClear(getKey);
 
     }
 
