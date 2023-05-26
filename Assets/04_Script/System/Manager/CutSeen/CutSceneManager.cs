@@ -23,7 +23,6 @@ public class CutSceneManager : MonoBehaviour
 
     public void CutSceneActive()
     {
-        Debug.Log("GLGL");
         input = player.GetComponent<PlayerInput>();
         input.enabled = false;
         startPos = FindObjectOfType<CutSize>().gameObject.transform.position;

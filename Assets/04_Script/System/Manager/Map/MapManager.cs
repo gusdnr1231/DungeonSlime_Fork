@@ -40,7 +40,6 @@ public class MapManager : MonoBehaviour
         CameraManager.instance.SetCof(map.cameraLockZone);
         player.transform.position = map.StartPos.position;
         CutSceneManager.instance.CutSceneActive();
-        Debug.Log("ddd");
     }
 
     public void RestartMap()
