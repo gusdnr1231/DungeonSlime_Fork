@@ -44,6 +44,7 @@ public class CutSceneManager : MonoBehaviour
             DOTween.To(() => vcam.m_Lens.OrthographicSize, x => vcam.m_Lens.OrthographicSize = x, 5, 1)
             .OnComplete(() => { 
                 vcam.Follow = player.transform;
+                speakManager.StartScritp();
                 speakManager.canToking = true;
             });
         }, 2f);

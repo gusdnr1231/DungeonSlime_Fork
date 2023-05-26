@@ -1165,8 +1165,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c2797e19776b148bb8bf3f70b430b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speakWindow: {fileID: 0}
-  text: {fileID: 0}
+  speak:
+  - _peaks:
+    - "\uC74C, \uC5EC\uAE30\uB294..."
+    - "1\uC2A4\uD14C\uC774\uC9C0\uAD6C\uBA3C"
+  - _peaks:
+    - "\uC5EC\uAE34 2\uC2A4\uD14C\uC774\uC9C0\uB124"
+    - "\u3145\u3142"
+  - _peaks:
+    - "\uC5EC\uAE34 3\uC2A4\uD14C\uC774\uC9C0\uB124"
+    - "\u3145\u3142"
+  - _peaks:
+    - "\uC5EC\uAE34 4\uC2A4\uD14C\uC774\uC9C0\uB124"
+    - "\u3145\u3142"
+  - _peaks:
+    - "\uC5EC\uAE34 5\uC2A4\uD14C\uC774\uC9C0\uB124"
+    - "\u3145\u3142"
+  - _peaks:
+    - "\uC5EC\uAE34 6\uC2A4\uD14C\uC774\uC9C0\uB124"
+    - "\u3145\u3142"
+  - _peaks:
+    - "\uC5EC\uAE34 7\uC2A4\uD14C\uC774\uC9C0\uB124"
+    - "\u3145\u3142"
+  - _peaks:
+    - "\uC5EC\uAE34 8\uC2A4\uD14C\uC774\uC9C0\uB124"
+    - "\u3145\u3142"
+  - _peaks:
+    - "\uC5EC\uAE34 9\uC2A4\uD14C\uC774\uC9C0\uB124"
+    - "\u3145\u3142"
+  speakWindow: {fileID: 6470802519567529021, guid: c12fd4f90a6c01941b6d2356975b9321, type: 3}
   canToking: 0
 --- !u!1 &1166545186
 GameObject:
