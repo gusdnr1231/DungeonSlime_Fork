@@ -13,6 +13,7 @@ public class CutSceneManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcam;
 
     private PlayerInput input;
+    private SpeakManager speakManager;
     private Vector3 startPos;
     private float camerSize;
 
@@ -23,6 +24,7 @@ public class CutSceneManager : MonoBehaviour
 
     public void CutSceneActive()
     {
+        speakManager = FindObjectOfType<SpeakManager>();
         input = player.GetComponent<PlayerInput>();
         input.enabled = false;
         startPos = FindObjectOfType<CutSize>().gameObject.transform.position;
@@ -42,7 +44,7 @@ public class CutSceneManager : MonoBehaviour
             DOTween.To(() => vcam.m_Lens.OrthographicSize, x => vcam.m_Lens.OrthographicSize = x, 5, 1)
             .OnComplete(() => { 
                 vcam.Follow = player.transform;
-                input.enabled = true;
+                speakManager.canToking = true;
             });
         }, 2f);
     }

@@ -1080,6 +1080,7 @@ GameObject:
   - component: {fileID: 863178207}
   - component: {fileID: 863178208}
   - component: {fileID: 863178209}
+  - component: {fileID: 863178210}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1152,6 +1153,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1932782182}
   vcam: {fileID: 183697156}
+--- !u!114 &863178210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863178204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c2797e19776b148bb8bf3f70b430b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakWindow: {fileID: 0}
+  text: {fileID: 0}
+  canToking: 0
 --- !u!1 &1166545186
 GameObject:
   m_ObjectHideFlags: 0
