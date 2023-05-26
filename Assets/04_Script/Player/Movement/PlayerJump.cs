@@ -23,6 +23,7 @@ public class PlayerJump : PlayerMovementRoot
         if (groundCol.isGround == false) return;
 
         AudioManager.Instance.PlayAudio("PlayerJump", audioSource);
+        Debug.Log("»ç¿îµå");
         rigid.velocity += Vector2.up * JumpPower;
 
     }
