@@ -10,6 +10,7 @@ public class JumpPad : MonoBehaviour
     [SerializeField] private Vector2 posVector, size, ofs;
     [SerializeField] private float bouncePower;
     [SerializeField] private bool ativeMoveable = true;
+    [SerializeField] private AudioSource audioSource;
 
     public void Jump()
     {
@@ -33,7 +34,7 @@ public class JumpPad : MonoBehaviour
                 }
 
                 v.GetComponent<Rigidbody2D>().velocity += posVector * bouncePower;
-
+                AudioManager.Instance.PlayAudio("PlayJumppad", audioSource);
             }
 
         }
