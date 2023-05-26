@@ -43,6 +43,7 @@ public class GemManager
         NullChack();
 
         gemSaveFile.clearTag.Add(tag);
+        Managers.Save.SaveFile(gemSaveFile, "Gem");
      
     }
 

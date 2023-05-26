@@ -24,4 +24,21 @@ namespace Class
 
     }
 
+    [System.Serializable]
+    public class ChapterSaveClass
+    {
+
+        public string chapterName;
+        public bool isLock;
+
+    }
+
+    [System.Serializable]
+    public class ChapterSaveFile
+    {
+
+        public List<ChapterSaveClass> chapterSaveClasses = new List<ChapterSaveClass>();
+
+    }
+
 }
