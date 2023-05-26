@@ -15,7 +15,7 @@ public class ChapterManager
         {
 
             chapterSaveFile = new ChapterSaveFile();
-            Managers.Save.SaveFile(chapterSaveFile, "Gem");
+            Managers.Save.SaveFile(chapterSaveFile, "Chapter");
 
         }
 
@@ -24,7 +24,7 @@ public class ChapterManager
     public void Setting()
     {
 
-        chapterSaveFile = Managers.Save.LoadFile<ChapterSaveFile>("Gem");
+        chapterSaveFile = Managers.Save.LoadFile<ChapterSaveFile>("Chapter");
 
     }
 
@@ -43,7 +43,7 @@ public class ChapterManager
         NullChack();
 
         chapterSaveFile.Clearchapter.Add(tag);
-        Managers.Save.SaveFile(chapterSaveFile, "Gem");
+        Managers.Save.SaveFile(chapterSaveFile, "Chapter");
 
     }
 
