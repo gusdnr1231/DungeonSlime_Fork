@@ -15,7 +15,9 @@ public class SpeakManager : MonoBehaviour
     [SerializeField] GameObject speakWindow;
     Camera mainCam;
     Canvas canvas;
+    PlayerJump playerJump;
     PlayerInput playerInput;
+    GameObject player;
     MapManager mapManager;
     Text text;
 
@@ -31,7 +33,9 @@ public class SpeakManager : MonoBehaviour
         window = Instantiate(speakWindow, canvas.transform).GetComponent<RectTransform>();
         Debug.Log("시바");
         text = window.GetChild(0).GetComponent<Text>();
+        playerJump = FindObjectOfType<PlayerJump>();
         playerInput = FindObjectOfType<PlayerInput>();
+        player = playerInput.gameObject;
         mapManager = FindObjectOfType<MapManager>();
         nowStage = mapManager.currentStageNum;
     }
@@ -48,20 +52,20 @@ public class SpeakManager : MonoBehaviour
 
     void WindowUp()
     {
-        Vector3 windowVec = new Vector3(transform.position.x, transform.position.y + 1, 0);
+        Vector3 windowVec = new Vector3(player.transform.position.x, player.transform.position.y + 2, 0);
         Vector3 windowPos = mainCam.WorldToScreenPoint(windowVec);
         window.position = windowPos;
-
     }
 
     void TokingEnd()
     {
-        if (speak[nowStage - 1]._peaks.Count <= speakCnt)
+        if (speak[nowStage - 1]._peaks.Count <= speakCnt && Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("게임드가자");
             canToking = false;
             playerInput.enabled = true;
-            //Destroy(window);
+            playerJump.enabled = true;
+            window.gameObject.SetActive(false);
             //게임 시작
         }
     }

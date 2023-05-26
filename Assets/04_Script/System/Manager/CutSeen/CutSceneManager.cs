@@ -13,6 +13,7 @@ public class CutSceneManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcam;
 
     private PlayerInput input;
+    private PlayerJump playerJump;
     private SpeakManager speakManager;
     private Vector3 startPos;
     private float camerSize;
@@ -25,8 +26,12 @@ public class CutSceneManager : MonoBehaviour
     public void CutSceneActive()
     {
         speakManager = FindObjectOfType<SpeakManager>();
+
         input = player.GetComponent<PlayerInput>();
+        playerJump = player.GetComponent<PlayerJump>();
         input.enabled = false;
+        playerJump.enabled = false;
+
         startPos = FindObjectOfType<CutSize>().gameObject.transform.position;
         startPos.z = -10;
         camerSize = FindObjectOfType<CutSize>().size;
