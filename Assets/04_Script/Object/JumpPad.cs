@@ -11,6 +11,15 @@ public class JumpPad : MonoBehaviour
     [SerializeField] private float bouncePower;
     [SerializeField] private bool ativeMoveable = true;
 
+    private Animator animator;
+
+    private void Awake()
+    {
+        
+        animator = GetComponent<Animator>();
+
+    }
+
     public void Jump()
     {
 
@@ -37,6 +46,12 @@ public class JumpPad : MonoBehaviour
             }
 
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        animator.SetTrigger("Jump");
+
     }
 
 #if UNITY_EDITOR

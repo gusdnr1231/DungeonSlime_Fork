@@ -390,6 +390,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   bouncePower: 4
+  hideEvt:
+    m_PersistentCalls:
+      m_Calls: []
+  bounceEvt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &53109936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,17 +996,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skell
       objectReference: {fileID: 0}
+    - target: {fileID: 1515324335, guid: 6e7a9c704ed49494c875b9e0641411da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1515324342, guid: 6e7a9c704ed49494c875b9e0641411da, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1515324342, guid: 6e7a9c704ed49494c875b9e0641411da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.178
+      value: -6.37
       objectReference: {fileID: 0}
     - target: {fileID: 1515324342, guid: 6e7a9c704ed49494c875b9e0641411da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.756
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 1515324342, guid: 6e7a9c704ed49494c875b9e0641411da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2125,7 +2135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b35f43bfde20742bf559d943a95674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPower: 0
+  jumpPower: 0
 --- !u!114 &1048718762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2696,7 +2706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1360432571
 Transform:
   m_ObjectHideFlags: 0
@@ -3066,17 +3076,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1360432580}
-    m_ColliderPaths:
-    - - X: -60000000
-        Y: -30000000
-      - X: 10000000
-        Y: -30000000
-      - X: 10000000
-        Y: 0
-      - X: -60000000
-        Y: 0
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 0.99997073, y: -3}
@@ -3558,7 +3558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b35f43bfde20742bf559d943a95674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPower: 6
+  jumpPower: 0
 --- !u!114 &1736188008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4286,11 +4286,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8823802744553566065, guid: 0ddfe02bc38372645abf890ac76c3f8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.09
+      value: 4.98
       objectReference: {fileID: 0}
     - target: {fileID: 8823802744553566065, guid: 0ddfe02bc38372645abf890ac76c3f8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: -3.35
       objectReference: {fileID: 0}
     - target: {fileID: 8823802744553566065, guid: 0ddfe02bc38372645abf890ac76c3f8d, type: 3}
       propertyPath: m_LocalPosition.z
