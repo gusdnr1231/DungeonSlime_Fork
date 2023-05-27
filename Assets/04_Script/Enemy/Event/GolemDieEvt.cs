@@ -33,13 +33,13 @@ public class GolemDieEvt : DieEvent
         if (GetComponent<DieSensor>().dieTag == "Water")
         {
 
-            FAED.Pop("GolemBlock", transform.position, Quaternion.identity);
+            FAED.Pop("GolemBlock", transform.position, Quaternion.identity).GetComponent<GolemDieBlock>().Setting();
 
         }
         else
         {
 
-            FAED.Pop("GolemBlock", transform.position, Quaternion.identity);
+            FAED.Pop("GolemBlock", transform.position, Quaternion.identity).GetComponent<GolemDieBlock>().Setting();
 
         }
 
