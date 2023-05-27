@@ -18,8 +18,10 @@ public class MapEventManager : MonoBehaviour
     public void RestartMap()
     {
 
-        LoadMap(Managers.Map.currentStageNum);
+        Managers.Map.SetCurrentStageNumber(Managers.Map.currentStageNum);
+        Managers.Map.LoadMap();
 
     }
+
 
 }
