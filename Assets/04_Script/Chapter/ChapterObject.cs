@@ -21,7 +21,7 @@ public class ChapterObject : MonoBehaviour
     private void Start()
     {
         
-        if(Managers.Chapter.ClearChack(mapKey)) 
+        if(!Managers.Chapter.ClearChack(mapKey)) 
         {
 
             lockImage.gameObject.SetActive(true);
