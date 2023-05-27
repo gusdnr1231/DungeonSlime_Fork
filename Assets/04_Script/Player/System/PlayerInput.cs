@@ -67,7 +67,7 @@ public class PlayerInput : MonoBehaviour
 
     public void JumpKeyPressExecute(bool b)
     {
-
+        
         OnJumpKeyPressEvent?.Invoke(b);
 
     }
