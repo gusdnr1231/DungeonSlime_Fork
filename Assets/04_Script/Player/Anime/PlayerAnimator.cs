@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,6 @@ public class PlayerAnimator : PlayerRoot
         SetMove();
         SetGround();
         SetYVel();
-
     }
 
     private void SetMove()

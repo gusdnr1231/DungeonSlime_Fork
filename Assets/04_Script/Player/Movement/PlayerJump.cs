@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerJump : PlayerMovementRoot
 {
-    private AudioSource audioSource;
     [SerializeField] private float JumpPower;
 
     protected override void Awake()
@@ -12,7 +11,6 @@ public class PlayerJump : PlayerMovementRoot
 
         base.Awake();
 
-        audioSource = GetComponent<AudioSource>();
         AddEvent();
 
     }
@@ -23,7 +21,6 @@ public class PlayerJump : PlayerMovementRoot
         if (groundCol.isGround == false) return;
 
         AudioManager.Instance.PlayAudio("PlayerJump", audioSource);
-        Debug.Log("»ç¿îµå");
         rigid.velocity += Vector2.up * JumpPower;
 
     }

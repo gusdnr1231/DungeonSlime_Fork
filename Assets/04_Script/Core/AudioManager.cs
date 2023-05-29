@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayBGM("IntroBGM");
+        //PlayBGM("IntroBGM");
     }
 
     public void PlayBGM(string clipName) => PlayAudio(clipName, bgmPlayer);
