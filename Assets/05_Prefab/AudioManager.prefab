@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d20180cf4413552429e09c998dfb82e0, type: 3}
   - {fileID: 8300000, guid: 6ec533034c5466f4e9b30b33fdd8c3bb, type: 3}
   - {fileID: 8300000, guid: 4717346a968657242bdf89fc23deda38, type: 3}
+  - {fileID: 8300000, guid: 7cfe3a13b52432340999dd3cb2671cf1, type: 3}
   bgmPlayer: {fileID: 7619573401262972785}
   systemPlayer: {fileID: 7619573400005990621}
 --- !u!1 &7619573400005990611

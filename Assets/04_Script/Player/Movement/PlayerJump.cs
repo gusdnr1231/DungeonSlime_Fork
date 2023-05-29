@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerJump : PlayerMovementRoot
 {
     [SerializeField] private float JumpPower;
+    public bool jumpAble { get; set; } = true;
 
     protected override void Awake()
     {
@@ -17,7 +18,7 @@ public class PlayerJump : PlayerMovementRoot
 
     private void Jump()
     {
-
+        if (jumpAble == false) return;
         if (groundCol.isGround == false) return;
 
         AudioManager.Instance.PlayAudio("PlayerJump", audioSource);

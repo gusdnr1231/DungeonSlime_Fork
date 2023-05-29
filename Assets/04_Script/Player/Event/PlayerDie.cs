@@ -11,12 +11,15 @@ public class PlayerDie : PlayerRoot
     [SerializeField] private Material paintwhiteMat;
     private Material defaultMat;
     private PlayerMove playerMove;
+    private PlayerJump playerJump;
 
     public void PlayerDieEvent()
     {
         //못 움직여
         playerMove = GetComponent<PlayerMove>();
         playerMove.moveAble = false;
+        playerJump = GetComponent<PlayerJump>();
+        playerJump.jumpAble = false;
 
         //Sound
         AudioManager.Instance.PlayAudio("PlayerDie", audioSource);
