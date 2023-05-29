@@ -22,11 +22,12 @@ public class CutSceneManager : MonoBehaviour
     {
         instance = this;
         input = player.GetComponent<PlayerInput>();
-        input.enabled = false;
     }
 
     public void CutSceneActive()
     {
+        input.enabled = false;
+
         speakManager = FindObjectOfType<SpeakManager>();
 
         startPos = FindObjectOfType<CutSize>().gameObject.transform.position;

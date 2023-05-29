@@ -31,7 +31,7 @@ public class SpeakManager : MonoBehaviour
     {
         mainCam = Camera.main;
         canvas = FindObjectOfType<Canvas>();
-        window = Instantiate(speakWindow, canvas.transform).GetComponent<RectTransform>();
+        window = Instantiate(speakWindow, canvas.transform.GetChild(0)).GetComponent<RectTransform>();
         text = window.GetChild(0).GetComponent<TextMeshProUGUI>();
         playerJump = FindObjectOfType<PlayerJump>();
         playerInput = FindObjectOfType<PlayerInput>();
@@ -74,6 +74,8 @@ public class SpeakManager : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.Space) && canToking) || speakCnt == 0)
         {
+            text.text = "";
+            StopAllCoroutines();
             StartCoroutine(Speak(speak[nowStage - 1]._peaks[speakCnt]));
             speakCnt++;
         }
