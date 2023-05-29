@@ -14,6 +14,7 @@ public class CutSceneManager : MonoBehaviour
 
     private PlayerInput input;
     private SpeakManager speakManager;
+    private Animator opendoorAnim;
     private Vector3 startPos;
     private float camerSize;
 
@@ -32,6 +33,9 @@ public class CutSceneManager : MonoBehaviour
         startPos.z = -10;
         camerSize = FindObjectOfType<CutSize>().size;
 
+        opendoorAnim = GameObject.FindWithTag("StartDoor").GetComponent<Animator>();
+        opendoorAnim.enabled = false;
+
         vcam.transform.position = startPos;
         vcam.m_Lens.OrthographicSize = camerSize;
         vcam.Follow = null;
@@ -41,12 +45,14 @@ public class CutSceneManager : MonoBehaviour
 
         FAED.InvokeDelay(() =>
         {
-            vcam.transform.DOMove(playerPos, 1);
-            DOTween.To(() => vcam.m_Lens.OrthographicSize, x => vcam.m_Lens.OrthographicSize = x, 5, 1)
-            .OnComplete(() => { 
+            vcam.transform.DOMove(playerPos, 1).OnComplete(() => {
                 vcam.Follow = player.transform;
-                speakManager.StartScritp();
-                speakManager.canToking = true;
+                DOTween.To(() => vcam.m_Lens.OrthographicSize, x => vcam.m_Lens.OrthographicSize = x, 5, 1)
+                .OnComplete(() => {
+                    opendoorAnim.enabled = true;
+                    speakManager.StartScript();
+                    speakManager.canToking = true;
+                });
             });
         }, 2f);
     }

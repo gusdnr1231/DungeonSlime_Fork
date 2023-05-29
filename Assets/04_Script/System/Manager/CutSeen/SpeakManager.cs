@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,20 +20,19 @@ public class SpeakManager : MonoBehaviour
     PlayerInput playerInput;
     GameObject player;
     MapManager mapManager;
-    Text text;
+    TextMeshProUGUI text;
 
     private RectTransform window;
     public bool canToking;
     int nowStage;
     int speakCnt;
 
-    public void StartScritp()
+    public void StartScript()
     {
         mainCam = Camera.main;
         canvas = FindObjectOfType<Canvas>();
         window = Instantiate(speakWindow, canvas.transform).GetComponent<RectTransform>();
-        Debug.Log("½Ã¹Ù");
-        text = window.GetChild(0).GetComponent<Text>();
+        text = window.GetChild(0).GetComponent<TextMeshProUGUI>();
         playerJump = FindObjectOfType<PlayerJump>();
         playerInput = FindObjectOfType<PlayerInput>();
         player = playerInput.gameObject;
