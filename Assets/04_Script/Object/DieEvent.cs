@@ -20,6 +20,19 @@ public class DieEvent : MonoBehaviour
             FAED.Push(gameObject);
 
         }
+        else
+        {
+
+            Destroy(gameObject);
+
+        }
+
+        Execute();
+
+    }
+
+    public void Execute()
+    {
 
         dieEvt?.Invoke();
         dieEvt = null;

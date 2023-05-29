@@ -21,9 +21,8 @@ public class GolemDieEvt : DieEvent
     public override void Die()
     {
 
-        base.Die();
         fsm.AddEvent();
-
+        Execute();
         animator.SetDieTrigger();
 
     }

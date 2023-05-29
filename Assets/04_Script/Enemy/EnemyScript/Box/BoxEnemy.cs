@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class BoxEnemy : EnemyRoot
 
         input.OnJumpEvent += BoxUpSkill;
         input.OnHideEvnet += BoxDownSkill;
+        StopAllCoroutines();
 
     }
 
@@ -32,13 +34,23 @@ public class BoxEnemy : EnemyRoot
 
         input.OnJumpEvent -= BoxUpSkill;
         input.OnHideEvnet -= BoxDownSkill;
+        StartCoroutine(SmallCo());
 
     }
+
+
 
     private void BoxUpSkill()
     {
 
         if (upCount == maxUpCount) return;
+
+        if (Physics2D.OverlapBox(bouncePos.transform.position + new Vector3(0, 1), new Vector2(0.8f, 1), 0, LayerMask.GetMask("Ground")))
+        {
+
+            return;
+
+        }
 
         spriteRenderer.size += new Vector2(0, 1);
         enemyCollider.size += new Vector2(0, 1);
@@ -58,6 +70,21 @@ public class BoxEnemy : EnemyRoot
         bouncePos.transform.position -= new Vector3(0, 1);
         enemyCollider.offset -= new Vector2(0, 0.5f);
         upCount--;
+
+    }
+
+    private IEnumerator SmallCo()
+    {
+
+        yield return null;
+
+        while (true) 
+        {
+
+            yield return new WaitForSeconds(1.5f);
+            BoxDownSkill();
+        
+        }
 
     }
 
