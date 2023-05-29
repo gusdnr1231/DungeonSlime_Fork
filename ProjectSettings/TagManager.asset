@@ -12,6 +12,7 @@ TagManager:
   - Trap
   - Hand
   - Enemy
+  - StartDoor
   layers:
   - Default
   - TransparentFX
