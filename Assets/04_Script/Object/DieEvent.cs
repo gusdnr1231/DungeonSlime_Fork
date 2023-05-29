@@ -18,7 +18,6 @@ public class DieEvent : MonoBehaviour
         {
 
             FAED.Push(gameObject);
-
         }
         else
         {

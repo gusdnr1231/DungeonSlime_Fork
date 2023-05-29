@@ -17,13 +17,20 @@ public class PlayerHide : PlayerRoot
     private DieSensor dieSensor;
     private List<IEventObject> playerEvent = new List<IEventObject>();
     private GameObject enemyObj;
-    private bool isHide;
     private GemObject obj;
+    private PlayerMove playerMove;
+    private PlayerJump playerJump;
+    private bool isHideAnimation;
+    private bool isHide;
 
     protected override void Awake()
     {
 
         base.Awake();
+
+        playerMove = GetComponent<PlayerMove>();
+        playerJump = GetComponent<PlayerJump>();
+
         input.OnHideEvnet += Hide;
         input.OnBounceEvent += Bounce;
         dieSensor = GetComponent<DieSensor>(); 
@@ -42,7 +49,6 @@ public class PlayerHide : PlayerRoot
 
     private void Hide()
     {
-
         if (isHide) return;
 
         RaycastHit2D hitAble = Physics2D.BoxCast(transform.position, boxRange, 0, Vector2.zero, 0, enemyLayer);
@@ -51,16 +57,39 @@ public class PlayerHide : PlayerRoot
 
         enemyObj = hitAble.transform.gameObject;
         dieSensor.dieAble = false;
+        isHideAnimation = true;
+        isHide = true;
+        // ���� �ִϸ��̼� ���
+        StartCoroutine(HideCo(hitAble));
 
+    }
 
-        foreach(var x in playerEvent)
+    IEnumerator HideCo(RaycastHit2D hitAble)
+    {
+        // ����
+        AudioManager.Instance.PlayAudio("PlayerHide", audioSource);
+
+        // �ִϸ��̼�
+        playerMove.moveAble = false;
+        playerJump.jumpAble = false;
+
+        animator.SetBool("IsHide", true);
+        animator.SetTrigger("Hide");
+        yield return new WaitForSeconds(0.4f);
+        playerMove.moveAble = true;
+        playerJump.jumpAble = true;
+
+        animator.SetBool("IsHide", false);
+        animator.ResetTrigger("Hide");
+
+        foreach (var x in playerEvent)
         {
 
             x.RemoveEvent();
 
         }
 
-        foreach(var x in hitAble.transform.GetComponents<IEventObject>())
+        foreach (var x in hitAble.transform.GetComponents<IEventObject>())
         {
 
             x.AddEvent();
@@ -70,11 +99,11 @@ public class PlayerHide : PlayerRoot
         spriteRenderer.enabled = false;
         playerCollider.enabled = false;
         rigid.gravityScale = 0;
-        
+
         rigid.velocity = Vector3.zero;
 
         var evt = enemyObj.GetComponent<DieEvent>();
-        if(evt != null) evt.dieEvt += Bounce;
+        if (evt != null) evt.dieEvt += Bounce;
 
         CameraManager.instance?.CameraTarget(enemyObj.transform.Find("BouncePos"));
 
@@ -96,12 +125,13 @@ public class PlayerHide : PlayerRoot
 
         obj.SetTarget(enemyObj.transform.Find("BouncePos"));
 
+        isHideAnimation = false;
     }
 
     private void Bounce()
     {
 
-        if(!isHide) return;
+        if(!isHide || isHideAnimation) return;
 
         var jumpPos = enemyObj.transform.Find("BouncePos");
 
