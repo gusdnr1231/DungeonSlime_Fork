@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Key : PlayerMovementRoot
 {
@@ -9,6 +10,7 @@ public class Key : PlayerMovementRoot
     Transform playerTrm;
     SpriteRenderer _spriteRender;
     BoxCollider2D _collider;
+    Rigidbody2D _playerrb;
 
     protected override void Awake()
     {
@@ -27,15 +29,22 @@ public class Key : PlayerMovementRoot
             -1 => true,
             _ => spriteRenderer.flipX
         };
-
-        transform.position = value switch
+        Vector2 targetTrm;
+        targetTrm = value switch
         {
             1 => new Vector2(playerTrm.position.x - 0.8f, playerTrm.localPosition.y + 1),
             -1 => new Vector2(playerTrm.position.x + 0.8f, playerTrm.localPosition.y + 1),
             _ => transform.position
         };
-
+        transform.DOMove(targetTrm, 1);
     }
+
+    //void UntilEndMove(Vector3 move)
+    //{
+    //    while(transform.position != move)
+    //    {
+    //    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,6 +53,7 @@ public class Key : PlayerMovementRoot
             this.transform.SetParent(collision.transform);
             _collider.enabled = false;
             updating = true;
+            _playerrb = collision.GetComponent<Rigidbody2D>();
             playerTrm = collision.GetComponent<Transform>();
             gotKey = true;
             input.OnMovementEvent += SetFlip;
