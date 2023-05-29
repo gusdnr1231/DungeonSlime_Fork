@@ -64,7 +64,7 @@ public class SpeakManager : MonoBehaviour
             Debug.Log("게임드가자");
             canToking = false;
             playerInput.enabled = true;
-            playerJump.enabled = true;
+            playerJump.AddEvent();
             window.gameObject.SetActive(false);
             //게임 시작
         }
@@ -72,7 +72,7 @@ public class SpeakManager : MonoBehaviour
 
     public void Toking()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canToking)
+        if ((Input.GetKeyDown(KeyCode.Space) && canToking) || speakCnt == 0)
         {
             StartCoroutine(Speak(speak[nowStage - 1]._peaks[speakCnt]));
             speakCnt++;
