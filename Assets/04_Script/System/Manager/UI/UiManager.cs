@@ -38,6 +38,13 @@ public class UiManager : MonoBehaviour
 
     }
 
+    public void SetUIKey(float value)
+    {
+
+        PlayerPrefs.SetFloat("UIKey", value);
+
+    }
+
     public void MoveChapterUI(bool value)
     {
 
