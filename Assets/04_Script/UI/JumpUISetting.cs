@@ -17,7 +17,7 @@ public class JumpUISetting : MonoBehaviour
     private IEnumerator Start()
     {
         yield return null;
-        image = GetComponent<Image>();
+        image = GameObject.Find("JumpIcon").GetComponent<Image>();
         door = FindObjectOfType<Door>();
 
     }
