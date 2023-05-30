@@ -16,6 +16,7 @@ public class JumpUISetting : MonoBehaviour
 
     private IEnumerator Start()
     {
+
         yield return null;
         image = GetComponent<Image>();
         door = FindObjectOfType<Door>();
