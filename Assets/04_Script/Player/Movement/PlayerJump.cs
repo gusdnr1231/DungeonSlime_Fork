@@ -12,7 +12,7 @@ public class PlayerJump : PlayerMovementRoot
 
         base.Awake();
 
-        //AddEvent();
+        AddEvent();
 
     }
 
