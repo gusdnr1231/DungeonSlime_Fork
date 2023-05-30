@@ -14,16 +14,32 @@ public class PlayerInput : MonoBehaviour
     public event Action OnBounceEvent;
     public event Action OnHideEvnet;
     public event Action OnSkillEvent;
+    public event Action OnUpdateEvent;
+
+    public bool controllAble { get; set; } = true;
 
     private void FixedUpdate()
     {
+
+        if (!controllAble) return;
 
         OnMovementEvent?.Invoke(moveValue);
 
     }
 
+    private void Update()
+    {
+
+        if (!controllAble) return;
+
+        OnUpdateEvent?.Invoke();
+
+    }
+
     public void SetMoveValue(float v)
     {
+
+        if (!controllAble) return;
 
         moveValue = v;
 
@@ -32,12 +48,16 @@ public class PlayerInput : MonoBehaviour
     public void JumpExecute()
     {
 
+        if (!controllAble) return;
+
         OnJumpEvent?.Invoke();
 
     }
 
     public void BounceExecute()
     {
+
+        if (!controllAble) return;
 
         OnBounceEvent?.Invoke();    
 
@@ -46,6 +66,8 @@ public class PlayerInput : MonoBehaviour
     public void HideExecute()
     {
 
+        if (!controllAble) return;
+
         OnHideEvnet?.Invoke();
 
     }
@@ -53,12 +75,16 @@ public class PlayerInput : MonoBehaviour
     public void SkillExecute()
     {
 
+        if (!controllAble) return;
+
         OnSkillEvent?.Invoke();
 
     }
 
     public void JumpKeyPressExecute(bool b)
     {
+
+        if (!controllAble) return;
 
         OnJumpKeyPressEvent?.Invoke(b);
 

@@ -9,6 +9,7 @@ public class UiManager : MonoBehaviour
 {
 
     [SerializeField] private RectTransform movementUI;
+    [SerializeField] private float lenght = 1920;
     private bool isMove = false;
 
     public void ChangeScene(string value)
@@ -37,11 +38,18 @@ public class UiManager : MonoBehaviour
 
     }
 
+    public void SetUIKey(float value)
+    {
+
+        PlayerPrefs.SetFloat("UIKey", value);
+
+    }
+
     public void MoveChapterUI(bool value)
     {
 
-        bool com = value ? movementUI.transform.localPosition.x >= 7680
-            : movementUI.transform.localPosition.x <= -7680;
+        bool com = value ? movementUI.transform.localPosition.x >= lenght
+            : movementUI.transform.localPosition.x <= -lenght;
         if (isMove || com) return;
 
         Vector3 vel = value ? new Vector2(1920, 0) : new Vector2(-1920, 0); 

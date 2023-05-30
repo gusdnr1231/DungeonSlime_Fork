@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea24cbf76c61cc4fab1aea7520a8779, type: 3}
   m_Name: ProjectSetting
   m_EditorClassIdentifier: 
-  isKeyboard: 1
+  isKeyboard: 0

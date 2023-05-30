@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextState: 
-  maxRange: 2
+  boxRange: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &560290720858024821
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +212,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextState: 
-  maxRange: 2
+  boxRange: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &2303253583554133998
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-  - Thorn
+  - Trap
   dieEvent:
     m_PersistentCalls:
       m_Calls: []

@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FD.Dev;
+using JetBrains.Annotations;
 
 public class BreakBlock : MonoBehaviour
 {
     [SerializeField] private Vector2 size, pos;
-    //[SerializeField] private ParticleSystem particle;
+    private SpriteRenderer sp;
+    private BoxCollider2D boxCol;
+    private ParticleSystem particle;
     bool foot = false, isInvoked;
+
+    private void Awake()
+    {
+        sp = gameObject.GetComponent<SpriteRenderer>();
+        boxCol = gameObject.GetComponent<BoxCollider2D>();
+        particle = transform.parent.GetChild(1).GetComponent<ParticleSystem>();
+    }
 
     private void Update()
     {
@@ -17,12 +27,34 @@ public class BreakBlock : MonoBehaviour
 
             if (foot) return;
             foot = true;
+            StartCoroutine(ColorA());
             FAED.InvokeDelay(() => {
-
-                gameObject.SetActive(false);
-            }, 3f);
+                StartCoroutine(ReActive());
+            }, 1f);
 
         }
+    }
+
+    IEnumerator ColorA()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            sp.color = new Color(1, 1, 1, 0.5f);
+            yield return new WaitForSeconds(0.15f);
+            sp.color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(0.15f);
+        }
+    }
+
+    IEnumerator ReActive()
+    {
+        sp.enabled = false;
+        boxCol.enabled = false;
+        particle.Play();
+        yield return new WaitForSeconds(6);
+        sp.enabled = true;
+        boxCol.enabled = true;
+        foot = false;
     }
 
 

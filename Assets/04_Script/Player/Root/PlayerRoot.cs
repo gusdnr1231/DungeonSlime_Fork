@@ -11,6 +11,7 @@ public class PlayerRoot : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     protected BoxCollider2D playerCollider;
     protected Animator animator;
+    protected AudioSource audioSource;
 
     protected virtual void Awake()
     {
@@ -20,6 +21,7 @@ public class PlayerRoot : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerCollider = GetComponent<BoxCollider2D>();
         groundCol = GetComponentInChildren<GroundCol>();
+        audioSource = GetComponent<AudioSource>();
 
         input = FindObjectOfType<PlayerInput>();
 

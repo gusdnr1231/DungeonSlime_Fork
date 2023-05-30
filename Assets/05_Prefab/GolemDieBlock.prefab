@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7400148983482625457}
   - component: {fileID: 7412421348549598350}
   - component: {fileID: 8635165320431083473}
+  - component: {fileID: 4641997598132457708}
+  - component: {fileID: 1843288225}
   m_Layer: 0
   m_Name: GolemDieBlock
   m_TagString: Untagged
@@ -111,3 +113,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5498917, y: 1.0726514}
   m_EdgeRadius: 0
+--- !u!114 &4641997598132457708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302938134848234102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7a41ebec9c8844c931695578e44b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1843288225
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302938134848234102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2ece09d5d0c21140a7e572592c5fcf9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

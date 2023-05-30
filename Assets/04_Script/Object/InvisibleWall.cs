@@ -81,6 +81,8 @@ public class InvisibleWall : MonoBehaviour
             oldC = new Color(oldC.r, oldC.g, oldC.b,
                 oldC.a + dessolvePower * Time.deltaTime);
 
+            oldC = new Color(oldC.r, oldC.g, oldC.b,
+                Mathf.Clamp(oldC.a, alphaClamp, 1));
             tilemapRenderer.material.color = oldC;
 
 

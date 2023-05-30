@@ -11,6 +11,8 @@ TagManager:
   - Scale
   - Trap
   - Hand
+  - Enemy
+  - StartDoor
   - Key
   layers:
   - Default
@@ -24,8 +26,8 @@ TagManager:
   - Pipe
   - Hand
   - CameraRange
-  - 
-  - 
+  - Gem
+  - GroundCol
   - 
   - 
   - 

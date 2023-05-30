@@ -6,7 +6,20 @@ using UnityEngine.SceneManagement;
 public class MapManager : MonoBehaviour
 {
 
-    public int currentStageNum { get; private set; } = 1;
+    [SerializeField] private bool isTesting = false;
+    [field:SerializeField] public int currentStageNum { get; private set; } = 1;
+
+    private void Awake()
+    {
+        
+        if(isTesting) 
+        {
+
+            CreateStage();
+
+        }
+
+    }
 
     public void SetCurrentStageNumber(int number)
     {
@@ -39,7 +52,12 @@ public class MapManager : MonoBehaviour
         var player = GameObject.Find("Player");
         CameraManager.instance.SetCof(map.cameraLockZone);
         player.transform.position = map.StartPos.position;
-
+        CutSceneManager.instance?.CutSceneActive();
+        if (PlayerPrefs.GetInt("StageStart") == 1)
+        {
+            PlayerPrefs.SetInt("StageStart", 0);
+            CutSceneManager.instance.CutSceneActive();
+        }
     }
 
     public void RestartMap()

@@ -10,6 +10,16 @@ public class JumpPad : MonoBehaviour
     [SerializeField] private Vector2 posVector, size, ofs;
     [SerializeField] private float bouncePower;
     [SerializeField] private bool ativeMoveable = true;
+    [SerializeField] private AudioSource audioSource;
+
+    private Animator animator;
+
+    private void Awake()
+    {
+        
+        animator = GetComponent<Animator>();
+
+    }
 
     public void Jump()
     {
@@ -33,10 +43,16 @@ public class JumpPad : MonoBehaviour
                 }
 
                 v.GetComponent<Rigidbody2D>().velocity += posVector * bouncePower;
-
+                AudioManager.Instance.PlayAudio("PlayJumppad", audioSource);
             }
 
         }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        animator.SetTrigger("Jump");
+
     }
 
 #if UNITY_EDITOR

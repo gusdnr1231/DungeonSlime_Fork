@@ -21,9 +21,8 @@ public class GolemDieEvt : DieEvent
     public override void Die()
     {
 
-        base.Die();
         fsm.AddEvent();
-
+        Execute();
         animator.SetDieTrigger();
 
     }
@@ -34,13 +33,13 @@ public class GolemDieEvt : DieEvent
         if (GetComponent<DieSensor>().dieTag == "Water")
         {
 
-            FAED.Pop("GolemBlock", transform.position, Quaternion.identity);
+            FAED.Pop("GolemBlock", transform.position, Quaternion.identity).GetComponent<GolemDieBlock>().Setting();
 
         }
         else
         {
 
-            FAED.Pop("GolemBlock", transform.position, Quaternion.identity);
+            FAED.Pop("GolemBlock", transform.position, Quaternion.identity).GetComponent<GolemDieBlock>().Setting();
 
         }
 
