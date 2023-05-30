@@ -11,8 +11,6 @@ public class KeyBlock : MonoBehaviour
     public List<Vector3Int> cellCollisions;
     Tilemap tilemap;
 
-    BoxCollider2D _boxcollider;
-
     [SerializeField]
     float delayTime = 0.5f;
     [SerializeField]
@@ -21,7 +19,6 @@ public class KeyBlock : MonoBehaviour
     private void Awake()
     {
         tilemap = GetComponent<Tilemap>();
-        _boxcollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
 
     private void Start()
@@ -84,17 +81,9 @@ public class KeyBlock : MonoBehaviour
                 return;
             if (_key.gotKey)
             {
-                Debug.Log(1);
-                Vector3Int gridPosition = tilemap.WorldToCell(collision.transform.position);
-                foreach(var collpos in cellCollisions)
-                {
-                    Debug.Log(2);
-                    if (collpos == gridPosition)
-                    {
-                        Debug.Log(3);
-                        StartCoroutine(deleteTile());
-                    }
-                }
+                Debug.Log(collision.contactCount);
+                if (collision.contactCount == 2)
+                    StartCoroutine(deleteTile());
             }
         }
     }
