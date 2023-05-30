@@ -45,8 +45,9 @@ public class SpeakManager : MonoBehaviour
         if (canToking)
         {
             WindowUp();
-            TokingEnd();
-            Toking();
+
+            if (speakCnt == 0)
+                Toking();
         }
     }
 
@@ -57,9 +58,9 @@ public class SpeakManager : MonoBehaviour
         window.position = windowPos;
     }
 
-    void TokingEnd()
+    public void TokingEnd()
     {
-        if (speak[nowStage - 1]._peaks.Count <= speakCnt && Input.GetKeyDown(KeyCode.Space))
+        if (speak[nowStage - 1]._peaks.Count <= speakCnt)
         {
             Debug.Log("게임드가자");
             canToking = false;
@@ -72,7 +73,7 @@ public class SpeakManager : MonoBehaviour
 
     public void Toking()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) && canToking) || speakCnt == 0)
+        if (canToking)
         {
             text.text = "";
             StopAllCoroutines();

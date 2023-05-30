@@ -9,13 +9,14 @@ public class BreakBlock : MonoBehaviour
     [SerializeField] private Vector2 size, pos;
     private SpriteRenderer sp;
     private BoxCollider2D boxCol;
-    //[SerializeField] private ParticleSystem particle;
+    private ParticleSystem particle;
     bool foot = false, isInvoked;
 
     private void Awake()
     {
         sp = gameObject.GetComponent<SpriteRenderer>();
         boxCol = gameObject.GetComponent<BoxCollider2D>();
+        particle = transform.parent.GetChild(1).GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -49,7 +50,8 @@ public class BreakBlock : MonoBehaviour
     {
         sp.enabled = false;
         boxCol.enabled = false;
-        yield return new WaitForSeconds(3);
+        particle.Play();
+        yield return new WaitForSeconds(6);
         sp.enabled = true;
         boxCol.enabled = true;
         foot = false;
