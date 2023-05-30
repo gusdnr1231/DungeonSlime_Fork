@@ -10,7 +10,7 @@ public class FadeUI : MonoBehaviour
 {
 
     [SerializeField] private float fadeTime;
-    [SerializeField] private UnityEvent inEvt, outEvt;
+    [SerializeField] private UnityEvent ftsEvt, inEvt, outEvt;
     [SerializeField] private bool startFadeOut;
     private Image image;
 
@@ -37,10 +37,14 @@ public class FadeUI : MonoBehaviour
     {
 
         image.DOFade(1, fadeTime).OnComplete(() =>
-        {
-
-            inEvt?.Invoke();
-
+        {   
+            if (PlayerPrefs.GetInt("FirstStart") == 1)
+                inEvt?.Invoke();
+            else
+            {
+                PlayerPrefs.SetInt("FirstStart", 1);
+                ftsEvt?.Invoke();
+            }
         });
 
     }

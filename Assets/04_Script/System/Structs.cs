@@ -23,4 +23,12 @@ namespace Struct
         [field:SerializeField] public float jumpPower { get; private set; }
 
     }
+
+    [System.Serializable]
+    public struct SaveData
+    {
+
+        
+    }
+
 }

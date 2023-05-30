@@ -29,7 +29,7 @@ namespace Class
     {
 
         public List<string> Clearchapter = new List<string>();
-
+        
     }
 
 }

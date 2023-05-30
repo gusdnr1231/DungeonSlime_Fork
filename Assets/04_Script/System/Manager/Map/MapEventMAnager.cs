@@ -8,7 +8,7 @@ public class MapEventManager : MonoBehaviour
     
     public void LoadMap(int count)
     {
-
+        PlayerPrefs.SetInt("StageStart", 1);
         Managers.Map.SetCurrentStageNumber(count);
         PlayerPrefs.SetString("NextScene", "StartLoadingMap");
         SceneManager.LoadScene("Loading");

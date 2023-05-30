@@ -31,7 +31,7 @@ public class SpeakManager : MonoBehaviour
     {
         mainCam = Camera.main;
         canvas = FindObjectOfType<Canvas>();
-        window = Instantiate(speakWindow, canvas.transform).GetComponent<RectTransform>();
+        window = Instantiate(speakWindow, canvas.transform.GetChild(0)).GetComponent<RectTransform>();
         text = window.GetChild(0).GetComponent<TextMeshProUGUI>();
         playerJump = FindObjectOfType<PlayerJump>();
         playerInput = FindObjectOfType<PlayerInput>();
@@ -45,8 +45,9 @@ public class SpeakManager : MonoBehaviour
         if (canToking)
         {
             WindowUp();
-            TokingEnd();
-            Toking();
+
+            if (speakCnt == 0)
+                Toking();
         }
     }
 
@@ -57,9 +58,9 @@ public class SpeakManager : MonoBehaviour
         window.position = windowPos;
     }
 
-    void TokingEnd()
+    public void TokingEnd()
     {
-        if (speak[nowStage - 1]._peaks.Count <= speakCnt && Input.GetKeyDown(KeyCode.Space))
+        if (speak[nowStage - 1]._peaks.Count <= speakCnt)
         {
             Debug.Log("게임드가자");
             canToking = false;
@@ -72,8 +73,10 @@ public class SpeakManager : MonoBehaviour
 
     public void Toking()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) && canToking) || speakCnt == 0)
+        if (canToking)
         {
+            text.text = "";
+            StopAllCoroutines();
             StartCoroutine(Speak(speak[nowStage - 1]._peaks[speakCnt]));
             speakCnt++;
         }

@@ -8,9 +8,13 @@ public class IntroCutSceneManager : MonoBehaviour
 {
     [SerializeField] private Text text;
     [SerializeField] List<string> story;
+    ScenePanelManager scenePanelManager;
 
     private void Start()
     {
+        scenePanelManager = FindObjectOfType<ScenePanelManager>();
+        scenePanelManager.InScene();
+
         StartCoroutine(Read());
     }
 
@@ -26,7 +30,6 @@ public class IntroCutSceneManager : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
-        text.text = "";
-
+        scenePanelManager.OutScene();
     }
 }

@@ -53,6 +53,11 @@ public class MapManager : MonoBehaviour
         CameraManager.instance.SetCof(map.cameraLockZone);
         player.transform.position = map.StartPos.position;
         CutSceneManager.instance?.CutSceneActive();
+        if (PlayerPrefs.GetInt("StageStart") == 1)
+        {
+            PlayerPrefs.SetInt("StageStart", 0);
+            CutSceneManager.instance.CutSceneActive();
+        }
     }
 
     public void RestartMap()
