@@ -16,6 +16,8 @@ public class KeyBlock : MonoBehaviour
     [SerializeField]
     Vector3 Startpos;
 
+    public void Delete() => StartCoroutine(deleteTile());
+
     private void Awake()
     {
         tilemap = GetComponent<Tilemap>();
@@ -72,20 +74,4 @@ public class KeyBlock : MonoBehaviour
         }
         cellPositions.Clear();
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            if (!collision.transform.Find("Key").TryGetComponent<Key>(out _key))
-                return;
-            if (_key.gotKey)
-            {
-                Debug.Log(collision.contactCount);
-                if (collision.contactCount == 2)
-                    StartCoroutine(deleteTile());
-            }
-        }
-    }
-
 }
