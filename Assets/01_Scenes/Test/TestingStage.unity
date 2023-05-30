@@ -2024,6 +2024,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 0.5
+  ftsEvt:
+    m_PersistentCalls:
+      m_Calls: []
   inEvt:
     m_PersistentCalls:
       m_Calls:
@@ -3219,7 +3222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTesting: 1
-  <currentStageNum>k__BackingField: 1
+  <currentStageNum>k__BackingField: 5
 --- !u!4 &1592080938
 Transform:
   m_ObjectHideFlags: 0

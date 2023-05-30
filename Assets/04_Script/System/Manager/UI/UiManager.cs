@@ -10,11 +10,18 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] private RectTransform movementUI;
     [SerializeField] private float lenght = 1920;
+    private AudioSource audioSource;
     private bool isMove = false;
+
+    private void Awake()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+    }
 
     public void ChangeScene(string value)
     {
 
+        audioSource.Play();
         SceneManager.LoadScene(value);
 
     }
@@ -22,6 +29,7 @@ public class UiManager : MonoBehaviour
     public void ExitGame()
     {
 
+        audioSource.Play();
 #if UNITY_EDITOR
 
         UnityEditor.EditorApplication.isPlaying = false;
@@ -34,6 +42,7 @@ public class UiManager : MonoBehaviour
     public void SetNextScene(string value)
     {
 
+        audioSource.Play();
         PlayerPrefs.SetString("NextScene", value);
 
     }
@@ -41,6 +50,7 @@ public class UiManager : MonoBehaviour
     public void SetUIKey(float value)
     {
 
+        audioSource.Play();
         PlayerPrefs.SetFloat("UIKey", value);
 
     }
@@ -55,6 +65,8 @@ public class UiManager : MonoBehaviour
         Vector3 vel = value ? new Vector2(1920, 0) : new Vector2(-1920, 0); 
 
         isMove = true;
+
+        audioSource.Play();
 
         movementUI.transform.DOLocalMove(movementUI.transform.localPosition + vel, 0.5f)
         .OnComplete(() =>
