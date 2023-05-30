@@ -21,6 +21,9 @@ public class KeyCollBlock : MonoBehaviour
             if (_key.gotKey)
             {
                 _block.Delete();
+                //이것도 이펙트 소환
+                Destroy(_key.gameObject);
+                Destroy(this.gameObject);
             }
         }
     }
