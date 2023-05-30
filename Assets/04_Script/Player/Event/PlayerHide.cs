@@ -8,7 +8,6 @@ using UnityEngine.Events;
 public class PlayerHide : PlayerRoot
 {
 
-    [SerializeField] private GameObject rangeArrow;
     [SerializeField] private Vector2 boxRange;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float bouncePower;
@@ -38,11 +37,6 @@ public class PlayerHide : PlayerRoot
 
         playerEvent = GetComponents<IEventObject>().ToList();
 
-    }
-
-    private void Update()
-    {
-        HideArrow();
     }
 
     private IEnumerator Start()
@@ -132,13 +126,6 @@ public class PlayerHide : PlayerRoot
         obj.SetTarget(enemyObj.transform.Find("BouncePos"));
 
         isHideAnimation = false;
-    }
-
-    private void HideArrow()
-    {
-        RaycastHit2D hitAble = Physics2D.BoxCast(transform.position, boxRange, 0,
-            Vector2.zero, 0, enemyLayer);
-        rangeArrow.SetActive(hitAble);
     }
 
     private void Bounce()
