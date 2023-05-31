@@ -17,7 +17,7 @@ public class SpeakManager : MonoBehaviour
     Camera mainCam;
     Canvas canvas;
     PlayerJump playerJump;
-    PlayerInput playerInput;
+    PlayerMove playerMove;
     GameObject player;
     MapManager mapManager;
     TextMeshProUGUI text;
@@ -34,8 +34,8 @@ public class SpeakManager : MonoBehaviour
         window = Instantiate(speakWindow, canvas.transform.GetChild(0)).GetComponent<RectTransform>();
         text = window.GetChild(0).GetComponent<TextMeshProUGUI>();
         playerJump = FindObjectOfType<PlayerJump>();
-        playerInput = FindObjectOfType<PlayerInput>();
-        player = playerInput.gameObject;
+        playerMove = FindObjectOfType<PlayerMove>();
+        player = playerMove.gameObject;
         mapManager = FindObjectOfType<MapManager>();
         nowStage = mapManager.currentStageNum;
     }
@@ -60,11 +60,12 @@ public class SpeakManager : MonoBehaviour
 
     public void TokingEnd()
     {
-        if (speak[nowStage - 1]._peaks.Count <= speakCnt)
+        if (speak[nowStage - 1]._peaks.Count <= speakCnt && canToking)
         {
+            canToking = false;
             Debug.Log("게임드가자");
             canToking = false;
-            playerInput.enabled = true;
+            playerMove.moveAble = true;
             playerJump.AddEvent();
             window.gameObject.SetActive(false);
             //게임 시작

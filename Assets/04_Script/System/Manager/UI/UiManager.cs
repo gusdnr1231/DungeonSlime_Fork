@@ -10,7 +10,13 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] private RectTransform movementUI;
     [SerializeField] private float lenght = 1920;
+    private AudioSource audioSource;
     private bool isMove = false;
+
+    private void Awake()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+    }
 
     public void ChangeScene(string value)
     {
@@ -63,6 +69,13 @@ public class UiManager : MonoBehaviour
             isMove = false;
 
         });
+
+    }
+
+    public void SoundEffect()
+    {
+
+        audioSource.Play();
 
     }
 

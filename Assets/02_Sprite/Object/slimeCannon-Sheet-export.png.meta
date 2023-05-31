@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,30 +101,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -134,17 +110,17 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.515, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6467c2ac25b78b4689eeb9cfafdc0f0
-      internalID: 549404974
+      spriteID: adcebf786589ce14c88fff9d34c0f9d7
+      internalID: 749846491
       vertices: []
       indices: 
       edges: []
@@ -153,19 +129,19 @@ TextureImporter:
       name: slimeCannon-Sheet-export_1
       rect:
         serializedVersion: 2
-        x: 150
+        x: 32
         y: 0
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.51, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac4b04619431cec4a8b240b9e3113bb2
-      internalID: 540613503
+      spriteID: d6c1cfa6129260e47b12096ba99d1ca1
+      internalID: 656395945
       vertices: []
       indices: 
       edges: []
@@ -181,8 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      slimeCannon-Sheet-export_0: 549404974
-      slimeCannon-Sheet-export_1: 540613503
+      slimeCannon-Sheet-export_0: 749846491
+      slimeCannon-Sheet-export_1: 656395945
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

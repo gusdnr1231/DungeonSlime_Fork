@@ -1,9 +1,9 @@
 using Interface;
-using Struct;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using FD.Dev;
+using FD.Program.Managers;
+using FD.Program.Core;
 
 public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
 {
@@ -16,18 +16,20 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
 
     public bool moveAble { get; set; } = true;
 
+    private Vector3 particleOffset = new Vector3(0.35f, 0, 0);
+    private float moveParticleCycleTime = 0.5f;
+    private float currentTime = 0f;
+
     protected override void Awake()
     {
 
         base.Awake();
 
         AddEvent();
-
     }
 
     private void Move(float value)
     {
-
         if (!moveAble) return;
 
         if(value == 0) addMoveSpeed = 1;
@@ -48,6 +50,7 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
     {
         
         input.OnMovementEvent += Move;
+        input.OnMovementEvent += MoveParticle;
 
     }
 
@@ -56,6 +59,26 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
 
         input.OnMovementEvent -= Move;
 
+    }
+
+    private void MoveParticle(float value)
+    {
+        if (!moveAble) return;
+        if (groundCol.isGround == false) return;
+        if (value == 0) return;
+
+        Vector2 particlePos = transform.position + ((spriteRenderer.flipX) ? -particleOffset : particleOffset);
+
+        currentTime += Time.deltaTime;
+        if(currentTime >= moveParticleCycleTime)
+        {
+            currentTime = 0f;
+            GameObject obj = FAED.Pop("MoveParticle", particlePos, Quaternion.identity);
+            FAED.InvokeDelay(() =>
+            {
+                FAED.Push(obj);
+            }, 0.5f);
+        }
     }
 
     IEnumerator SetMoveAbleToVelCo()

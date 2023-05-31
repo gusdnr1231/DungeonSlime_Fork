@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 497462884910509603}
   - component: {fileID: 3083171453059528457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: VcamPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edda2f6cdddbfe488082dd9e55a99bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 9.5
+  size: 7.8

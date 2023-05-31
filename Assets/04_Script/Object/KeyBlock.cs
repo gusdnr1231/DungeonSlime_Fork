@@ -66,6 +66,11 @@ public class KeyBlock : MonoBehaviour
 
     public IEnumerator deleteTile()
     {
+        for (int i = 0; i < cellCollisions.Count; i++)
+        {
+            tilemap.SetTile(cellCollisions[i], null);
+        }
+
         for (int i = 0; i<cellPositions.Count;i++)
         {
             yield return new WaitForSeconds(delayTime);

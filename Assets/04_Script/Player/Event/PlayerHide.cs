@@ -56,6 +56,7 @@ public class PlayerHide : PlayerRoot
         if (hitAble == false) return;
 
         enemyObj = hitAble.transform.gameObject;
+        enemyObj.transform.GetChild(0).gameObject.SetActive(false);
         dieSensor.dieAble = false;
         isHideAnimation = true;
         isHide = true;
@@ -123,7 +124,7 @@ public class PlayerHide : PlayerRoot
 
         }
 
-        obj.SetTarget(enemyObj.transform.Find("BouncePos"));
+        obj?.SetTarget(enemyObj.transform.Find("BouncePos"));
 
         isHideAnimation = false;
     }
@@ -154,6 +155,8 @@ public class PlayerHide : PlayerRoot
 
         }
 
+        enemyObj.transform.GetChild(0).gameObject.SetActive(true);
+
         spriteRenderer.enabled = true;
         playerCollider.enabled = true;
         rigid.gravityScale = 1;
@@ -174,7 +177,7 @@ public class PlayerHide : PlayerRoot
 
         bounceEvt?.Invoke();
 
-        obj.SetTarget(transform);
+        obj?.SetTarget(transform);
 
     }
 

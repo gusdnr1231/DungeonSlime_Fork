@@ -16,3 +16,6 @@ MonoBehaviour:
   - poolName: GolemBlock
     poolObj: {fileID: 6302938134848234102, guid: 3b9cf5c2ce682e445bb31d4fda24299e, type: 3}
     poolSize: 10
+  - poolName: MoveParticle
+    poolObj: {fileID: 7444011689043019563, guid: e072f3c6a7bf34649aed528541c1dc08, type: 3}
+    poolSize: 20
