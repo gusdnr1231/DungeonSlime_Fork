@@ -20,7 +20,7 @@ public class GolemAnimator : MonoBehaviour
     private void Update()
     {
 
-        animator.SetBool("R", Mathf.Abs(rigid.velocity.x) > 0);
+        animator.SetBool("R", Mathf.Abs(rigid.velocity.x) <= 0);
 
     }
 
