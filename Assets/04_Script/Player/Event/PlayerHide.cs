@@ -136,7 +136,7 @@ public class PlayerHide : PlayerRoot
 
         var jumpPos = enemyObj.transform.Find("BouncePos");
 
-        if(Physics2D.OverlapBox(jumpPos.position + new Vector3(0, 1), new Vector2(0.8f, 1), 0, LayerMask.GetMask("Ground"))) 
+        if(Physics2D.OverlapBox(jumpPos.position + new Vector3(0, 1), new Vector2(1f, 1), 0, LayerMask.GetMask("Ground"))) 
         {
 
             return;

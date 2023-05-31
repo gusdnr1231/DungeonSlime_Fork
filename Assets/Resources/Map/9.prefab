@@ -15262,6 +15262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8a883c71146b74e8e8d96f17b41edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clearAbleTag:
+  - Player
   clearEvent:
     m_PersistentCalls:
       m_Calls:
@@ -15277,8 +15279,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  clearAbleTag:
-  - Player
 --- !u!114 &5539418316243469363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18175,7 +18175,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
