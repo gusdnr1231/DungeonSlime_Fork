@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: Assets/01_Scenes/Play/Loading.unity
     guid: 236ef6882b7bb96479347ea8e7c125ff
   - enabled: 1
-    path: Assets/01_Scenes/Play/SelectStage/SelectStage1.unity
+    path: Assets/01_Scenes/Test/SelectStage/SelectStage1.unity
     guid: 5ea19fdaf028f084fb7b53e1659c3410
   - enabled: 1
-    path: Assets/01_Scenes/Play/SelectStage/TutorialSelect.unity
+    path: Assets/01_Scenes/Test/SelectStage/TutorialSelect.unity
     guid: 9e3fb0f35e5a4a7458ec71c1094f6f8f
   - enabled: 1
     path: Assets/01_Scenes/Test/SystemTest/TestStory.unity
