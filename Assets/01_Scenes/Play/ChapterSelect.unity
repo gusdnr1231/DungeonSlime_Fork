@@ -502,6 +502,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 0.3
+  ftsEvt:
+    m_PersistentCalls:
+      m_Calls: []
   inEvt:
     m_PersistentCalls:
       m_Calls: []
