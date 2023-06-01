@@ -7,6 +7,7 @@ public class JumpPad : MonoBehaviour
 {
 
     [SerializeField] private List<string> jumpAbleTag = new List<string>();
+    [SerializeField] private LayerMask layerMask;
     [SerializeField] private Vector2 posVector, size, ofs;
     [SerializeField] private float bouncePower;
     [SerializeField] private bool ativeMoveable = true;
@@ -24,7 +25,7 @@ public class JumpPad : MonoBehaviour
     public void Jump()
     {
 
-        var v = Physics2D.OverlapBox(transform.position + (Vector3)ofs, size, 0, LayerMask.GetMask("Player"));
+        var v = Physics2D.OverlapBox(transform.position + (Vector3)ofs, size, 0, layerMask);
 
         if (v == null) return;
 
