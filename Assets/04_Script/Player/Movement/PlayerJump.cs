@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerJump : PlayerMovementRoot
 {
     [SerializeField] private float JumpPower;
+    [SerializeField] private float DoubleJumpPower;
     public bool jumpAble { get; set; } = true;
+
+    public bool canDoubleJump = true;
 
     protected override void Awake()
     {
@@ -19,10 +22,21 @@ public class PlayerJump : PlayerMovementRoot
     private void Jump()
     {
         if (jumpAble == false) return;
-        if (groundCol.isGround == false) return;
+        if (groundCol.isGround == false && canDoubleJump == false) return;
 
         AudioManager.Instance.PlayAudio("PlayerJump", audioSource);
-        rigid.velocity += Vector2.up * JumpPower;
+        if (groundCol.isGround == true)
+        {
+            rigid.velocity += Vector2.up * JumpPower;
+            canDoubleJump = true;
+        }
+        else if (canDoubleJump == true)
+        {
+            rigid.velocity = new Vector2(rigid.velocity.x, DoubleJumpPower);
+            canDoubleJump = false;
+        }
+
+        
 
     }
 
