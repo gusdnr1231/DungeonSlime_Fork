@@ -24,7 +24,7 @@ public class JumpPad : MonoBehaviour
     public void Jump()
     {
 
-        var v = Physics2D.OverlapBox(transform.position + (Vector3)ofs, size, 0);
+        var v = Physics2D.OverlapBox(transform.position + (Vector3)ofs, size, 0, LayerMask.GetMask("Player"));
 
         if (v == null) return;
 
