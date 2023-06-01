@@ -3128,6 +3128,7 @@ MonoBehaviour:
   - {x: -5, y: 10, z: 0}
   - {x: -5, y: 11, z: 0}
   - {x: -5, y: 12, z: 0}
+  particle: {fileID: 2559080111147976892, guid: 320fbb25650d2aa4db1c6972dc962e62, type: 3}
   delayTime: 0.5
   Startpos: {x: -4, y: 12, z: 0}
 --- !u!1 &782829146
