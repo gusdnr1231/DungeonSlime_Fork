@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6064206877635472723}
   - component: {fileID: 8307803034376003442}
   - component: {fileID: 4682505411419107173}
+  - component: {fileID: 1134665139}
   m_Layer: 3
   m_Name: Bird
   m_TagString: Untagged
@@ -133,7 +134,7 @@ Animator:
   m_GameObject: {fileID: 2970593168664154617}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ade96a684b69c64988c2669c10fb41a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -156,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd77c45d47ab5d94f8d8c289d2c7aa73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 3
   increseMoveSpeed: 0
   maxMoveSpeed: 0
 --- !u!114 &6064206877635472723
@@ -192,7 +193,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4682505411419107173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -219,6 +220,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1134665139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2970593168664154617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c183a943139454ca330865de9a356f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jummpPower: 3
 --- !u!1 &8101359434070200651
 GameObject:
   m_ObjectHideFlags: 0
