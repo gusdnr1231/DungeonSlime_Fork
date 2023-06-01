@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 2044025760}
   - component: {fileID: 2044025759}
   - component: {fileID: 2044025758}
+  - component: {fileID: 7359589791976466865}
   m_Layer: 3
   m_Name: SkellHel
   m_TagString: Untagged
@@ -515,6 +516,24 @@ MonoBehaviour:
     - {fileID: 251108004}
   data: {fileID: 11400000, guid: 1f73045765d14f34cab771ac88e872e6, type: 2}
   firstState: {fileID: 1156081934}
+--- !u!114 &7359589791976466865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044025757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4dcdaa36d090e46aaeaf2aef33f35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Trap
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  useIsDie: 1
 --- !u!1 &8830966648984239747
 GameObject:
   m_ObjectHideFlags: 0
