@@ -102,6 +102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpAbleTag:
   - Player
+  - Enemy
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 136
   posVector: {x: 0, y: 1}
   size: {x: 1, y: 1}
   ofs: {x: 0, y: 0}
