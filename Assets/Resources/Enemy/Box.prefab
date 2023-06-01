@@ -249,7 +249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - Die
-  - Trap
   dieEvent:
     m_PersistentCalls:
       m_Calls:
