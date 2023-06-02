@@ -52,6 +52,7 @@ public class MapManager : MonoBehaviour
         var player = GameObject.Find("Player");
         CameraManager.instance.SetCof(map.cameraLockZone);
         player.transform.position = map.StartPos.position;
+        Debug.Log(PlayerPrefs.GetInt("StageStart"));
         if (PlayerPrefs.GetInt("StageStart") == 1)
         {
             PlayerPrefs.SetInt("StageStart", 0);

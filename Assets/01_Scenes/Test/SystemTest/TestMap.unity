@@ -322,6 +322,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   startFadeOut: 1
+  rectTrs2: {fileID: 0}
+  rectTrs3: {fileID: 0}
 --- !u!114 &260162793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2143,67 +2145,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &1002026645
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676711272126887042, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8809561578589966414, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: particle
-      value: 
-      objectReference: {fileID: 2559080111147976892, guid: 320fbb25650d2aa4db1c6972dc962e62, type: 3}
-    - target: {fileID: 8905005033522992369, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
-      propertyPath: m_Name
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 223253e772a5a4e488a8633a3b64d4eb, type: 3}
 --- !u!1 &1021733407
 GameObject:
   m_ObjectHideFlags: 0
@@ -3682,19 +3623,7 @@ MonoBehaviour:
   - Enemy
   dieEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 260162792}
-        m_TargetAssemblyTypeName: FadeUI, Assembly-CSharp
-        m_MethodName: FadeIn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   useIsDie: 1
 --- !u!114 &1932782185
 MonoBehaviour:
@@ -3883,6 +3812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpPower: 7
+  DoubleJumpPower: 0
+  canDoubleJump: 1
 --- !u!114 &1932782192
 MonoBehaviour:
   m_ObjectHideFlags: 0
