@@ -15,7 +15,7 @@ public class SpiderEnemy : EnemyRoot
 
     private void WallSide(float value)
     {
-        if (Physics2D.BoxCast(transform.position + (Vector3)pos, size, 0, Vector2.zero, 0,LayerMask.GetMask("Ground")))
+        if (Physics2D.BoxCast(transform.position + (Vector3)pos, size, 0, Vector2.zero, 0,LayerMask.GetMask("Ground", "Enemy")))
         {
             if (value != 0)
             {

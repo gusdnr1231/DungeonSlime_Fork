@@ -16,6 +16,7 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
 
     public bool moveAble { get; set; } = true;
 
+    PlayerHide playerHide;
     private Vector3 particleOffset = new Vector3(0.35f, 0, 0);
     private float moveParticleCycleTime = 0.5f;
     private float currentTime = 0f;
@@ -25,6 +26,7 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
 
         base.Awake();
 
+        playerHide = GetComponent<PlayerHide>();
         AddEvent();
     }
 
@@ -66,6 +68,7 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
         if (!moveAble) return;
         if (groundCol.isGround == false) return;
         if (value == 0) return;
+        if (playerHide.IsHide) return;
 
         Vector2 particlePos = transform.position + ((spriteRenderer.flipX) ? -particleOffset : particleOffset);
 

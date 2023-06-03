@@ -22,6 +22,7 @@ public class PlayerHide : PlayerRoot
     private PlayerJump playerJump;
     private bool isHideAnimation;
     private bool isHide;
+    public bool IsHide => isHide;
 
     protected override void Awake()
     {
