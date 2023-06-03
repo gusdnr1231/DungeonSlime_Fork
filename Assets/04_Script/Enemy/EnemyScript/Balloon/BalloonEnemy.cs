@@ -67,6 +67,13 @@ public class BalloonEnemy : EnemyRoot
         cnt++;
         if (cnt >= sprite.Length && !bomb)
         {
+            var jumpPos = transform.Find("BouncePos");
+
+            if (Physics2D.OverlapBox(jumpPos.position + new Vector3(0, 1), new Vector2(1f, 1), 0, LayerMask.GetMask("Ground")))
+            {
+                return;
+            }
+
             bomb = true;
             jumpCheck.SetActive(false);
             playerHide.Bounce();
@@ -86,7 +93,6 @@ public class BalloonEnemy : EnemyRoot
     {
 
         jumpCheck.SetActive(true);
-        rigid.constraints &= RigidbodyConstraints2D.FreezeRotation;
         input.OnJumpEvent += Touch;
 
     }
@@ -95,7 +101,6 @@ public class BalloonEnemy : EnemyRoot
     {
 
         jumpCheck.SetActive(false);
-        rigid.constraints = RigidbodyConstraints2D.FreezeAll;
         input.OnJumpEvent -= Touch;
 
     }

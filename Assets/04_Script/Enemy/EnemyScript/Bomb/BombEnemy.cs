@@ -14,6 +14,7 @@ public class BombEnemy : EnemyRoot
     Tilemap tilemap;
     PlayerHide playerHide;
     GameObject jumpCheck;
+    GameObject possibleCheck;
     bool willBomb;
 
     protected override void Awake()
@@ -22,6 +23,7 @@ public class BombEnemy : EnemyRoot
         tilemap = GameObject.FindWithTag("Breakable").GetComponent<Tilemap>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         playerHide = FindObjectOfType<PlayerHide>();
+        possibleCheck = transform.GetChild(0).gameObject;
         jumpCheck = transform.GetChild(1).gameObject;
     }
 
@@ -35,6 +37,7 @@ public class BombEnemy : EnemyRoot
             willBomb = true;
             jumpCheck.SetActive(false);
             playerHide.Bounce();
+            possibleCheck.SetActive(false);
             gameObject.layer = 0;
             StartCoroutine(ColorChange(0.5f, 5));
         }
