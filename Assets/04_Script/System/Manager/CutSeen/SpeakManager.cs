@@ -60,7 +60,7 @@ public class SpeakManager : MonoBehaviour
 
     public void TokingEnd()
     {
-        if (speak[nowStage - 1]._peaks.Count <= speakCnt && canToking)
+        if (canToking && speak[nowStage - 1]._peaks.Count <= speakCnt)
         {
             canToking = false;
             Debug.Log("게임드가자");

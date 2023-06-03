@@ -59,6 +59,8 @@ public class BombEnemy : EnemyRoot
         part.GetComponent<ParticleSystem>().Play();
 
         RemoveTilesInRadius(radiua);
+        PlayerRadius();
+        BossRadius();
         Destroy(gameObject);
     }
 
@@ -83,6 +85,19 @@ public class BombEnemy : EnemyRoot
                 }
             }
         }
+    }
+
+    void PlayerRadius()
+    {
+        if (Physics2D.OverlapCircle(transform.position, radiua, LayerMask.GetMask("Player")))
+        {
+            //플레이어 죽기
+        }
+    }
+
+    void BossRadius()
+    {
+
     }
 
     private void OnDrawGizmos()
