@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class RangeArrowSin : MonoBehaviour
 {
+    [SerializeField] float timeSpeed = 3;
+    [SerializeField] float range = 2;
+
     void Update()
     {
-        transform.position -= new Vector3(0, (Mathf.Sin(Time.time * 3) / 1000f) / 2, 0);
+        transform.position -= new Vector3(0, (Mathf.Sin(Time.time * timeSpeed) / 1000f) / range, 0);
     }
 }

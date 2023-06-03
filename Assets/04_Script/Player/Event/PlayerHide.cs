@@ -130,7 +130,7 @@ public class PlayerHide : PlayerRoot
         isHideAnimation = false;
     }
 
-    private void Bounce()
+    public void Bounce()
     {
 
         if(!isHide || isHideAnimation) return;

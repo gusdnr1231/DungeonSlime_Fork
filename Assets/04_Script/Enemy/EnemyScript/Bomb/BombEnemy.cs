@@ -6,33 +6,42 @@ using UnityEngine.Tilemaps;
 public class BombEnemy : EnemyRoot
 {
     const float increaseValue = 0.2f;
-    const float decreaseValue = 0.01f;
+    const float decreaseValue = 0.0005f;
 
-    public Tilemap tilemap;
     [SerializeField] float radiua;
+    [SerializeField] GameObject particle;
+
+    Tilemap tilemap;
+    PlayerHide playerHide;
+    GameObject jumpCheck;
     bool willBomb;
 
     protected override void Awake()
     {
         base.Awake();
+        tilemap = GameObject.FindWithTag("Breakable").GetComponent<Tilemap>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        playerHide = FindObjectOfType<PlayerHide>();
+        jumpCheck = transform.GetChild(1).gameObject;
     }
 
     private void Update()
     {
-        //if(!willBomb)
-        //    spriteRenderer.color += new Color(0, decreaseValue, decreaseValue, 0);
+        if(!willBomb)
+            spriteRenderer.color += new Color(0, decreaseValue, decreaseValue, 0);
 
         if (spriteRenderer.color.b <= 0 && !willBomb)
         {
             willBomb = true;
+            jumpCheck.SetActive(false);
+            playerHide.Bounce();
+            gameObject.layer = 0;
             StartCoroutine(ColorChange(0.5f, 5));
         }
     }
 
     void Touch()
     {
-        Debug.Log("touch");
         spriteRenderer.color -= new Color(0, increaseValue, increaseValue, 0);
     }
 
@@ -45,6 +54,9 @@ public class BombEnemy : EnemyRoot
             spriteRenderer.color = new Color(1, 0, 0, 1);
             yield return new WaitForSeconds(time);
         }
+
+        GameObject part = Instantiate(particle, transform.position, Quaternion.identity);
+        part.GetComponent<ParticleSystem>().Play();
 
         RemoveTilesInRadius(radiua);
         Destroy(gameObject);
@@ -65,6 +77,9 @@ public class BombEnemy : EnemyRoot
                 if (Vector3.Distance(transform.position, cellCenter) <= radius)
                 {
                     tilemap.SetTile(cell, null);
+
+                    GameObject part = Instantiate(particle, cell, Quaternion.identity);
+                    part.GetComponent<ParticleSystem>().Play();
                 }
             }
         }
@@ -79,6 +94,7 @@ public class BombEnemy : EnemyRoot
     public override void AddEvent()
     {
 
+        jumpCheck.SetActive(true);
         input.OnJumpEvent += Touch;
 
     }
@@ -86,6 +102,7 @@ public class BombEnemy : EnemyRoot
     public override void RemoveEvent()
     {
 
+        jumpCheck.SetActive(false);
         input.OnJumpEvent -= Touch;
 
     }
