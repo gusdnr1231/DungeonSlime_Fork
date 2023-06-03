@@ -42,7 +42,7 @@ public class TurtleEnemy : EnemyRoot
         if (collision.transform.tag == waterTag)
         {
             Debug.Log(collision.name);
-            isSwimming = true;
+            isSwimming = !isSwimming;
         }
     }
 
