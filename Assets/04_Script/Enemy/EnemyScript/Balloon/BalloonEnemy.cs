@@ -14,6 +14,7 @@ public class BalloonEnemy : EnemyRoot
 
     bool bomb;
     public int cnt = 0;
+    int smallCnt = 0;
 
     protected override void Awake()
     {
@@ -64,7 +65,12 @@ public class BalloonEnemy : EnemyRoot
 
     void Touch()
     {
-        cnt++;
+        smallCnt++;
+        if (smallCnt >= 4)
+        {
+            smallCnt = 0;
+            cnt++;
+        }
         if (cnt >= sprite.Length && !bomb)
         {
             var jumpPos = transform.Find("BouncePos");
