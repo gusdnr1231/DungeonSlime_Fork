@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpiderEnemy : EnemyRoot
 {
     [SerializeField] private Vector2 size, pos;
+    [SerializeField] private LayerMask ableLayer;
     private Rigidbody2D rb;
 
     protected override void Awake()
@@ -15,7 +16,24 @@ public class SpiderEnemy : EnemyRoot
 
     private void WallSide(float value)
     {
-        if (Physics2D.BoxCast(transform.position + (Vector3)pos, size, 0, Vector2.zero, 0,LayerMask.GetMask("Ground", "Enemy")))
+
+        var ray = Physics2D.BoxCastAll(transform.position + (Vector3)pos, size, 0, Vector2.zero, 0, ableLayer);
+        bool able = false;
+
+        foreach (var item in ray) 
+        {
+
+            if (!item.transform.TryGetComponent<SpiderEnemy>(out var i)) 
+            {
+
+                able = true;
+                break;
+
+            }
+
+        }
+
+        if (able)
         {
             if (value != 0)
             {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class BirdEnemy : EnemyRoot
 {
     [SerializeField] private float jummpPower;
+    int jumpCnt = 4;
     Rigidbody2D rb;
 
     protected override void Awake()
@@ -15,7 +16,14 @@ public class BirdEnemy : EnemyRoot
 
     void Fly()
     {
-        rb.velocity = Vector3.up * jummpPower;
+        if (jumpCnt >= 0)
+        {
+            jumpCnt--;
+            rb.velocity = Vector3.up * jummpPower;
+        }
+
+        if (groundCol.isGround)
+            jumpCnt = 4;
     }
 
     public override void AddEvent()

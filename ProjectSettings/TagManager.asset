@@ -14,6 +14,7 @@ TagManager:
   - Enemy
   - StartDoor
   - Key
+  - Breakable
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - CameraRange
   - Gem
   - GroundCol
-  - 
-  - 
+  - MoveBlock
+  - Breakable
   - 
   - 
   - 
@@ -50,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Breakable
+    uniqueID: 1926510543
     locked: 0
