@@ -9,14 +9,18 @@ public class Rock : EnemyRoot
 
     protected override void Awake()
     {
+
         base.Awake();
         rb = gameObject.GetComponent<Rigidbody2D>();
         movementHide = gameObject.GetComponent<EnemyMovementHide>();
+
     }
 
     private void NotClamp(float value)
     {
+
         rb.mass = 10;
+
     }
 
     public override void AddEvent()

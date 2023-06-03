@@ -5,8 +5,8 @@ using UnityEngine;
 public class BirdEnemy : EnemyRoot
 {
     [SerializeField] private float jummpPower;
-    int jumpCnt = 4;
-    Rigidbody2D rb;
+    private int jumpCnt = 4;
+    private Rigidbody2D rb;
 
     protected override void Awake()
     {

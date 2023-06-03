@@ -5,26 +5,29 @@ using UnityEngine.Tilemaps;
 
 public class BombEnemy : EnemyRoot
 {
-    const float increaseValue = 0.2f;
-    const float decreaseValue = 0.0005f;
 
-    [SerializeField] float radiua;
-    [SerializeField] GameObject particle;
+    private const float increaseValue = 0.2f;
+    private const float decreaseValue = 0.0005f;
 
-    Tilemap tilemap;
-    PlayerHide playerHide;
-    GameObject jumpCheck;
-    GameObject possibleCheck;
-    bool willBomb;
+    [SerializeField] private float radiua;
+    [SerializeField] private GameObject particle;
+
+    private Tilemap tilemap;
+    private PlayerHide playerHide;
+    private GameObject jumpCheck;
+    private GameObject possibleCheck;
+    private bool willBomb;
 
     protected override void Awake()
     {
+
         base.Awake();
         tilemap = GameObject.FindWithTag("Breakable").GetComponent<Tilemap>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         playerHide = FindObjectOfType<PlayerHide>();
         possibleCheck = transform.GetChild(0).gameObject;
         jumpCheck = transform.GetChild(1).gameObject;
+
     }
 
     private void Update()
@@ -34,12 +37,14 @@ public class BombEnemy : EnemyRoot
 
         if (spriteRenderer.color.b <= 0 && !willBomb)
         {
+
             willBomb = true;
             jumpCheck.SetActive(false);
             playerHide.Bounce();
             possibleCheck.SetActive(false);
             gameObject.layer = 0;
             StartCoroutine(ColorChange(0.5f, 5));
+
         }
     }
 
@@ -92,10 +97,18 @@ public class BombEnemy : EnemyRoot
 
     void PlayerRadius()
     {
-        if (Physics2D.OverlapCircle(transform.position, radiua, LayerMask.GetMask("Player")))
+
+        var obj = Physics2D.OverlapCircle(transform.position, radiua, LayerMask.GetMask("Player"));
+
+        if (obj)
         {
-            //플레이어 죽기
+
+            //MapBy 될거임
+            var copo = obj.GetComponent<DieSensor>();
+            copo.InvokeDieEvent();
+
         }
+
     }
 
     void BossRadius()

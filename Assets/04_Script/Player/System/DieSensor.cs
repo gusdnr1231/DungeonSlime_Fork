@@ -61,4 +61,15 @@ public class DieSensor : MonoBehaviour
 
     }
 
+    public void InvokeDieEvent()
+    {
+
+        if (isDie && useIsDie) return;
+
+        dieTag = tag;
+        isDie = true;
+        dieEvent?.Invoke();
+
+    }
+
 }
