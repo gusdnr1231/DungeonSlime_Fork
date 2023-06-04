@@ -1,83 +1,85 @@
 using DG.Tweening;
 using FD.AI.FSM;
-using FD.AI.Tree.Program;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using FD.Dev;
 
 public class SkulBossIdle : FAED_FSMState
 {
     [Header("GameObject")]
+    [SerializeField] private GameObject head;
     [SerializeField] private GameObject leftHand;
     [SerializeField] private GameObject rightHand;
-    [Space(10f)]
+    [SerializeField] private GameObject dangerousBox;
+    [Header("Pos")]
     [SerializeField] private Transform leftPos;
     [SerializeField] private Transform rightPos;
-    [SerializeField] private GameObject dangerousBox;
+    [SerializeField] private Transform headPos;
+    [SerializeField] private Transform orgHeadpos;
+    [SerializeField] private Transform orgLeftpos;
+    [SerializeField] private Transform orgRightpos;
     [Header("Values")]
     [SerializeField] private BoxCollider2D onPlayer;
-    [SerializeField] private Vector2 maxX;
-    [SerializeField] private Vector2 maxY;
     [SerializeField] private float attackSpeed;
 
-    private SkulBossAppear bossAppear;
     private GameObject player;
+    public int handCnt;
 
     Color orignDangerousColor;
 
-    Sequence attack;
-
     void Awake()
     {
-        bossAppear = FindObjectOfType<SkulBossAppear>();
         orignDangerousColor = dangerousBox.GetComponent<SpriteRenderer>().color;
         dangerousBox.SetActive(false);
         player = FindObjectOfType<PlayerAnimator>().gameObject;
 
         leftHand.GetComponent<Collider2D>().enabled = false;
         rightHand.GetComponent<Collider2D>().enabled = false;
+
+        HeadMove();
     }
 
-    private void Start()
+    void HeadMove()
     {
-        attack = DOTween.Sequence();
-
-        attack.Append(leftHand.transform.DOMove(new Vector3(maxX.x, PlayerValue(), 0), 1f).SetEase(Ease.OutCirc))
-        .Join(rightHand.transform.DOMove(new Vector3(maxX.y, PlayerValue(), 0), 1f).SetEase(Ease.OutCirc))
-        .AppendCallback(() =>
+        head.transform.DOMoveX(player.transform.position.x, 1).OnComplete(() =>
         {
-            leftHand.GetComponent<Collider2D>().enabled = true;
-            rightHand.GetComponent<Collider2D>().enabled = true;
-
-            rightHand.transform.eulerAngles += new Vector3(0, 0, -90);
-            Attack(leftHand, -90);
+            if (handCnt == 2)
+            {
+                //왼손주먹공격
+                Attack(leftHand, leftPos.position, orgLeftpos.position);
+            }
+            else if (handCnt == 1)
+            {
+                //오른손주먹공격
+                Attack(rightHand, rightPos.position, orgRightpos.position);
+            }
+            else
+            {
+                //머리공격
+                Attack(head, headPos.position, orgHeadpos.position);
+            }
         });
     }
 
-    void Attack(GameObject hand, float angle)
+    void Attack(GameObject obj, Vector2 actPos, Vector2 backPos)
     {
-        hand.transform.eulerAngles += new Vector3(0, 0, angle);
+        obj.transform.DOMoveX(player.transform.position.x, 1);
 
         dangerousBox.GetComponent<SpriteRenderer>().color = orignDangerousColor;
-        dangerousBox.transform.position = new Vector2(dangerousBox.transform.position.x, hand.transform.position.y);
+        dangerousBox.transform.position = player.transform.position;
         dangerousBox.SetActive(true);
-        dangerousBox.GetComponent<SpriteRenderer>().DOFade(0, 1.5f)
-        .OnComplete(() =>
+        dangerousBox.GetComponent<SpriteRenderer>().DOFade(0, 1).OnComplete(() => 
         {
-            hand.transform.DOMoveX(-hand.transform.position.x, attackSpeed).SetEase(Ease.OutQuad)
-            .OnComplete(() =>
+            obj.transform.DOMoveY(actPos.y, 0.5f).SetEase(Ease.InExpo).OnComplete(() => 
             {
-                hand.transform.DOMoveY(PlayerValue(), 0.5f);
-
-                if (hand == leftHand) Attack(rightHand, 180);
-                else Attack(leftHand, 180);
+                FAED.InvokeDelay(() => 
+                {
+                    obj.transform.DOMove(backPos, 0.5f).SetEase(Ease.OutExpo).OnComplete(() => 
+                    {
+                        HeadMove();
+                    });
+                }, 2);
             });
         });
-    }
-
-    float PlayerValue()
-    {
-        return Mathf.Clamp(player.transform.position.y, -10, bossAppear.backPos - 4f);
     }
 
     public override void EnterState()
