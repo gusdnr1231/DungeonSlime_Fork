@@ -13,6 +13,7 @@ public class BombEnemy : EnemyRoot
 
     Tilemap tilemap;
     PlayerHide playerHide;
+    Generator generator;
     GameObject jumpCheck;
     GameObject possibleCheck;
     bool willBomb;
@@ -25,6 +26,7 @@ public class BombEnemy : EnemyRoot
         playerHide = FindObjectOfType<PlayerHide>();
         possibleCheck = transform.GetChild(0).gameObject;
         jumpCheck = transform.GetChild(1).gameObject;
+        generator = transform.parent.GetComponent<Generator>();
     }
 
     private void Update()
@@ -64,6 +66,8 @@ public class BombEnemy : EnemyRoot
         RemoveTilesInRadius(radiua);
         PlayerRadius();
         BossRadius();
+        generator.Create();
+
         Destroy(gameObject);
     }
 
