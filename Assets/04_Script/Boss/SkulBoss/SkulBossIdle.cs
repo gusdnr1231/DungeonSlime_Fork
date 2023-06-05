@@ -32,9 +32,6 @@ public class SkulBossIdle : FAED_FSMState
         dangerousBox.SetActive(false);
         player = FindObjectOfType<PlayerAnimator>().gameObject;
 
-        leftHand.GetComponent<Collider2D>().enabled = false;
-        rightHand.GetComponent<Collider2D>().enabled = false;
-
         HeadMove();
     }
 
@@ -71,8 +68,10 @@ public class SkulBossIdle : FAED_FSMState
         {
             obj.transform.DOMoveY(actPos.y, 0.5f).SetEase(Ease.InExpo).OnComplete(() => 
             {
+                obj.GetComponent<HandHP>().possibleIn = true;
                 FAED.InvokeDelay(() => 
                 {
+                    obj.GetComponent<HandHP>().possibleIn = false;
                     obj.transform.DOMove(backPos, 0.5f).SetEase(Ease.OutExpo).OnComplete(() => 
                     {
                         HeadMove();
@@ -89,7 +88,11 @@ public class SkulBossIdle : FAED_FSMState
 
     public override void UpdateState()
     {
-        
+        if (handCnt <= -1)
+        {
+            //게임 종료
+            //탈출구 열기
+        }
     }
 
     public override void ExitState()
