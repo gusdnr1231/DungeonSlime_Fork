@@ -27,7 +27,7 @@ public class BombEnemy : EnemyRoot
         playerHide = FindObjectOfType<PlayerHide>();
         possibleCheck = transform.GetChild(0).gameObject;
         jumpCheck = transform.GetChild(1).gameObject;
-
+        generator = transform.parent.GetComponent<Generator>();
     }
 
     private void Update()
@@ -69,6 +69,8 @@ public class BombEnemy : EnemyRoot
         RemoveTilesInRadius(radiua);
         PlayerRadius();
         BossRadius();
+        generator.Create();
+
         Destroy(gameObject);
     }
 
@@ -103,7 +105,7 @@ public class BombEnemy : EnemyRoot
         if (obj)
         {
 
-            //MapBy µÉ°ÅÀÓ
+            //MapBy ï¿½É°ï¿½ï¿½ï¿½
             var copo = obj.GetComponent<DieSensor>();
             copo.InvokeDieEvent();
 

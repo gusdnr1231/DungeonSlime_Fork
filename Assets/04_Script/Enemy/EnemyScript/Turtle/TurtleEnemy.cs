@@ -15,6 +15,7 @@ public class TurtleEnemy : EnemyRoot
     Rigidbody2D rb;
 
     bool isSwimming;
+    bool init;
 
     protected override void Awake()
     {
@@ -27,6 +28,15 @@ public class TurtleEnemy : EnemyRoot
     private void Update()
     {
         Swim();
+
+        if (Physics2D.OverlapBox(transform.position, Vector2.one, 0, LayerMask.GetMask("Water")))
+        {
+            isSwimming = true;
+        }
+        else
+        {
+            isSwimming = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -39,26 +49,28 @@ public class TurtleEnemy : EnemyRoot
     private void OnTriggerExit2D(Collider2D collision)
     {
         //닿았다가 다시 돌아가는거면 return;
-        if (collision.transform.tag == waterTag)
-        {
-            Debug.Log(collision.name);
-            isSwimming = !isSwimming;
-        }
+        //if (collision.transform.tag == waterTag)
+        //{
+        //    Debug.Log(collision.name);
+        //    isSwimming = !isSwimming;
+        //}
     }
 
     void Swim()
     {
-        if (isSwimming)
+        if (isSwimming && !init)
         {
+            init = true;
             input.OnJumpEvent += Fly;
             waterTilemap.GetComponent<Tilemap>().color = new Color(1, 1, 1, 0.6f);
-            waterTilemap.GetComponent<Rigidbody2D>().gravityScale = 0.3f;
+            rb.gravityScale = 0.3f;
         }
-        else
+        else if(init && !isSwimming)
         {
+            init = false;
             input.OnJumpEvent -= Fly;
             waterTilemap.GetComponent<Tilemap>().color = Color.white;
-            waterTilemap.GetComponent<Rigidbody2D>().gravityScale = 1;
+            rb.gravityScale = 1;
         }
     }
 

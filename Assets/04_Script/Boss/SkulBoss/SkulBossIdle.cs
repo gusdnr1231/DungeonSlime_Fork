@@ -1,83 +1,107 @@
 using DG.Tweening;
 using FD.AI.FSM;
-using FD.AI.Tree.Program;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using FD.Dev;
 
 public class SkulBossIdle : FAED_FSMState
 {
     [Header("GameObject")]
+    [SerializeField] private GameObject head;
     [SerializeField] private GameObject leftHand;
     [SerializeField] private GameObject rightHand;
-    [Space(10f)]
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject dangerousBox;
+    [SerializeField] private GameObject clearObject;
+    [Header("Pos")]
     [SerializeField] private Transform leftPos;
     [SerializeField] private Transform rightPos;
-    [SerializeField] private GameObject dangerousBox;
+    [SerializeField] private Transform headPos;
+    [SerializeField] private Transform orgHeadpos;
+    [SerializeField] private Transform orgLeftpos;
+    [SerializeField] private Transform orgRightpos;
     [Header("Values")]
     [SerializeField] private BoxCollider2D onPlayer;
-    [SerializeField] private Vector2 maxX;
-    [SerializeField] private Vector2 maxY;
     [SerializeField] private float attackSpeed;
 
-    private SkulBossAppear bossAppear;
     private GameObject player;
+    public int handCnt;
 
     Color orignDangerousColor;
 
-    Sequence attack;
-
     void Awake()
     {
-        bossAppear = FindObjectOfType<SkulBossAppear>();
         orignDangerousColor = dangerousBox.GetComponent<SpriteRenderer>().color;
         dangerousBox.SetActive(false);
         player = FindObjectOfType<PlayerAnimator>().gameObject;
-
-        leftHand.GetComponent<Collider2D>().enabled = false;
-        rightHand.GetComponent<Collider2D>().enabled = false;
+        clearObject.SetActive(false);
+        HeadMove();
     }
 
-    private void Start()
+    void HeadMove()
     {
-        attack = DOTween.Sequence();
-
-        attack.Append(leftHand.transform.DOMove(new Vector3(maxX.x, PlayerValue(), 0), 1f).SetEase(Ease.OutCirc))
-        .Join(rightHand.transform.DOMove(new Vector3(maxX.y, PlayerValue(), 0), 1f).SetEase(Ease.OutCirc))
-        .AppendCallback(() =>
+        head.transform.DOMoveX(player.transform.position.x, 1).OnComplete(() =>
         {
-            leftHand.GetComponent<Collider2D>().enabled = true;
-            rightHand.GetComponent<Collider2D>().enabled = true;
-
-            rightHand.transform.eulerAngles += new Vector3(0, 0, -90);
-            Attack(leftHand, -90);
+            if (handCnt == 2)
+            {
+                if (Random.Range(0, 2) == 0)
+                    Attack(leftHand, leftPos.position, orgLeftpos.position); //왼손주먹공격
+                else
+                    Bullet(leftHand); //왼손탄환공격
+            }
+            else if (handCnt == 1)
+            {
+                if (Random.Range(0, 2) == 0)
+                    Attack(rightHand, rightPos.position, orgRightpos.position); //오른손주먹공격
+                else
+                    Bullet(rightHand); //오른손탄환공격
+            }
+            else if(handCnt == 0)
+            {
+                if (Random.Range(0, 2) == 0)
+                    Attack(head, headPos.position, orgHeadpos.position); //머리공격
+                else
+                    Bullet(head); //머리탄환공격
+            }
         });
     }
 
-    void Attack(GameObject hand, float angle)
+    void Attack(GameObject obj, Vector2 actPos, Vector2 backPos)
     {
-        hand.transform.eulerAngles += new Vector3(0, 0, angle);
+        obj.transform.DOMoveX(player.transform.position.x, 1);
 
         dangerousBox.GetComponent<SpriteRenderer>().color = orignDangerousColor;
-        dangerousBox.transform.position = new Vector2(dangerousBox.transform.position.x, hand.transform.position.y);
+        dangerousBox.transform.position = player.transform.position;
         dangerousBox.SetActive(true);
-        dangerousBox.GetComponent<SpriteRenderer>().DOFade(0, 1.5f)
-        .OnComplete(() =>
+        dangerousBox.GetComponent<SpriteRenderer>().DOFade(0, 1).OnComplete(() => 
         {
-            hand.transform.DOMoveX(-hand.transform.position.x, attackSpeed).SetEase(Ease.OutQuad)
-            .OnComplete(() =>
+            obj.transform.DOMoveY(actPos.y, 0.5f).SetEase(Ease.InExpo).OnComplete(() => 
             {
-                hand.transform.DOMoveY(PlayerValue(), 0.5f);
-
-                if (hand == leftHand) Attack(rightHand, 180);
-                else Attack(leftHand, 180);
+                obj.GetComponent<HandHP>().possibleIn = true;
+                FAED.InvokeDelay(() => 
+                {
+                    obj.GetComponent<HandHP>().possibleIn = false;
+                    obj.transform.DOMove(backPos, 0.5f).SetEase(Ease.OutExpo).OnComplete(() => 
+                    {
+                        HeadMove();
+                    });
+                }, 2);
             });
         });
     }
 
-    float PlayerValue()
+    void Bullet(GameObject obj)
     {
-        return Mathf.Clamp(player.transform.position.y, -10, bossAppear.backPos - 4f);
+        Instantiate(bullet, obj.transform.position, Quaternion.identity);
+        GameObject sideBullet_1 = Instantiate(bullet, obj.transform.position, Quaternion.identity);
+        GameObject sideBullet_2 = Instantiate(bullet, obj.transform.position, Quaternion.identity);
+
+        sideBullet_1.GetComponent<SkulBossBullet>().angle = -1;
+        sideBullet_2.GetComponent<SkulBossBullet>().angle = 1;
+
+        FAED.InvokeDelay(() =>
+        {
+            HeadMove();
+        }, 2);
     }
 
     public override void EnterState()
@@ -87,7 +111,14 @@ public class SkulBossIdle : FAED_FSMState
 
     public override void UpdateState()
     {
-        
+        if (handCnt <= -1)
+        {
+            //게임 종료
+            //탈출구 열기
+            DOTween.KillAll();
+            clearObject.SetActive(true);
+            head.SetActive(false);
+        }
     }
 
     public override void ExitState()

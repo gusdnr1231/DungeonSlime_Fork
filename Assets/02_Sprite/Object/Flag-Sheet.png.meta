@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: acc6f6711c3bbe247b37e8acbcfc77af
+guid: 25be489e9a1377a41ba1c0fd25798295
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,43 +105,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slimeCannon-Sheet-export_0
+      name: Flag-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.515, y: 0.4}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adcebf786589ce14c88fff9d34c0f9d7
-      internalID: 749846491
+      spriteID: b633881734f83a5459d928b15991f4bf
+      internalID: 885969408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeCannon-Sheet-export_1
+      name: Flag-Sheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 0
-        width: 32
+        width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.51, y: 0.5}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6c1cfa6129260e47b12096ba99d1ca1
-      internalID: 656395945
+      spriteID: 1f5da10570f170c4ea1da6e5f361ab02
+      internalID: 72363795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flag-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1614d688df5764eb758b47a72d72e1
+      internalID: -102003128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flag-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0ae5c5ec01c924c9a543ec7bcf6f89
+      internalID: -1976649064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flag-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37831e09666a4442b4e0a71edd400b9
+      internalID: -1454449340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flag-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37044984f86e19b40953ed226b1ba346
+      internalID: 22736382
       vertices: []
       indices: 
       edges: []
@@ -157,8 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      slimeCannon-Sheet-export_0: 749846491
-      slimeCannon-Sheet-export_1: 656395945
+      Flag-Sheet_0: 885969408
+      Flag-Sheet_1: 72363795
+      Flag-Sheet_2: -102003128
+      Flag-Sheet_3: -1976649064
+      Flag-Sheet_4: -1454449340
+      Flag-Sheet_5: 22736382
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

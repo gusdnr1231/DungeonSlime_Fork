@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
+  m_Sprite: {fileID: 1402383643, guid: b44293ffd401cc84e80106ccaee0e61b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -281,9 +281,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1, y: 1.0625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -329,6 +329,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 959770667940028458, guid: 3929b692ee22a0640903269ecef28e77, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 959770667940028458, guid: 3929b692ee22a0640903269ecef28e77, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 959770667940028459, guid: 3929b692ee22a0640903269ecef28e77, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -339,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 959770667940028459, guid: 3929b692ee22a0640903269ecef28e77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.078
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 959770667940028459, guid: 3929b692ee22a0640903269ecef28e77, type: 3}
       propertyPath: m_LocalPosition.z
@@ -401,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 959770667940028459, guid: 3929b692ee22a0640903269ecef28e77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.888
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 959770667940028459, guid: 3929b692ee22a0640903269ecef28e77, type: 3}
       propertyPath: m_LocalPosition.z
