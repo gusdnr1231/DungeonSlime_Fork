@@ -22,6 +22,7 @@ public class BalloonEnemy : EnemyRoot
         base.Awake();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         rigid = gameObject.GetComponent<Rigidbody2D>();
+        enemyCollider = gameObject.GetComponent<BoxCollider2D>();
         playerHide = FindObjectOfType<PlayerHide>();
         jumpCheck = transform.GetChild(1).gameObject;
         generator = transform.parent.GetComponent<Generator>();
@@ -96,6 +97,8 @@ public class BalloonEnemy : EnemyRoot
         else
         {
             spriteRenderer.sprite = sprite[cnt];
+            enemyCollider.size = new Vector2((0.2f * cnt) + 0.8f, (0.2f * cnt) + 0.8f);
+            enemyCollider.offset = new Vector2(-0.03f, -0.1f + (0.05f * cnt));
         }
     }
 

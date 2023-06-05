@@ -9,6 +9,7 @@ public class SkulBossIdle : FAED_FSMState
     [SerializeField] private GameObject head;
     [SerializeField] private GameObject leftHand;
     [SerializeField] private GameObject rightHand;
+    [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject dangerousBox;
     [SerializeField] private GameObject clearObject;
     [Header("Pos")]
@@ -42,18 +43,24 @@ public class SkulBossIdle : FAED_FSMState
         {
             if (handCnt == 2)
             {
-                //왼손주먹공격
-                Attack(leftHand, leftPos.position, orgLeftpos.position);
+                if (Random.Range(0, 2) == 0)
+                    Attack(leftHand, leftPos.position, orgLeftpos.position); //왼손주먹공격
+                else
+                    Bullet(leftHand); //왼손탄환공격
             }
             else if (handCnt == 1)
             {
-                //오른손주먹공격
-                Attack(rightHand, rightPos.position, orgRightpos.position);
+                if (Random.Range(0, 2) == 0)
+                    Attack(rightHand, rightPos.position, orgRightpos.position); //오른손주먹공격
+                else
+                    Bullet(rightHand); //오른손탄환공격
             }
             else if(handCnt == 0)
             {
-                //머리공격
-                Attack(head, headPos.position, orgHeadpos.position);
+                if (Random.Range(0, 2) == 0)
+                    Attack(head, headPos.position, orgHeadpos.position); //머리공격
+                else
+                    Bullet(head); //머리탄환공격
             }
         });
     }
@@ -80,6 +87,21 @@ public class SkulBossIdle : FAED_FSMState
                 }, 2);
             });
         });
+    }
+
+    void Bullet(GameObject obj)
+    {
+        Instantiate(bullet, obj.transform.position, Quaternion.identity);
+        GameObject sideBullet_1 = Instantiate(bullet, obj.transform.position, Quaternion.identity);
+        GameObject sideBullet_2 = Instantiate(bullet, obj.transform.position, Quaternion.identity);
+
+        sideBullet_1.GetComponent<SkulBossBullet>().angle = -1;
+        sideBullet_2.GetComponent<SkulBossBullet>().angle = 1;
+
+        FAED.InvokeDelay(() =>
+        {
+            HeadMove();
+        }, 2);
     }
 
     public override void EnterState()
