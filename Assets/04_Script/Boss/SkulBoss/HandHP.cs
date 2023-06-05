@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class HandHP : MonoBehaviour
 {
-    public int hp;
-    public bool possibleIn, isIn;
+    public float hp;
+    float maxHp;
+    public bool possibleIn, isIn, isNotDie;
     bool die;
 
     [SerializeField] Transform outPos;
     [SerializeField] GameObject inArrow;
     [SerializeField] GameObject checkArrow;
+    [SerializeField] GameObject part;
     [SerializeField] Transform pos;
     [SerializeField] Vector2 size;
 
     private SkulBossIdle bossIdle;
     private PlayerInput input;
     private GameObject player;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         bossIdle = FindObjectOfType<SkulBossIdle>();
         input = FindObjectOfType<PlayerInput>();
         player = FindObjectOfType<PlayerAnimator>().gameObject;
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         input.OnHideEvnet += InHand;
         input.OnJumpEvent += AttackHP;
+
+        maxHp = hp;
     }
 
     private void Update()
@@ -62,6 +68,7 @@ public class HandHP : MonoBehaviour
         else if (isIn)
         {
             //플레이어 나오기
+            isIn = false;
             player.transform.position = outPos.position;
             player.SetActive(true);
         }
@@ -73,16 +80,22 @@ public class HandHP : MonoBehaviour
         {
             hp--;
 
+            spriteRenderer.color = new Color(1, hp / maxHp, hp / maxHp, 1);
+
             if (hp <= 0 && !die)
             {
-                die = true;
+                die = true; 
+                isIn = false;
 
                 //플레이어 나오기
                 player.transform.position = outPos.position;
                 player.SetActive(true);
 
+                Instantiate(part, transform.position, Quaternion.identity);
+
                 bossIdle.handCnt--;
-                gameObject.SetActive(false);
+                if(!isNotDie)
+                    gameObject.SetActive(false);
             }
         }
     }

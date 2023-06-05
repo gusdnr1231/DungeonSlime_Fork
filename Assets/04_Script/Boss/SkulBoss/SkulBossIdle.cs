@@ -10,6 +10,7 @@ public class SkulBossIdle : FAED_FSMState
     [SerializeField] private GameObject leftHand;
     [SerializeField] private GameObject rightHand;
     [SerializeField] private GameObject dangerousBox;
+    [SerializeField] private GameObject clearObject;
     [Header("Pos")]
     [SerializeField] private Transform leftPos;
     [SerializeField] private Transform rightPos;
@@ -31,7 +32,7 @@ public class SkulBossIdle : FAED_FSMState
         orignDangerousColor = dangerousBox.GetComponent<SpriteRenderer>().color;
         dangerousBox.SetActive(false);
         player = FindObjectOfType<PlayerAnimator>().gameObject;
-
+        clearObject.SetActive(false);
         HeadMove();
     }
 
@@ -49,7 +50,7 @@ public class SkulBossIdle : FAED_FSMState
                 //오른손주먹공격
                 Attack(rightHand, rightPos.position, orgRightpos.position);
             }
-            else
+            else if(handCnt == 0)
             {
                 //머리공격
                 Attack(head, headPos.position, orgHeadpos.position);
@@ -92,6 +93,9 @@ public class SkulBossIdle : FAED_FSMState
         {
             //게임 종료
             //탈출구 열기
+            DOTween.KillAll();
+            clearObject.SetActive(true);
+            head.SetActive(false);
         }
     }
 
