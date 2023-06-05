@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,5 +15,13 @@ public class ScreenDecoAnimation : MonoBehaviour
         startPos = transform.position;
     }
 
+    private void Update()
+    {
+        MoveLoop();
+    }
 
+    private void MoveLoop()
+    {
+        //
+    }
 }
