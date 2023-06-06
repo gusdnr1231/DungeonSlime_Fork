@@ -26,17 +26,32 @@ public class SoundUI : MonoBehaviour
     [SerializeField]
     private string _audioType;
 
+    private float _soundValue;
+
     private void Awake()
     {
         _onOffImage = GetComponent<Image>();
-        _onOffBarImage = GameObject.Find($"{gameObject.name}/OnOff").GetComponent<Image>();     
+        _onOffBarImage = transform.Find($"OnOff").GetComponent<Image>();     
     }
 
     public void ClickEvent()
     {
         OnOff = !OnOff;
+        SetImage();
+        _audioMixer.SetFloat(_audioType, (OnOff ? 0.0f : -40.0f));
+    }
+
+    private void OnEnable()
+    {
+        _audioMixer.GetFloat(_audioType, out _soundValue);
+
+        OnOff = (_soundValue == 0.0f);
+        SetImage();
+    }
+
+    private void SetImage()
+    {
         _onOffImage.sprite = (OnOff ? _onUISprite : _offUISprite);
         _onOffBarImage.sprite = (OnOff ? _onBarUISprite : _offBarUISprite);
-        _audioMixer.SetFloat(_audioType, (OnOff ? 0.0f : -40.0f));
     }
 }
