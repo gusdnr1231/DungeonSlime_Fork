@@ -42,7 +42,6 @@ public class MapManager : MonoBehaviour
         if(Resources.Load<GameObject>($"Map/{currentStageNum}") == null)
         {
 
-            Debug.Log(123);
             PlayerPrefs.SetString("NextScene", "SelectStage1");
             SceneManager.LoadScene("Loading");
             return;
