@@ -21,7 +21,7 @@ public class PlayerJump : PlayerMovementRoot
 
     private void Jump()
     {
-        if (jumpAble == false) return;
+        if (jumpAble == false || Physics2D.OverlapBox(transform.position, new Vector2(1, 1), 0, LayerMask.GetMask("JumpPad"))) return;
         if (groundCol.isGround == false && canDoubleJump == false) return;
 
         AudioManager.Instance.PlayAudio("PlayerJump", audioSource);

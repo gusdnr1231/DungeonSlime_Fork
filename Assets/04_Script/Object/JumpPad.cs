@@ -43,7 +43,7 @@ public class JumpPad : MonoBehaviour
 
                 }
 
-                v.GetComponent<Rigidbody2D>().velocity += posVector * bouncePower;
+                v.GetComponent<Rigidbody2D>().velocity = posVector * bouncePower;
                 AudioManager.Instance.PlayAudio("PlayJumppad", audioSource);
             }
 
