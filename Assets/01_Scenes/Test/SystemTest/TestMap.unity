@@ -503,6 +503,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 123350880}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 863178209}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: SoundEffect
@@ -4299,7 +4311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3efb1bb2c6ecc154591184ae3a84adbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.2
+  moveSpeed: 2
   increseMoveSpeed: 4
   maxMoveSpeed: 3
 --- !u!114 &1932782191
@@ -4314,8 +4326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7861c8b555d8f48943cbb15ac72000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPower: 7
-  DoubleJumpPower: 0
+  JumpPower: 9
+  DoubleJumpPower: 7
   canDoubleJump: 1
 --- !u!114 &1932782192
 MonoBehaviour:
