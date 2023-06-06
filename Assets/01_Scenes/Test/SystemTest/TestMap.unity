@@ -1904,6 +1904,8 @@ GameObject:
   - component: {fileID: 863178210}
   - component: {fileID: 863178211}
   - component: {fileID: 863178212}
+  - component: {fileID: 863178213}
+  - component: {fileID: 863178214}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2062,7 +2064,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: ea74c1fa7902a4842a6db64eb207506e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: -0.29
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2145,6 +2147,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &863178213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863178204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651ee5649b05b2f40950d6bbe0847fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savePos: {x: 0, y: 0}
+--- !u!114 &863178214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863178204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e555c875b018d4dbcc6f0f88241ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1021733407
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,16 +3042,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 260162792}
-        m_TargetAssemblyTypeName: FadeUI, Assembly-CSharp
-        m_MethodName: FadeIn
+      - m_Target: {fileID: 863178206}
+        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
+        m_MethodName: RestartMap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: TestMap
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1627846396
@@ -3624,7 +3651,19 @@ MonoBehaviour:
   - Enemy
   dieEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 863178213}
+        m_TargetAssemblyTypeName: SavePointerManager, Assembly-CSharp
+        m_MethodName: SavePoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   useIsDie: 1
 --- !u!114 &1932782185
 MonoBehaviour:

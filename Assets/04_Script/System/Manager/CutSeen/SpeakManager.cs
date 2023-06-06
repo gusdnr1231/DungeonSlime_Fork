@@ -16,6 +16,7 @@ public class SpeakManager : MonoBehaviour
     [SerializeField] GameObject speakWindow;
     Camera mainCam;
     Canvas canvas;
+    PlayerInput playerInput;
     PlayerJump playerJump;
     PlayerMove playerMove;
     GameObject player;
@@ -33,6 +34,7 @@ public class SpeakManager : MonoBehaviour
         canvas = FindObjectOfType<Canvas>();
         window = Instantiate(speakWindow, canvas.transform.GetChild(0)).GetComponent<RectTransform>();
         text = window.GetChild(0).GetComponent<TextMeshProUGUI>();
+        playerInput = FindObjectOfType<PlayerInput>();
         playerJump = FindObjectOfType<PlayerJump>();
         playerMove = FindObjectOfType<PlayerMove>();
         player = playerMove.gameObject;
@@ -49,6 +51,11 @@ public class SpeakManager : MonoBehaviour
             if (speakCnt == 0)
                 Toking();
         }
+    }
+
+    public void Skeep()
+    {
+
     }
 
     void WindowUp()

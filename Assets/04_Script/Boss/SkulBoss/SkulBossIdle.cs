@@ -2,6 +2,7 @@ using DG.Tweening;
 using FD.AI.FSM;
 using UnityEngine;
 using FD.Dev;
+using Cinemachine;
 
 public class SkulBossIdle : FAED_FSMState
 {
@@ -22,7 +23,11 @@ public class SkulBossIdle : FAED_FSMState
     [Header("Values")]
     [SerializeField] private BoxCollider2D onPlayer;
     [SerializeField] private float attackSpeed;
+    [SerializeField] private Sprite attackSprite;
+    [SerializeField] private Sprite normalSprite;
 
+    private CinemachineBasicMultiChannelPerlin cbmcp;
+    private Animator animator;
     private GameObject player;
     public int handCnt;
 
@@ -30,9 +35,11 @@ public class SkulBossIdle : FAED_FSMState
 
     void Awake()
     {
+        cbmcp = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         orignDangerousColor = dangerousBox.GetComponent<SpriteRenderer>().color;
         dangerousBox.SetActive(false);
         player = FindObjectOfType<PlayerAnimator>().gameObject;
+        animator = head.GetComponent<Animator>();
         clearObject.SetActive(false);
         HeadMove();
     }
@@ -44,28 +51,34 @@ public class SkulBossIdle : FAED_FSMState
             if (handCnt == 2)
             {
                 if (Random.Range(0, 2) == 0)
-                    Attack(leftHand, leftPos.position, orgLeftpos.position); //¿Þ¼ÕÁÖ¸Ô°ø°Ý
+                {
+                    leftHand.GetComponent<SpriteRenderer>().sprite = attackSprite;
+                    Attack(leftHand, leftPos.position, orgLeftpos.position, false); //¿Þ¼ÕÁÖ¸Ô°ø°Ý
+                }
                 else
-                    Bullet(leftHand); //¿Þ¼ÕÅºÈ¯°ø°Ý
+                    Bullet(leftHand, false); //¿Þ¼ÕÅºÈ¯°ø°Ý
             }
             else if (handCnt == 1)
             {
                 if (Random.Range(0, 2) == 0)
-                    Attack(rightHand, rightPos.position, orgRightpos.position); //¿À¸¥¼ÕÁÖ¸Ô°ø°Ý
+                {
+                    rightHand.GetComponent<SpriteRenderer>().sprite = attackSprite;
+                    Attack(rightHand, rightPos.position, orgRightpos.position, false); //¿À¸¥¼ÕÁÖ¸Ô°ø°Ý
+                }
                 else
-                    Bullet(rightHand); //¿À¸¥¼ÕÅºÈ¯°ø°Ý
+                    Bullet(rightHand, false); //¿À¸¥¼ÕÅºÈ¯°ø°Ý
             }
             else if(handCnt == 0)
             {
                 if (Random.Range(0, 2) == 0)
-                    Attack(head, headPos.position, orgHeadpos.position); //¸Ó¸®°ø°Ý
+                    Attack(head, headPos.position, orgHeadpos.position, true); //¸Ó¸®°ø°Ý
                 else
-                    Bullet(head); //¸Ó¸®ÅºÈ¯°ø°Ý
+                    Bullet(head, true); //¸Ó¸®ÅºÈ¯°ø°Ý
             }
         });
     }
 
-    void Attack(GameObject obj, Vector2 actPos, Vector2 backPos)
+    void Attack(GameObject obj, Vector2 actPos, Vector2 backPos, bool boss)
     {
         obj.transform.DOMoveX(player.transform.position.x, 1);
 
@@ -74,14 +87,30 @@ public class SkulBossIdle : FAED_FSMState
         dangerousBox.SetActive(true);
         dangerousBox.GetComponent<SpriteRenderer>().DOFade(0, 1).OnComplete(() => 
         {
-            obj.transform.DOMoveY(actPos.y, 0.5f).SetEase(Ease.InExpo).OnComplete(() => 
+            //º¸½º ¾Ö´Ï
+            if (boss)
+                animator.SetTrigger("Attack");
+
+            obj.transform.DOMoveY(actPos.y, 0.4f).SetEase(Ease.InExpo).OnComplete(() => 
             {
+                //Èçµé¸²
+                cbmcp.m_AmplitudeGain = 2;
+                FAED.InvokeDelay(() => { cbmcp.m_AmplitudeGain = 0; }, 0.5f);
+
                 obj.GetComponent<HandHP>().possibleIn = true;
                 FAED.InvokeDelay(() => 
                 {
+                    if (boss)
+                        animator.SetTrigger("Normal");
+
                     obj.GetComponent<HandHP>().possibleIn = false;
                     obj.transform.DOMove(backPos, 0.5f).SetEase(Ease.OutExpo).OnComplete(() => 
                     {
+                        if (!boss)
+                        {
+                            leftHand.GetComponent<SpriteRenderer>().sprite = normalSprite;
+                            rightHand.GetComponent<SpriteRenderer>().sprite = normalSprite;
+                        }
                         HeadMove();
                     });
                 }, 2);
@@ -89,14 +118,26 @@ public class SkulBossIdle : FAED_FSMState
         });
     }
 
-    void Bullet(GameObject obj)
+    void Bullet(GameObject obj, bool boss)
     {
-        Instantiate(bullet, obj.transform.position, Quaternion.identity);
-        GameObject sideBullet_1 = Instantiate(bullet, obj.transform.position, Quaternion.identity);
-        GameObject sideBullet_2 = Instantiate(bullet, obj.transform.position, Quaternion.identity);
+        GameObject mainBullet = Instantiate(bullet, obj.transform.position, Quaternion.identity);
 
-        sideBullet_1.GetComponent<SkulBossBullet>().angle = -1;
-        sideBullet_2.GetComponent<SkulBossBullet>().angle = 1;
+        if (boss)
+        {
+            mainBullet.transform.localScale = new Vector2(2, 2);
+        }
+        else
+        {
+            GameObject sideBullet_1 = Instantiate(bullet, obj.transform.position, Quaternion.identity);
+            GameObject sideBullet_2 = Instantiate(bullet, obj.transform.position, Quaternion.identity);
+
+            sideBullet_1.GetComponent<SkulBossBullet>().angle = -1;
+            sideBullet_2.GetComponent<SkulBossBullet>().angle = 1;
+        }
+
+        //Èçµé¸²
+        cbmcp.m_AmplitudeGain = 2;
+        FAED.InvokeDelay(() => { cbmcp.m_AmplitudeGain = 0; }, 0.5f);
 
         FAED.InvokeDelay(() =>
         {

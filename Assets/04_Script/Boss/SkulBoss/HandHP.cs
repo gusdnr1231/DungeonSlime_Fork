@@ -1,3 +1,5 @@
+using DG.Tweening;
+using FD.Dev;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -80,7 +82,8 @@ public class HandHP : MonoBehaviour
         {
             hp--;
 
-            spriteRenderer.color = new Color(1, hp / maxHp, hp / maxHp, 1);
+            spriteRenderer.color = Color.red;
+            FAED.InvokeDelay(() => { spriteRenderer.color = Color.white; }, 0.05f);
 
             if (hp <= 0 && !die)
             {
@@ -91,7 +94,8 @@ public class HandHP : MonoBehaviour
                 player.transform.position = outPos.position;
                 player.SetActive(true);
 
-                Instantiate(part, transform.position, Quaternion.identity);
+                GameObject pa = Instantiate(part, transform.position, Quaternion.identity);
+                pa.GetComponent<ParticleSystem>().Play();
 
                 bossIdle.handCnt--;
                 if(!isNotDie)

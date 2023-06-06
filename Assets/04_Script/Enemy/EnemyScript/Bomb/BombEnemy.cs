@@ -12,6 +12,7 @@ public class BombEnemy : EnemyRoot
     [SerializeField] private float radiua;
     [SerializeField] private GameObject particle;
 
+    private Generator generator;
     private Tilemap tilemap;
     private PlayerHide playerHide;
     private GameObject jumpCheck;
