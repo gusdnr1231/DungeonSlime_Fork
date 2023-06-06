@@ -3698,6 +3698,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   startFadeOut: 1
+  rectTrs2: {fileID: 0}
+  rectTrs3: {fileID: 0}
 --- !u!114 &1300285843
 MonoBehaviour:
   m_ObjectHideFlags: 0
