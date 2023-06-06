@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using FD.Dev;
+using UnityEngine.Windows;
 
 public class CutSceneManager : MonoBehaviour
 {

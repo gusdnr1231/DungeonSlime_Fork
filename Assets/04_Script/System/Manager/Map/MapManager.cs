@@ -1,3 +1,4 @@
+using FD.Dev;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -63,13 +64,8 @@ public class MapManager : MonoBehaviour
     public void RestartMap()
     {
 
-        Destroy(FindObjectOfType<Map>().gameObject);
-
-        var map = Instantiate(Resources.Load<GameObject>($"Map/{currentStageNum}")).GetComponent<Map>();
-
-        var player = GameObject.Find("Player");
-        CameraManager.instance.SetCof(map.cameraLockZone);
-        player.transform.position = map.StartPos.position;
+        SceneManager.LoadScene("TestMap");
+        FAED.InvokeDelay(() => Managers.Map.CreateStage(), 0.001f);
 
     }
 
