@@ -1797,8 +1797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a91ca16372aaad4eb7b299641833a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 0
-  <currentStageNum>k__BackingField: 1
+  isTesting: 1
+  <currentStageNum>k__BackingField: 4
 --- !u!114 &863178207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4266,8 +4266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7861c8b555d8f48943cbb15ac72000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPower: 7
-  DoubleJumpPower: 0
+  JumpPower: 9
+  DoubleJumpPower: 7
   canDoubleJump: 1
 --- !u!114 &1932782192
 MonoBehaviour:
