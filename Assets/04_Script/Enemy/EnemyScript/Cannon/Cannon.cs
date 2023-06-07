@@ -6,6 +6,7 @@ public class Cannon : EnemyRoot
 {
     private Rigidbody2D rb;
     PlayerMove playerMove;
+    PlayerInput playerInput;
 
     [SerializeField] private float cannonSpeed = 0.2f;
 
