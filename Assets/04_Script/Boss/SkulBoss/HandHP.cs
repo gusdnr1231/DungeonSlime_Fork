@@ -11,6 +11,10 @@ public class HandHP : MonoBehaviour
     public bool possibleIn, isIn, isNotDie;
     bool die;
 
+    [Header("col")]
+    [SerializeField] GameObject floorCol;
+    [SerializeField] Transform floorColTrs;
+    [Space(10)]
     [SerializeField] Transform outPos;
     [SerializeField] GameObject inArrow;
     [SerializeField] GameObject checkArrow;
@@ -54,11 +58,12 @@ public class HandHP : MonoBehaviour
                 player.SetActive(true);
             }
         }
+
+        floorCol.transform.position = floorColTrs.position;
     }
 
     void InHand()
     {
-        Debug.Log(Physics2D.OverlapBox(pos.position, size, 0, LayerMask.GetMask("Player")));
         if (Physics2D.OverlapBox(pos.position, size, 0, LayerMask.GetMask("Player")))
         {
             inArrow.SetActive(false);

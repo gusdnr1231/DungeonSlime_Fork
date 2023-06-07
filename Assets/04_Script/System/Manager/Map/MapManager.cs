@@ -10,6 +10,8 @@ public class MapManager : MonoBehaviour
     [SerializeField] private bool isTesting = false;
     [field:SerializeField] public int currentStageNum { get; private set; } = 1;
 
+    SkulBossIdle skulBossIdle;
+
     private void Awake()
     {
         
@@ -56,6 +58,11 @@ public class MapManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("StageStart", 0);
             CutSceneManager.instance.CutSceneActive();
+        }
+        else
+        {
+            skulBossIdle = FindObjectOfType<SkulBossIdle>();
+            skulBossIdle.start = true;
         }
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,6 +22,7 @@ public class SpeakManager : MonoBehaviour
     PlayerMove playerMove;
     GameObject player;
     MapManager mapManager;
+    SkulBossIdle skulBossIdle;
     TextMeshProUGUI text;
 
     private RectTransform window;
@@ -40,6 +42,11 @@ public class SpeakManager : MonoBehaviour
         player = playerMove.gameObject;
         mapManager = FindObjectOfType<MapManager>();
         nowStage = mapManager.currentStageNum;
+
+        if (nowStage == 4)
+        {
+            skulBossIdle = FindObjectOfType<SkulBossIdle>();
+        }
     }
 
     private void Update()
@@ -58,11 +65,25 @@ public class SpeakManager : MonoBehaviour
 
     }
 
+    //void WindowUp()
+    //{
+    //    Vector3 windowVec = new Vector3(player.transform.position.x, player.transform.position.y + 2, 0);
+    //    Vector3 windowPos = mainCam.WorldToScreenPoint(windowVec);
+    //    window.position = windowPos;
+    //}
+
     void WindowUp()
     {
         Vector3 windowVec = new Vector3(player.transform.position.x, player.transform.position.y + 2, 0);
         Vector3 windowPos = mainCam.WorldToScreenPoint(windowVec);
-        window.position = windowPos;
+        //    window.position = windowPos;
+
+        // 캔버스 내에서의 위치 계산
+        Vector2 windowCanvasPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, windowPos, mainCam, out windowCanvasPos);
+
+        // 위치 설정
+        window.position = windowCanvasPos;
     }
 
     public void TokingEnd()
@@ -75,7 +96,8 @@ public class SpeakManager : MonoBehaviour
             playerMove.moveAble = true;
             playerJump.AddEvent();
             window.gameObject.SetActive(false);
-            //게임 시작
+            if (nowStage == 4)
+                skulBossIdle.start = true;
         }
     }
 
