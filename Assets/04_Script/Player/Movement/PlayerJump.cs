@@ -19,6 +19,12 @@ public class PlayerJump : PlayerMovementRoot
 
     }
 
+    private void Update()
+    {
+        if (groundCol.isGround)
+            canDoubleJump = true;
+    }
+
     private void Jump()
     {
         if (jumpAble == false || Physics2D.OverlapBox(transform.position, new Vector2(1, 1), 0, LayerMask.GetMask("JumpPad"))) return;
@@ -28,16 +34,12 @@ public class PlayerJump : PlayerMovementRoot
         if (groundCol.isGround == true)
         {
             rigid.velocity += Vector2.up * JumpPower;
-            canDoubleJump = true;
         }
         else if (canDoubleJump == true)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, DoubleJumpPower);
             canDoubleJump = false;
         }
-
-        
-
     }
 
     public override void AddEvent()

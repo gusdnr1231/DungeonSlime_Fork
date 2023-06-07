@@ -109,7 +109,7 @@ MonoBehaviour:
   posVector: {x: 0, y: 1}
   size: {x: 1, y: 1}
   ofs: {x: 0, y: 0}
-  bouncePower: 10
+  bouncePower: 15
   ativeMoveable: 1
   audioSource: {fileID: 4586754927198691257}
 --- !u!61 &8823802744553566068

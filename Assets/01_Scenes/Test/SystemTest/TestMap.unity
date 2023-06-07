@@ -1775,7 +1775,6 @@ GameObject:
   - component: {fileID: 863178210}
   - component: {fileID: 863178211}
   - component: {fileID: 863178212}
-  - component: {fileID: 863178213}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1878,46 +1877,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speak:
   - _peaks:
-    - "\uC5EC\uAE341\uC2A4\uD14C\uC774\uC9C0"
-    - "\uCD5C\uB300\uC6D0\uBAA8\uC3E0\uC544\uB2E4"
-    - "\uAC15\uC0B0\uC8FD\uC5B4"
-    - "\uBB38"
-    - "\uC7AC\uC778"
+    - "\uC5EC\uAE30\uAC00 \uB0B4 \uBC14\uB85C \uC704\uCE35\uC774\uB124"
+    - "\uBCC4\uB85C \uB2E4\uB978 \uAC74 \uC5C6\uAD6C\uB9CC!"
     - 
   - _peaks:
-    - "\uC5EC\uAE341\uC2A4\uD14C\uC774\uC9C0"
-    - "\uCD5C\uB300\uC6D0\uBAA8\uC3E0\uC544\uB2E4"
-    - "\uAC15\uC0B0\uC8FD\uC5B4"
-    - "\uBB38"
-    - "\uC7AC\uC778"
+    - "\uACE8\uB818\uC740 \uB2E8\uB2E8\uD558\uB124"
+    - "\uB098\uB3C4 \uC800\uB807\uAC8C \uB2E8\uB2E8\uD574\uC9C8 \uC218 \uC788\uC744\uB824\uB098!"
     - 
   - _peaks:
-    - "\uC5EC\uAE341\uC2A4\uD14C\uC774\uC9C0"
-    - "\uCD5C\uB300\uC6D0\uBAA8\uC3E0\uC544\uB2E4"
-    - "\uAC15\uC0B0\uC8FD\uC5B4"
-    - "\uBB38"
-    - "\uC7AC\uC778"
+    - "\uC774\uBC88\uC5D0\uB294 \uC880 \uC704\uD5D8\uD588\uB2E4..."
+    - "\uC55E\uC73C\uB85C \uC774\uB7F0 \uACF3\uC744 \uB354 \uC9C0\uB098\uAC00\uC57C
+      \uD558\uB294\uAC70\uC9C0?"
+    - "\uD55C \uBC88 \uD574\uBCF4\uC9C0 \uBB50!"
     - 
   - _peaks:
-    - "\uC5EC\uAE341\uC2A4\uD14C\uC774\uC9C0"
-    - "\uCD5C\uB300\uC6D0\uBAA8\uC3E0\uC544\uB2E4"
-    - "\uAC15\uC0B0\uC8FD\uC5B4"
-    - "\uBB38"
-    - "\uC7AC\uC778"
+    - "\uC5B4\uD6C4 \uC704\uD5D8\uD558\uB124"
+    - ~.~
     - 
   - _peaks:
-    - "\uC5EC\uAE341\uC2A4\uD14C\uC774\uC9C0"
-    - "\uCD5C\uB300\uC6D0\uBAA8\uC3E0\uC544\uB2E4"
-    - "\uAC15\uC0B0\uC8FD\uC5B4"
-    - "\uBB38"
-    - "\uC7AC\uC778"
+    - "\uC774\uC815\uB3C4\uB294 \uAECC\uC774\uC9C0!"
+    - "\uC74C... \uAECC\uC774 \uBB50\uC9C0?"
     - 
   - _peaks:
-    - "\uC5EC\uAE341\uC2A4\uD14C\uC774\uC9C0"
-    - "\uCD5C\uB300\uC6D0\uBAA8\uC3E0\uC544\uB2E4"
-    - "\uAC15\uC0B0\uC8FD\uC5B4"
-    - "\uBB38"
-    - "\uC7AC\uC778"
+    - "\uC2A4\uCF08\uB808\uD1A4 \uC544\uC800\uC528\uB2E4!"
+    - "\uC5B4.. \uD654\uB098\uC168\uB098?"
+    - 
+  - _peaks:
+    - "\uBB3C \uC870\uC2EC!"
+    - 
+  - _peaks:
+    - "\uAC70\uBD81\uC774\uB294 \uB290\uB824!"
+    - "\uADF8\uB798\uB3C4 \uADC0\uC5EC\uC6B0\uB2C8\uAE4C \uAD1C\uCC2E\uC544!"
+    - 
+  - _peaks:
+    - "\uC774\uC81C \uC808\uBC18 \uC815\uB3C4 \uC628 \uAC74\uAC00?"
+    - "\uC774 \uC18D\uB3C4\uBA74 \uAE08\uBC29\uC774\uACA0\uB2E4!"
+    - 
+  - _peaks:
+    - "\uB610 \uC5C4\uCCAD \uD070 \uD574\uACE8 \uAC19\uC740 \uAC8C \uB098\uC624\uC9C0\uB294
+      \uC54A\uACA0\uC9C0?"
+    - "\uBB54\uAC00 \uD558\uBA74 \uC548\uB420 \uB9D0\uC744 \uD55C \uAC83 \uAC19\uC544..."
+    - 
+  - _peaks:
+    - "\uB531 \uBD10\uB3C4 \uD654\uB098\uC788\uC73C\uC2DC\uB124..."
     - 
   speakWindow: {fileID: 6470802519567529021, guid: c12fd4f90a6c01941b6d2356975b9321, type: 3}
   canToking: 0
@@ -2017,19 +2019,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &863178213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863178204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 651ee5649b05b2f40950d6bbe0847fe6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  savePos: {x: 0, y: 0}
 --- !u!1 &921264828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,9 +2594,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 863178209}
-        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: SoundEffect
+      - m_Target: {fileID: 260162792}
+        m_TargetAssemblyTypeName: FadeUI, Assembly-CSharp
+        m_MethodName: FadeIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2617,9 +2606,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 863178206}
-        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
-        m_MethodName: RestartMap
+      - m_Target: {fileID: 863178209}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: SoundEffect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2926,7 +2915,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451074274}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4152,31 +4141,7 @@ MonoBehaviour:
   - Enemy
   dieEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 863178213}
-        m_TargetAssemblyTypeName: SavePointerManager, Assembly-CSharp
-        m_MethodName: SavePoint
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 863178206}
-        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
-        m_MethodName: RestartMap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   useIsDie: 1
 --- !u!114 &1932782185
 MonoBehaviour:
@@ -4349,7 +4314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3efb1bb2c6ecc154591184ae3a84adbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.2
+  moveSpeed: 2
   increseMoveSpeed: 4
   maxMoveSpeed: 3
 --- !u!114 &1932782191
@@ -4364,7 +4329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7861c8b555d8f48943cbb15ac72000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPower: 7
+  JumpPower: 9
   DoubleJumpPower: 7
   canDoubleJump: 1
 --- !u!114 &1932782192
