@@ -14,9 +14,6 @@ public class MapEditor : MonoBehaviour
 
     public void CreateDefaultMap()
     {
-
-        if (mapNumber <= 0) return;
-
         if (mainMap != null)
         {
 
@@ -57,7 +54,7 @@ public class MapEditor : MonoBehaviour
     public void SaveMap()
     {
 
-        if (mapNumber <= 0 || mainMap == null) return;
+        if (mainMap == null) return;
 
         PrefabUtility.SaveAsPrefabAsset(mainMap,
             Application.dataPath + $"/Resources/Map/{mapNumber}.prefab");
@@ -66,8 +63,6 @@ public class MapEditor : MonoBehaviour
 
     public void LoadMap()
     {
-
-        if (mapNumber <= 0) return;
 
         if(mainMap != null)
         {

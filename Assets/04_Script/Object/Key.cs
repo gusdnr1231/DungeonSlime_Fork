@@ -39,11 +39,10 @@ public class Key : PlayerMovementRoot
         transform.DOMove(targetTrm, 1);
     }
 
-    //void UntilEndMove(Vector3 move)
+    //private void Update()
     //{
-    //    while(transform.position != move)
-    //    {
-    //    }
+    //    if(!updating)
+    //        return;
     //}
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -9052,8 +9052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b9d02377b88c1409fc74a3051604bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {fileID: 0}
-  cameraLockZone: {fileID: 0}
+  startPos: {fileID: 6634304433873512597}
+  cameraLockZone: {fileID: 6634304434882669658}
 --- !u!156049354 &6634304434345486176
 Grid:
   m_ObjectHideFlags: 0
@@ -15053,11 +15053,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139382390213156999, guid: ee1cf9bf019a86d42aebed189cd56d2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7698274
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139382390213156999, guid: ee1cf9bf019a86d42aebed189cd56d2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.404789
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139382390213156999, guid: ee1cf9bf019a86d42aebed189cd56d2e, type: 3}
       propertyPath: m_LocalPosition.z
