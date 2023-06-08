@@ -43,7 +43,7 @@ public class SpeakManager : MonoBehaviour
         mapManager = FindObjectOfType<MapManager>();
         nowStage = mapManager.currentStageNum;
 
-        if (nowStage == 4)
+        if (nowStage == -1)
         {
             skulBossIdle = FindObjectOfType<SkulBossIdle>();
         }
@@ -74,7 +74,7 @@ public class SpeakManager : MonoBehaviour
 
     public void TokingEnd()
     {
-        if (canToking && speak[nowStage - 1]._peaks.Count <= speakCnt)
+        if (canToking && speak[nowStage + 2]._peaks.Count <= speakCnt)
         {
             canToking = false;
             Debug.Log("게임드가자");
@@ -82,7 +82,7 @@ public class SpeakManager : MonoBehaviour
             playerMove.moveAble = true;
             playerJump.AddEvent();
             window.gameObject.SetActive(false);
-            if (nowStage == 4)
+            if (nowStage == -1)
                 skulBossIdle.start = true;
         }
     }
@@ -93,7 +93,7 @@ public class SpeakManager : MonoBehaviour
         {
             text.text = "";
             StopAllCoroutines();
-            StartCoroutine(Speak(speak[nowStage - 1]._peaks[speakCnt]));
+            StartCoroutine(Speak(speak[nowStage + 2]._peaks[speakCnt]));
             speakCnt++;
         }
     }

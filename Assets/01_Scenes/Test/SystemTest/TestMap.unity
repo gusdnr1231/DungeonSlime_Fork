@@ -1878,6 +1878,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speak:
   - _peaks:
+    - "\uC2A4\uCF08\uB808\uD1A4 \uC544\uC800\uC528\uB2E4!"
+    - "\uC5B4.. \uD654\uB098\uC168\uB098?"
+    - 
+  - _peaks:
+    - "\uB531 \uBD10\uB3C4 \uD654\uB098\uC788\uC73C\uC2DC\uB124..."
+    - 
+  - _peaks:
+    - "\uC640 \uD29C\uD1A0\uB9AC\uC5BC!"
+    - "\uC640 \uC0CC\uC988"
+    - 
+  - _peaks:
     - "\uC5EC\uAE30\uAC00 \uB0B4 \uBC14\uB85C \uC704\uCE35\uC774\uB124"
     - "\uBCC4\uB85C \uB2E4\uB978 \uAC74 \uC5C6\uAD6C\uB9CC!"
     - 
@@ -1900,10 +1911,6 @@ MonoBehaviour:
     - "\uC74C... \uAECC\uC774 \uBB50\uC9C0?"
     - 
   - _peaks:
-    - "\uC2A4\uCF08\uB808\uD1A4 \uC544\uC800\uC528\uB2E4!"
-    - "\uC5B4.. \uD654\uB098\uC168\uB098?"
-    - 
-  - _peaks:
     - "\uBB3C \uC870\uC2EC!"
     - 
   - _peaks:
@@ -1918,9 +1925,6 @@ MonoBehaviour:
     - "\uB610 \uC5C4\uCCAD \uD070 \uD574\uACE8 \uAC19\uC740 \uAC8C \uB098\uC624\uC9C0\uB294
       \uC54A\uACA0\uC9C0?"
     - "\uBB54\uAC00 \uD558\uBA74 \uC548\uB420 \uB9D0\uC744 \uD55C \uAC83 \uAC19\uC544..."
-    - 
-  - _peaks:
-    - "\uB531 \uBD10\uB3C4 \uD654\uB098\uC788\uC73C\uC2DC\uB124..."
     - 
   speakWindow: {fileID: 6470802519567529021, guid: c12fd4f90a6c01941b6d2356975b9321, type: 3}
   canToking: 0
