@@ -7,7 +7,7 @@ public class BombEnemy : EnemyRoot
 {
 
     private const float increaseValue = 0.2f;
-    private const float decreaseValue = 0.0005f;
+    private const float decreaseValue = 0.0002f;
 
     [SerializeField] private float radiua;
     [SerializeField] private GameObject particle;

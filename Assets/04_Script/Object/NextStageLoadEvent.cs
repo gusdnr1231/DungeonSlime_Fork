@@ -10,6 +10,7 @@ public class NextStageLoadEvent : MonoBehaviour
 
     private void LoadEmpact()
     {
+        PlayerPrefs.SetInt("StageStart", 1);
         SpriteRenderer player = GameObject.FindWithTag("Player").GetComponent<SpriteRenderer>();
         player.DOFade(0, 0.5f).OnComplete(() => {
             gameObject.GetComponent<Animator>().enabled = true;

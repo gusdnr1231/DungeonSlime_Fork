@@ -65,25 +65,11 @@ public class SpeakManager : MonoBehaviour
 
     }
 
-    //void WindowUp()
-    //{
-    //    Vector3 windowVec = new Vector3(player.transform.position.x, player.transform.position.y + 2, 0);
-    //    Vector3 windowPos = mainCam.WorldToScreenPoint(windowVec);
-    //    window.position = windowPos;
-    //}
-
     void WindowUp()
     {
         Vector3 windowVec = new Vector3(player.transform.position.x, player.transform.position.y + 2, 0);
         Vector3 windowPos = mainCam.WorldToScreenPoint(windowVec);
-        //    window.position = windowPos;
-
-        // 캔버스 내에서의 위치 계산
-        Vector2 windowCanvasPos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, windowPos, mainCam, out windowCanvasPos);
-
-        // 위치 설정
-        window.position = windowCanvasPos;
+        window.position = windowPos;
     }
 
     public void TokingEnd()
