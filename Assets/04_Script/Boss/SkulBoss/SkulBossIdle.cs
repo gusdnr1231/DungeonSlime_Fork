@@ -41,7 +41,8 @@ public class SkulBossIdle : FAED_FSMState
         dangerousBox.SetActive(false);
         player = FindObjectOfType<PlayerAnimator>().gameObject;
         animator = head.GetComponent<Animator>();
-        clearObject.SetActive(false);
+
+        FAED.InvokeDelay(() => { clearObject.SetActive(false); }, 0.1f);
     }
 
     private void Update()
@@ -124,7 +125,7 @@ public class SkulBossIdle : FAED_FSMState
                         obj.GetComponent<Collider2D>().enabled = true;
                         HeadMove();
                     });
-                }, 4);
+                }, 3);
             });
         });
     }

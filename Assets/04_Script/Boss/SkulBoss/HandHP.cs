@@ -103,6 +103,8 @@ public class HandHP : MonoBehaviour
                 pa.GetComponent<ParticleSystem>().Play();
 
                 bossIdle.handCnt--;
+
+                floorCol.SetActive(false);
                 if(!isNotDie)
                     gameObject.SetActive(false);
             }

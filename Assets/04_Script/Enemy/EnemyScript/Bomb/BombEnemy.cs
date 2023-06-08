@@ -38,10 +38,11 @@ public class BombEnemy : EnemyRoot
 
         if (spriteRenderer.color.b <= 0 && !willBomb)
         {
-
             willBomb = true;
             jumpCheck.SetActive(false);
+            Debug.Log($"시발 나와 {playerHide}");
             playerHide.Bounce();
+            Debug.Log($"시발 나와 {playerHide}");
             possibleCheck.SetActive(false);
             gameObject.layer = 0;
             StartCoroutine(ColorChange(0.5f, 5));

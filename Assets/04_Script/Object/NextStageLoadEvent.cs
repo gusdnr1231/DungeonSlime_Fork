@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using FD.Dev;
+using static UnityEngine.Rendering.DebugUI;
 
 public class NextStageLoadEvent : MonoBehaviour
 {
@@ -28,6 +29,17 @@ public class NextStageLoadEvent : MonoBehaviour
             SceneManager.LoadScene("Loading");
         }, 1f);
 
+    }
+
+    public void ClearChapter()
+    {
+        LoadEmpact();
+
+        FAED.InvokeDelay(() =>
+        {
+            PlayerPrefs.SetString("NextScene", "SelectStage1");
+            SceneManager.LoadScene("Loading");
+        }, 1f);
     }
 
 }

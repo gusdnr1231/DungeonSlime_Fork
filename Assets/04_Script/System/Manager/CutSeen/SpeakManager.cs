@@ -77,7 +77,6 @@ public class SpeakManager : MonoBehaviour
         if (canToking && speak[nowStage + 2]._peaks.Count <= speakCnt)
         {
             canToking = false;
-            Debug.Log("게임드가자");
             canToking = false;
             playerMove.moveAble = true;
             playerJump.AddEvent();
