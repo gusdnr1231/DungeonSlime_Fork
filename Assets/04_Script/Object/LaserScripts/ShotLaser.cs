@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShotLaser : MonoBehaviour
 {
     [SerializeField] private Vector2 dir;
-    private readonly float dist = 100;
+    private readonly float dist = 10000;
     private readonly float laserTime = 0.3f;
     private readonly float maxWidth = 0.7f;
 
@@ -40,7 +40,9 @@ public class ShotLaser : MonoBehaviour
         UseLineRenderer(lineRenderer, true);
         while(currentTime <= laserTime)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, dist);
+            int layerMask = (-1) - (1 << LayerMask.NameToLayer("CameraRange"));
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, dist, layerMask);
             Vector2 endPos = (hit.collider) ? hit.point : transform.position + (Vector3)dir.normalized * dist;
 
             float width = (1 - easeOutElastic(Mathf.Lerp(0, 1, currentTime / laserTime))) * maxWidth;
