@@ -31,6 +31,19 @@ public class NextStageLoadEvent : MonoBehaviour
 
     }
 
+    public void BossLoad(int num)
+    {
+        LoadEmpact();
+
+        FAED.InvokeDelay(() =>
+        {
+            Managers.Map.SetCurrentStageNumber(num);
+            PlayerPrefs.SetString("NextScene", "StartLoadingMap");
+            SceneManager.LoadScene("Loading");
+        }, 1f);
+
+    }
+
     public void ClearChapter()
     {
         LoadEmpact();

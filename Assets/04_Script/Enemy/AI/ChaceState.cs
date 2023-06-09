@@ -47,7 +47,10 @@ public class ChaceState : FAED_FSMState
 
         }
 
-        spriteRenderer.flipX = value > 0 ? true : false; 
+        if (value > 0)
+            spriteRenderer.flipX = true;
+        else if (value < 0)
+            spriteRenderer.flipX = false;
 
         rigid.velocity = new Vector2(value, rigid.velocity.y);
 

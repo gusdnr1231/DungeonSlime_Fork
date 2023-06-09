@@ -26,6 +26,7 @@ public class Cannon : EnemyRoot
     {
         input.BounceExecute();
         playerMove.SetValMoveAble();
+        playerMove.isFlying = true;
 
         float angle = transform.eulerAngles.z < 180 ? Mathf.Clamp(-transform.eulerAngles.z, -90, 90) : Mathf.Clamp(360 - transform.eulerAngles.z, -90, 90);
 

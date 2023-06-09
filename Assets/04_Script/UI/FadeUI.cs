@@ -17,6 +17,8 @@ public class FadeUI : MonoBehaviour
     [SerializeField] RectTransform rectTrs2;
     [SerializeField] RectTransform rectTrs3;
 
+    bool isFading;
+
     private void Awake()
     {
 
@@ -53,29 +55,31 @@ public class FadeUI : MonoBehaviour
 
     public void FadeIn()
     {
-
-        DOTween.KillAll();
-        rectTrs.anchoredPosition = new Vector3(0, 1300, 0);
-        rectTrs2.anchoredPosition = new Vector3(0, 1300, 0);
-        rectTrs3.anchoredPosition = new Vector3(0, 1300, 0);
-        FAED.InvokeDelay(() => 
-        { 
-            rectTrs3.DOMoveY(540, 1).SetEase(Ease.OutCirc)
-            .OnComplete(() =>
+        if (!isFading)
+        {
+            isFading = true;
+            DOTween.KillAll();
+            rectTrs.anchoredPosition = new Vector3(0, 1300, 0);
+            rectTrs2.anchoredPosition = new Vector3(0, 1300, 0);
+            rectTrs3.anchoredPosition = new Vector3(0, 1300, 0);
+            FAED.InvokeDelay(() =>
             {
-
-                if (PlayerPrefs.GetInt("FirstStart") == 1)
-                    inEvt?.Invoke();
-                else
+                rectTrs3.DOMoveY(540, 1).SetEase(Ease.OutCirc)
+                .OnComplete(() =>
                 {
-                    PlayerPrefs.SetInt("FirstStart", 1);
-                    ftsEvt?.Invoke();
-                }
-            });
-        }, 0.4f);
-        rectTrs.DOMoveY(540, 1).SetEase(Ease.OutCirc);
-        FAED.InvokeDelay(() => { rectTrs2.DOMoveY(540, 1).SetEase(Ease.OutCirc); }, 0.2f);
 
+                    if (PlayerPrefs.GetInt("FirstStart") == 1)
+                        inEvt?.Invoke();
+                    else
+                    {
+                        PlayerPrefs.SetInt("FirstStart", 1);
+                        ftsEvt?.Invoke();
+                    }
+                });
+            }, 0.4f);
+            rectTrs.DOMoveY(540, 1).SetEase(Ease.OutCirc);
+            FAED.InvokeDelay(() => { rectTrs2.DOMoveY(540, 1).SetEase(Ease.OutCirc); }, 0.2f);
+        }
     }
 
     public void FadeOut()
@@ -96,25 +100,27 @@ public class FadeUI : MonoBehaviour
 
     public void FadeIn(string name)
     {
-
-        DOTween.KillAll();
-        rectTrs.anchoredPosition = new Vector3(0, 1300, 0);
-        rectTrs2.anchoredPosition = new Vector3(0, 1300, 0);
-        rectTrs3.anchoredPosition = new Vector3(0, 1300, 0);
-        FAED.InvokeDelay(() => 
-        { 
-            rectTrs3.DOMoveY(540, 1).SetEase(Ease.OutCirc)
-            .OnComplete(() =>
+        if (!isFading)
+        {
+            isFading = true;
+            DOTween.KillAll();
+            rectTrs.anchoredPosition = new Vector3(0, 1300, 0);
+            rectTrs2.anchoredPosition = new Vector3(0, 1300, 0);
+            rectTrs3.anchoredPosition = new Vector3(0, 1300, 0);
+            FAED.InvokeDelay(() =>
             {
+                rectTrs3.DOMoveY(540, 1).SetEase(Ease.OutCirc)
+                .OnComplete(() =>
+                {
 
-                inEvt?.Invoke();
-                SceneManager.LoadScene(name);
+                    inEvt?.Invoke();
+                    SceneManager.LoadScene(name);
 
-            });
-        }, 0.4f);
-        rectTrs.DOMoveY(540, 1).SetEase(Ease.OutCirc);
-        FAED.InvokeDelay(() => { rectTrs2.DOMoveY(540, 1).SetEase(Ease.OutCirc); }, 0.2f);
-
+                });
+            }, 0.4f);
+            rectTrs.DOMoveY(540, 1).SetEase(Ease.OutCirc);
+            FAED.InvokeDelay(() => { rectTrs2.DOMoveY(540, 1).SetEase(Ease.OutCirc); }, 0.2f);
+        }
     }
 
 }
