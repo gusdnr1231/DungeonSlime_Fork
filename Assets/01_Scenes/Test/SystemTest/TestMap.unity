@@ -1938,7 +1938,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2410215840127038802, guid: 8e5bbe4d54f2e2448bcfd3a1b2fcde63, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ea74c1fa7902a4842a6db64eb207506e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3219,6 +3219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7619573401262972785, guid: 781a2ddbf930c0d4ea6fe8edbf2412b0, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ec533034c5466f4e9b30b33fdd8c3bb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 781a2ddbf930c0d4ea6fe8edbf2412b0, type: 3}
 --- !u!1 &1597043642
@@ -4371,6 +4375,7 @@ MonoBehaviour:
   moveSpeed: 2
   increseMoveSpeed: 4
   maxMoveSpeed: 3
+  isFlying: 0
 --- !u!114 &1932782191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4398,6 +4403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21ef2db2a5059043a42e2fd41771b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveValue: 0
 --- !u!50 &1932782193
 Rigidbody2D:
   serializedVersion: 4
