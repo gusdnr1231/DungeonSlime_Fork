@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be096720c68c3444a226eea0cffbb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSpeed: 3
-  range: 2
+  timeSpeed: 6
+  range: 0.25

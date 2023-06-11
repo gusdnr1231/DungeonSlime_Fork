@@ -33,7 +33,7 @@ public class ChaceState : FAED_FSMState
 
     public override void UpdateState()
     {
-        float value = 0;
+        float value;
         if (!reverce)
         {
 

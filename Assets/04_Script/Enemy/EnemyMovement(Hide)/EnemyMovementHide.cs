@@ -26,7 +26,10 @@ public class EnemyMovementHide : EnemyRoot, IMoveAbleObject
         }
         if (addMoveSpeed <= maxMoveSpeed) addMoveSpeed += increseMoveSpeed / 100f;
 
-        spriteRenderer.flipX = value == 1 ? true : false;
+        if (value > 0)
+            spriteRenderer.flipX = true;
+        else if (value < 0)
+            spriteRenderer.flipX = false;
 
         rigid.velocity = new Vector2(value * moveSpeed * addMoveSpeed, rigid.velocity.y);
 

@@ -1885,8 +1885,8 @@ MonoBehaviour:
     - "\uB531 \uBD10\uB3C4 \uD654\uB098\uC788\uC73C\uC2DC\uB124..."
     - 
   - _peaks:
-    - "\uC640 \uD29C\uD1A0\uB9AC\uC5BC!"
-    - "\uC640 \uC0CC\uC988"
+    - "\uC640 \uD29C\uD1A0\uB9AC\uC5BC"
+    - "\uC640 \uC0CC\uC988!"
     - 
   - _peaks:
     - "\uC5EC\uAE30\uAC00 \uB0B4 \uBC14\uB85C \uC704\uCE35\uC774\uB124"
@@ -3935,7 +3935,7 @@ GameObject:
   - component: {fileID: 1681669724}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: GameCanvers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

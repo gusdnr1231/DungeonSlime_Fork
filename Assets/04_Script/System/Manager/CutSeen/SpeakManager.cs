@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,7 +34,7 @@ public class SpeakManager : MonoBehaviour
     public void StartScript()
     {
         mainCam = Camera.main;
-        canvas = FindObjectOfType<Canvas>();
+        canvas = GameObject.FindWithTag("GameCanvers").GetComponent<Canvas>();
         window = Instantiate(speakWindow, canvas.transform.GetChild(0)).GetComponent<RectTransform>();
         text = window.GetChild(0).GetComponent<TextMeshProUGUI>();
         playerInput = FindObjectOfType<PlayerInput>();
@@ -69,6 +70,17 @@ public class SpeakManager : MonoBehaviour
     {
         Vector3 windowVec = new Vector3(player.transform.position.x, player.transform.position.y + 2, 0);
         Vector3 windowPos = mainCam.WorldToScreenPoint(windowVec);
+
+        if (windowPos.x < 230)
+            windowPos.x = 230;
+        else if (windowPos.x > 1700)
+            windowPos.x = 1700;
+
+        if (windowPos.y < 240)
+            windowPos.y = 240;
+        else if (windowPos.y > 960)
+            windowPos.y = 960;
+
         window.position = windowPos;
     }
 

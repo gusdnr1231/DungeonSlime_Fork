@@ -15,6 +15,7 @@ TagManager:
   - StartDoor
   - Key
   - Breakable
+  - GameCanvers
   layers:
   - Default
   - TransparentFX
