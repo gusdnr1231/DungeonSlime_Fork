@@ -4132,6 +4132,7 @@ GameObject:
   - component: {fileID: 1932782183}
   - component: {fileID: 1932782197}
   - component: {fileID: 1932782198}
+  - component: {fileID: 1932782199}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -4188,9 +4189,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 863178206}
-        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
-        m_MethodName: RestartMap
+      - m_Target: {fileID: 1932782199}
+        m_TargetAssemblyTypeName: PlayerDie, Assembly-CSharp
+        m_MethodName: PlayerDieEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4628,6 +4629,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7286257acaaa4fe4fac7a9097416562b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1932782199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932782182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89d548658eab6046b295555ba05c4c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 863178206}
+        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
+        m_MethodName: RestartMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  paintwhiteMat: {fileID: 2100000, guid: 49313a01f5c3d14449d7a0c47c51162a, type: 2}
 --- !u!1 &1994255513
 GameObject:
   m_ObjectHideFlags: 0

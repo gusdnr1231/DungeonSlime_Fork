@@ -14,8 +14,8 @@ public class MapManager : MonoBehaviour
 
     private void Awake()
     {
-        
-        if(isTesting) 
+
+        if (isTesting) 
         {
 
             CreateStage();
