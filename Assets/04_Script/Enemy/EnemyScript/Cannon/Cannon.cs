@@ -6,6 +6,7 @@ public class Cannon : EnemyRoot
 {
     private Rigidbody2D rb;
     PlayerMove playerMove;
+    PlayerInput playerInput;
 
     [SerializeField] private float cannonSpeed = 0.2f;
 
@@ -25,6 +26,7 @@ public class Cannon : EnemyRoot
     {
         input.BounceExecute();
         playerMove.SetValMoveAble();
+        playerMove.isFlying = true;
 
         float angle = transform.eulerAngles.z < 180 ? Mathf.Clamp(-transform.eulerAngles.z, -90, 90) : Mathf.Clamp(360 - transform.eulerAngles.z, -90, 90);
 

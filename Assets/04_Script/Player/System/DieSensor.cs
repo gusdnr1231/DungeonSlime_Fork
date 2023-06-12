@@ -22,7 +22,6 @@ public class DieSensor : MonoBehaviour
 
         foreach(var tag in tags) 
         {
-
             if (collision.CompareTag(tag))
             {
 
@@ -53,6 +52,7 @@ public class DieSensor : MonoBehaviour
 
                 dieTag = tag;
                 isDie = true;
+                Debug.Log(collision.transform.name);
                 dieEvent?.Invoke();
 
             }

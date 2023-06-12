@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
 
-    private float moveValue;
+    public float moveValue;
 
     public event Action<float> OnMovementEvent;
     public event Action<bool> OnJumpKeyPressEvent;
@@ -40,7 +40,6 @@ public class PlayerInput : MonoBehaviour
     {
 
         if (!controllAble) return;
-
         moveValue = v;
 
     }

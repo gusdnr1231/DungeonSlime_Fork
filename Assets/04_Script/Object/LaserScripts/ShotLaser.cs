@@ -51,6 +51,9 @@ public class ShotLaser : MonoBehaviour
             if(hit.collider)
             {
                 // 닿은 물체 처리
+                DieSensor dieObj = hit.collider.gameObject.GetComponent<DieSensor>();
+                if (dieObj != null)
+                    dieObj.InvokeDieEvent();
 
                 // 레이저를 감지하는 블럭에 닿았다면
                 CheckLaser checkLaser = hit.collider.gameObject.GetComponent<CheckLaser>();

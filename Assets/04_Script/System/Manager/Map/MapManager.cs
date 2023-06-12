@@ -10,6 +10,8 @@ public class MapManager : MonoBehaviour
     [SerializeField] private bool isTesting = false;
     [field:SerializeField] public int currentStageNum { get; private set; } = 1;
 
+    SkulBossIdle skulBossIdle;
+
     private void Awake()
     {
         
@@ -42,7 +44,6 @@ public class MapManager : MonoBehaviour
         if(Resources.Load<GameObject>($"Map/{currentStageNum}") == null)
         {
 
-            Debug.Log(123);
             PlayerPrefs.SetString("NextScene", "SelectStage1");
             SceneManager.LoadScene("Loading");
             return;
@@ -53,11 +54,15 @@ public class MapManager : MonoBehaviour
         var player = GameObject.Find("Player");
         CameraManager.instance.SetCof(map.cameraLockZone);
         player.transform.position = map.StartPos.position;
-        Debug.Log(PlayerPrefs.GetInt("StageStart"));
         if (PlayerPrefs.GetInt("StageStart") == 1)
         {
             PlayerPrefs.SetInt("StageStart", 0);
             CutSceneManager.instance.CutSceneActive();
+        }
+        else
+        {
+            skulBossIdle = FindObjectOfType<SkulBossIdle>();
+            skulBossIdle.start = true;
         }
     }
 

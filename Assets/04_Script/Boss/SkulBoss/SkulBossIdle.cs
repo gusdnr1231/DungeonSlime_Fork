@@ -30,6 +30,7 @@ public class SkulBossIdle : FAED_FSMState
     private Animator animator;
     private GameObject player;
     public int handCnt;
+    public bool start;
 
     Color orignDangerousColor;
 
@@ -40,8 +41,17 @@ public class SkulBossIdle : FAED_FSMState
         dangerousBox.SetActive(false);
         player = FindObjectOfType<PlayerAnimator>().gameObject;
         animator = head.GetComponent<Animator>();
-        clearObject.SetActive(false);
-        HeadMove();
+
+        FAED.InvokeDelay(() => { clearObject.SetActive(false); }, 0.1f);
+    }
+
+    private void Update()
+    {
+        if (start)
+        {
+            start = false;
+            HeadMove();
+        }
     }
 
     void HeadMove()
@@ -103,6 +113,7 @@ public class SkulBossIdle : FAED_FSMState
                     if (boss)
                         animator.SetTrigger("Normal");
 
+                    obj.GetComponent<Collider2D>().enabled = false;
                     obj.GetComponent<HandHP>().possibleIn = false;
                     obj.transform.DOMove(backPos, 0.5f).SetEase(Ease.OutExpo).OnComplete(() => 
                     {
@@ -111,9 +122,10 @@ public class SkulBossIdle : FAED_FSMState
                             leftHand.GetComponent<SpriteRenderer>().sprite = normalSprite;
                             rightHand.GetComponent<SpriteRenderer>().sprite = normalSprite;
                         }
+                        obj.GetComponent<Collider2D>().enabled = true;
                         HeadMove();
                     });
-                }, 2);
+                }, 3);
             });
         });
     }

@@ -15,6 +15,7 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
     private float addMoveSpeed;
 
     public bool moveAble { get; set; } = true;
+    public bool isFlying;
 
     PlayerHide playerHide;
     private Vector3 particleOffset = new Vector3(0.35f, 0, 0);
@@ -42,7 +43,7 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
 
     public void SetValMoveAble()
     {
-
+        
         StopAllCoroutines();
         StartCoroutine(SetMoveAbleToVelCo());
 
@@ -98,6 +99,15 @@ public class PlayerMove : PlayerMovementRoot, IMoveAbleObject
 
         moveAble = true;
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isFlying)
+        {
+            isFlying = false;
+            moveAble = true;
+        }
     }
 
 }

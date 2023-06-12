@@ -21,7 +21,6 @@ public class SavePointer : MonoBehaviour
         if (Physics2D.OverlapBox(transform.position, Vector2.one, 0, LayerMask.GetMask("Player")) && !isFlaging)
         {
             isFlaging = true;
-            Debug.Log("fa");
             animator.SetTrigger("Flaging");
             manager.savePos = player.transform.position;
         }

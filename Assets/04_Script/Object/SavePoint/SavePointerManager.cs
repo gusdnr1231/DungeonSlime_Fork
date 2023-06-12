@@ -1,23 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FD.Dev;
 
 public class SavePointerManager : MonoBehaviour
 {
     public Vector2 savePos;
     private GameObject player;
 
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerInput>().gameObject;
+    }
+
     private void Start()
     {
-        player = GameObject.FindWithTag("Player");
-
-        if (PlayerPrefs.GetInt("PosSave") == 1)
+        FAED.InvokeDelay(() => 
         {
-            PlayerPrefs.SetInt("PosSave", 0);
-            float x = PlayerPrefs.GetFloat("SavePosX");
-            float y = PlayerPrefs.GetFloat("SavePosY");
-            player.transform.position = new Vector2(x, y);
-        }
+            if (PlayerPrefs.GetInt("PosSave") == 1)
+            {
+                PlayerPrefs.SetInt("PosSave", 0);
+                float x = PlayerPrefs.GetFloat("SavePosX");
+                float y = PlayerPrefs.GetFloat("SavePosY");
+                player.transform.position = new Vector2(x, y);
+            }
+        }, 0.005f);
     }
 
     private void Update()
