@@ -728,6 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockChapter: 2
   clickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1291,6 +1292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockChapter: 1
   clickEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1799,6 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockChapter: 0
   clickEvent:
     m_PersistentCalls:
       m_Calls:

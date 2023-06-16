@@ -8,6 +8,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class NextStageLoadEvent : MonoBehaviour
 {
+    [SerializeField] private int nextChapter;
 
     private void LoadEmpact()
     {
@@ -47,6 +48,10 @@ public class NextStageLoadEvent : MonoBehaviour
     public void ClearChapter()
     {
         LoadEmpact();
+        if (PlayerPrefs.GetInt("UnlockChapter") < nextChapter)
+        {
+            PlayerPrefs.SetInt("UnlockChapter", nextChapter);
+        }
 
         FAED.InvokeDelay(() =>
         {

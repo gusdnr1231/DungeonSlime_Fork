@@ -488,6 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ef61bdd472f394eb6c71d8143389b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockChapter: 0
   clickEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2444,8 +2445,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 863178209}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: SetNextScene
-        m_Mode: 5
+        m_MethodName: SetSelectStageScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

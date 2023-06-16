@@ -6,13 +6,14 @@ using UnityEngine.EventSystems;
 
 public class ImageClickEvent : MonoBehaviour, IPointerDownHandler
 {
-
+    [SerializeField] private int lockChapter;
     [SerializeField] private UnityEvent clickEvent;
 
     public void OnPointerDown(PointerEventData eventData)
     {
 
-        clickEvent?.Invoke();
+        if (PlayerPrefs.GetInt("UnlockChapter") >= lockChapter)
+            clickEvent?.Invoke();
 
     }
 

@@ -4,17 +4,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.Rendering.DebugUI;
 
 public class UiManager : MonoBehaviour
 {
 
     [SerializeField] private RectTransform movementUI;
     [SerializeField] private float lenght = 1920;
+
+    private MapManager mapManager;
     private AudioSource audioSource;
     private bool isMove = false;
 
     private void Awake()
     {
+        mapManager = FindObjectOfType<MapManager>();
         audioSource = gameObject.GetComponent<AudioSource>();
     }
 
@@ -70,6 +74,24 @@ public class UiManager : MonoBehaviour
 
         });
 
+    }
+
+    public void SetSelectStageScene()
+    {
+        int stage = mapManager.currentStageNum;
+        Debug.Log(stage);
+        if (stage == 0)//Æ©Åä¸®¾ó
+        {
+            PlayerPrefs.SetString("NextScene", "TutorialSelect");
+        }
+        if ((stage >= 1 && stage <= 5) || stage == -1)//1Ã©ÅÍ
+        {
+            PlayerPrefs.SetString("NextScene", "SelectStage1");
+        }
+        else if ((stage >= 6 && stage <= 10) || stage == -2)//2Ã©ÅÍ
+        {
+            PlayerPrefs.SetString("NextScene", "SelectStage2");
+        }
     }
 
     public void SoundEffect()

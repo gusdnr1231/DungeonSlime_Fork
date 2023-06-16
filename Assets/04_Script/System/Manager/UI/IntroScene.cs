@@ -9,6 +9,7 @@ public class IntroScene : MonoBehaviour
     private void Start()
     {
 
+        PlayerPrefs.SetInt("UnlockChapter", 1);
         PlayerPrefs.SetFloat("UIKey", 1920);
 
     }

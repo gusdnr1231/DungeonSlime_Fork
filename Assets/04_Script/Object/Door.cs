@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class Door : MonoBehaviour
 {
-
     [SerializeField] private List<string> clearAbleTag;
 
     private JumpUISetting jumpUISetting;
